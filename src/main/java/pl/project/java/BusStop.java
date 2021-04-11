@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class BusStop {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String departureOneTime;
