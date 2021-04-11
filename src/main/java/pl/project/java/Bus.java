@@ -7,7 +7,7 @@ import java.util.Set;
 public class Bus
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
     private int busLineNumber;

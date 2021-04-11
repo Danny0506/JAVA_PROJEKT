@@ -27,8 +27,8 @@ public class Gui extends JFrame implements ActionListener {
     private final JButton button2 = new JButton("WRÓĆ DO MENU GŁÓWNEGO");
     private final JButton button3 = new JButton("WRÓĆ DO MENU GŁÓWNEGO");
     private final JButton button4 = new JButton("SPRAWDŹ");
-    private final String[] numberOfBus = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
-    private final JComboBox<String> comboBox = new JComboBox<>(numberOfBus);
+    private final Integer[] numberOfBus = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    private final JComboBox<Integer> comboBox = new JComboBox<>(numberOfBus);
     private final JComboBox<String> comboBox2 = new JComboBox<>();
     private final JComboBox<String> comboBox3 = new JComboBox<>();
     private final JPanel panel = new JPanel();
@@ -87,14 +87,14 @@ public class Gui extends JFrame implements ActionListener {
         label3.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
         label4.setBounds(380, -250, 900, 600);
         label4.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
-        label5.setBounds(130, 230, 300, 100);
+        label5.setBounds(170, 230, 300, 100);
         label5.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
         label6.setBounds(150, 60, 1250, 100);
         label6.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         label7.setBounds(530, 230, 300, 100);
         label7.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
         label7.setForeground(Color.white);
-        label8.setBounds(930, 230, 300, 100);
+        label8.setBounds(940, 230, 300, 100);
         label8.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
         label9.setBounds(0, 400, 1280, 100);
         label9.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
@@ -120,10 +120,10 @@ public class Gui extends JFrame implements ActionListener {
         button1.setBounds(900, 200, 200, 100);
         button2.setBounds(440, 600, 400, 50);
         button3.setBounds(440, 600, 400, 50);
-        button4.setBounds(535, 350, 180, 30);
-        comboBox.setBounds(150, 300, 100, 25);
-        comboBox2.setBounds(535, 300, 180, 25);
-        comboBox3.setBounds(915, 300, 180, 25);
+        button4.setBounds(535, 350, 180, 33);
+        comboBox.setBounds(150, 300, 180, 33);
+        comboBox2.setBounds(535, 300, 180, 33);
+        comboBox3.setBounds(920, 300, 180, 33);
     }
 
     private void audio() throws UnsupportedAudioFileException {
@@ -319,8 +319,8 @@ public class Gui extends JFrame implements ActionListener {
         int indexTwo = comboBox2.getSelectedIndex();
         int indexThree = comboBox3.getSelectedIndex();
 
-        if (source == comboBox)
-        {
+        if (source == comboBox) {
+
             if (index == 0) {
                 comboBox2.removeAllItems();
                 comboBox2.addItem(bus.getDirectionOne());
@@ -365,230 +365,151 @@ public class Gui extends JFrame implements ActionListener {
         }
         else if(source == comboBox2)
         {
+            String [] busStopsOne = {busStop15.getBusStopName(), busStop16.getBusStopName(), busStop17.getBusStopName(), busStop18.getBusStopName(), busStop19.getBusStopName(), busStop20.getBusStopName(),busStop21.getBusStopName()}, busStopsTwo = {busStop22.getBusStopName(), busStop23.getBusStopName(), busStop24.getBusStopName(), busStop25.getBusStopName(), busStop26.getBusStopName(), busStop27.getBusStopName(),busStop28.getBusStopName()}, busStopsThree = {busStop36.getBusStopName(), busStop37.getBusStopName(), busStop38.getBusStopName(), busStop39.getBusStopName(), busStop40.getBusStopName(), busStop41.getBusStopName(),busStop42.getBusStopName()}, busStopsFour = {busStop29.getBusStopName(), busStop30.getBusStopName(), busStop31.getBusStopName(), busStop32.getBusStopName(), busStop33.getBusStopName(), busStop34.getBusStopName(),busStop35.getBusStopName()}, busStopsFive = {busStop43.getBusStopName(), busStop44.getBusStopName(), busStop45.getBusStopName(), busStop46.getBusStopName(), busStop47.getBusStopName(), busStop48.getBusStopName(),busStop49.getBusStopName()},busStopsSix = {busStop50.getBusStopName(), busStop51.getBusStopName(), busStop52.getBusStopName(), busStop53.getBusStopName(), busStop54.getBusStopName(), busStop55.getBusStopName(),busStop56.getBusStopName()},busStopsSeven = {busStop57.getBusStopName(), busStop58.getBusStopName(), busStop59.getBusStopName(), busStop60.getBusStopName(), busStop61.getBusStopName(), busStop62.getBusStopName(),busStop63.getBusStopName()},busStopsEight = {busStop64.getBusStopName(), busStop65.getBusStopName(), busStop66.getBusStopName(), busStop67.getBusStopName(), busStop68.getBusStopName(), busStop69.getBusStopName(),busStop70.getBusStopName()},busStopsNine = {busStop8.getBusStopName(), busStop9.getBusStopName(), busStop10.getBusStopName(), busStop11.getBusStopName(), busStop12.getBusStopName(), busStop13.getBusStopName(),busStop14.getBusStopName()},busStopsTen = {busStop1.getBusStopName(), busStop2.getBusStopName(), busStop3.getBusStopName(), busStop4.getBusStopName(), busStop5.getBusStopName(), busStop6.getBusStopName(),busStop7.getBusStopName()},busStopsEleven = {busStop71.getBusStopName(), busStop72.getBusStopName(), busStop73.getBusStopName(), busStop74.getBusStopName(), busStop75.getBusStopName(), busStop76.getBusStopName(),busStop77.getBusStopName()},busStopsTwelve = {busStop78.getBusStopName(), busStop79.getBusStopName(), busStop80.getBusStopName(), busStop81.getBusStopName(), busStop82.getBusStopName(), busStop83.getBusStopName(),busStop84.getBusStopName()},busStopsThreeteen = {busStop85.getBusStopName(), busStop86.getBusStopName(), busStop87.getBusStopName(), busStop88.getBusStopName(), busStop89.getBusStopName(), busStop90.getBusStopName(),busStop91.getBusStopName()},busStopsFourteen = {busStop92.getBusStopName(), busStop93.getBusStopName(), busStop94.getBusStopName(), busStop95.getBusStopName(), busStop96.getBusStopName(), busStop97.getBusStopName(),busStop98.getBusStopName()},busStopsFiveteen = {busStop99.getBusStopName(), busStop100.getBusStopName(), busStop101.getBusStopName(), busStop102.getBusStopName(), busStop103.getBusStopName(), busStop104.getBusStopName(),busStop105.getBusStopName()},busStopsSixteen = {busStop106.getBusStopName(), busStop107.getBusStopName(), busStop108.getBusStopName(), busStop109.getBusStopName(), busStop110.getBusStopName(), busStop111.getBusStopName(),busStop112.getBusStopName()},busStopsSeventeen = {busStop113.getBusStopName(), busStop114.getBusStopName(), busStop115.getBusStopName(), busStop116.getBusStopName(), busStop117.getBusStopName(), busStop118.getBusStopName(),busStop119.getBusStopName()},busStopsEightteen = {busStop120.getBusStopName(), busStop121.getBusStopName(), busStop122.getBusStopName(), busStop123.getBusStopName(), busStop124.getBusStopName(), busStop125.getBusStopName(),busStop126.getBusStopName()},busStopsNineteen = {busStop127.getBusStopName(), busStop128.getBusStopName(), busStop129.getBusStopName(), busStop130.getBusStopName(), busStop131.getBusStopName(), busStop132.getBusStopName(),busStop133.getBusStopName()},busStopsTwenty = {busStop134.getBusStopName(), busStop135.getBusStopName(), busStop136.getBusStopName(), busStop137.getBusStopName(), busStop138.getBusStopName(), busStop139.getBusStopName(),busStop140.getBusStopName()};
             if(index == 0 && indexTwo == 0)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop15.getBusStopName());
-                comboBox3.addItem(busStop16.getBusStopName());
-                comboBox3.addItem(busStop17.getBusStopName());
-                comboBox3.addItem(busStop18.getBusStopName());
-                comboBox3.addItem(busStop19.getBusStopName());
-                comboBox3.addItem(busStop20.getBusStopName());
-                comboBox3.addItem(busStop21.getBusStopName());
+                for (String bus: busStopsOne) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 0 && indexTwo == 1)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop22.getBusStopName());
-                comboBox3.addItem(busStop23.getBusStopName());
-                comboBox3.addItem(busStop24.getBusStopName());
-                comboBox3.addItem(busStop25.getBusStopName());
-                comboBox3.addItem(busStop26.getBusStopName());
-                comboBox3.addItem(busStop27.getBusStopName());
-                comboBox3.addItem(busStop28.getBusStopName());
+                for (String bus: busStopsTwo) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 1 && indexTwo == 1)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop36.getBusStopName());
-                comboBox3.addItem(busStop37.getBusStopName());
-                comboBox3.addItem(busStop38.getBusStopName());
-                comboBox3.addItem(busStop39.getBusStopName());
-                comboBox3.addItem(busStop40.getBusStopName());
-                comboBox3.addItem(busStop41.getBusStopName());
-                comboBox3.addItem(busStop42.getBusStopName());
+                for (String bus: busStopsThree) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 1 && indexTwo == 0)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop29.getBusStopName());
-                comboBox3.addItem(busStop30.getBusStopName());
-                comboBox3.addItem(busStop31.getBusStopName());
-                comboBox3.addItem(busStop32.getBusStopName());
-                comboBox3.addItem(busStop33.getBusStopName());
-                comboBox3.addItem(busStop34.getBusStopName());
-                comboBox3.addItem(busStop35.getBusStopName());
+                for (String bus: busStopsFour) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 2 && indexTwo == 0)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop43.getBusStopName());
-                comboBox3.addItem(busStop44.getBusStopName());
-                comboBox3.addItem(busStop45.getBusStopName());
-                comboBox3.addItem(busStop46.getBusStopName());
-                comboBox3.addItem(busStop47.getBusStopName());
-                comboBox3.addItem(busStop48.getBusStopName());
-                comboBox3.addItem(busStop49.getBusStopName());
+                for (String bus: busStopsFive) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 2 && indexTwo == 1)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop50.getBusStopName());
-                comboBox3.addItem(busStop51.getBusStopName());
-                comboBox3.addItem(busStop52.getBusStopName());
-                comboBox3.addItem(busStop53.getBusStopName());
-                comboBox3.addItem(busStop54.getBusStopName());
-                comboBox3.addItem(busStop55.getBusStopName());
-                comboBox3.addItem(busStop56.getBusStopName());
+                for (String bus: busStopsSix) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 3 && indexTwo == 0)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop57.getBusStopName());
-                comboBox3.addItem(busStop58.getBusStopName());
-                comboBox3.addItem(busStop59.getBusStopName());
-                comboBox3.addItem(busStop60.getBusStopName());
-                comboBox3.addItem(busStop61.getBusStopName());
-                comboBox3.addItem(busStop62.getBusStopName());
-                comboBox3.addItem(busStop63.getBusStopName());
+                for (String bus: busStopsSeven) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 3 && indexTwo == 1)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop64.getBusStopName());
-                comboBox3.addItem(busStop65.getBusStopName());
-                comboBox3.addItem(busStop66.getBusStopName());
-                comboBox3.addItem(busStop67.getBusStopName());
-                comboBox3.addItem(busStop68.getBusStopName());
-                comboBox3.addItem(busStop69.getBusStopName());
-                comboBox3.addItem(busStop70.getBusStopName());
+                for (String bus: busStopsEight) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 4 && indexTwo == 1)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop8.getBusStopName());
-                comboBox3.addItem(busStop9.getBusStopName());
-                comboBox3.addItem(busStop10.getBusStopName());
-                comboBox3.addItem(busStop11.getBusStopName());
-                comboBox3.addItem(busStop12.getBusStopName());
-                comboBox3.addItem(busStop13.getBusStopName());
-                comboBox3.addItem(busStop14.getBusStopName());
+                for (String bus: busStopsNine) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 4 && indexTwo == 0)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop1.getBusStopName());
-                comboBox3.addItem(busStop2.getBusStopName());
-                comboBox3.addItem(busStop3.getBusStopName());
-                comboBox3.addItem(busStop4.getBusStopName());
-                comboBox3.addItem(busStop5.getBusStopName());
-                comboBox3.addItem(busStop6.getBusStopName());
-                comboBox3.addItem(busStop7.getBusStopName());
+                for (String bus: busStopsTen) {
+                    comboBox3.addItem(bus);
+                }
             }
             if(index == 5 && indexTwo == 0)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop71.getBusStopName());
-                comboBox3.addItem(busStop72.getBusStopName());
-                comboBox3.addItem(busStop73.getBusStopName());
-                comboBox3.addItem(busStop74.getBusStopName());
-                comboBox3.addItem(busStop75.getBusStopName());
-                comboBox3.addItem(busStop76.getBusStopName());
-                comboBox3.addItem(busStop77.getBusStopName());
+                for (String bus: busStopsEleven) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 5 && indexTwo == 1)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop78.getBusStopName());
-                comboBox3.addItem(busStop79.getBusStopName());
-                comboBox3.addItem(busStop80.getBusStopName());
-                comboBox3.addItem(busStop81.getBusStopName());
-                comboBox3.addItem(busStop82.getBusStopName());
-                comboBox3.addItem(busStop83.getBusStopName());
-                comboBox3.addItem(busStop84.getBusStopName());
+                for (String bus: busStopsTwelve) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 6 && indexTwo == 0)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop85.getBusStopName());
-                comboBox3.addItem(busStop86.getBusStopName());
-                comboBox3.addItem(busStop87.getBusStopName());
-                comboBox3.addItem(busStop88.getBusStopName());
-                comboBox3.addItem(busStop89.getBusStopName());
-                comboBox3.addItem(busStop90.getBusStopName());
-                comboBox3.addItem(busStop91.getBusStopName());
+                for (String bus: busStopsThreeteen) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 6 && indexTwo == 1)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop92.getBusStopName());
-                comboBox3.addItem(busStop93.getBusStopName());
-                comboBox3.addItem(busStop94.getBusStopName());
-                comboBox3.addItem(busStop95.getBusStopName());
-                comboBox3.addItem(busStop96.getBusStopName());
-                comboBox3.addItem(busStop97.getBusStopName());
-                comboBox3.addItem(busStop98.getBusStopName());
+                for (String bus: busStopsFourteen) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 7 && indexTwo == 0)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop99.getBusStopName());
-                comboBox3.addItem(busStop100.getBusStopName());
-                comboBox3.addItem(busStop101.getBusStopName());
-                comboBox3.addItem(busStop102.getBusStopName());
-                comboBox3.addItem(busStop103.getBusStopName());
-                comboBox3.addItem(busStop104.getBusStopName());
-                comboBox3.addItem(busStop105.getBusStopName());
+                for (String bus: busStopsFiveteen) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 7 && indexTwo == 1)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop106.getBusStopName());
-                comboBox3.addItem(busStop107.getBusStopName());
-                comboBox3.addItem(busStop108.getBusStopName());
-                comboBox3.addItem(busStop109.getBusStopName());
-                comboBox3.addItem(busStop110.getBusStopName());
-                comboBox3.addItem(busStop111.getBusStopName());
-                comboBox3.addItem(busStop112.getBusStopName());
+                for (String bus: busStopsSixteen) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 8 && indexTwo == 0)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop113.getBusStopName());
-                comboBox3.addItem(busStop114.getBusStopName());
-                comboBox3.addItem(busStop115.getBusStopName());
-                comboBox3.addItem(busStop116.getBusStopName());
-                comboBox3.addItem(busStop117.getBusStopName());
-                comboBox3.addItem(busStop118.getBusStopName());
-                comboBox3.addItem(busStop119.getBusStopName());
+                for (String bus: busStopsSeventeen) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 8 && indexTwo == 1)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop120.getBusStopName());
-                comboBox3.addItem(busStop121.getBusStopName());
-                comboBox3.addItem(busStop122.getBusStopName());
-                comboBox3.addItem(busStop123.getBusStopName());
-                comboBox3.addItem(busStop124.getBusStopName());
-                comboBox3.addItem(busStop125.getBusStopName());
-                comboBox3.addItem(busStop126.getBusStopName());
+                for (String bus: busStopsEightteen) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 9 && indexTwo == 0)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop127.getBusStopName());
-                comboBox3.addItem(busStop128.getBusStopName());
-                comboBox3.addItem(busStop129.getBusStopName());
-                comboBox3.addItem(busStop130.getBusStopName());
-                comboBox3.addItem(busStop131.getBusStopName());
-                comboBox3.addItem(busStop132.getBusStopName());
-                comboBox3.addItem(busStop133.getBusStopName());
+                for (String bus: busStopsNineteen) {
+                    comboBox3.addItem(bus);
+                }
             }
             else if(index == 9 && indexTwo == 1)
             {
                 comboBox3.removeAllItems();
-                comboBox3.addItem(busStop134.getBusStopName());
-                comboBox3.addItem(busStop135.getBusStopName());
-                comboBox3.addItem(busStop136.getBusStopName());
-                comboBox3.addItem(busStop137.getBusStopName());
-                comboBox3.addItem(busStop138.getBusStopName());
-                comboBox3.addItem(busStop139.getBusStopName());
-                comboBox3.addItem(busStop140.getBusStopName());
+                for (String bus: busStopsTwenty) {
+                    comboBox3.addItem(bus);
+                }
             }
         }
         else if(source == button4)
         {
-            if(indexThree == -1 || indexTwo == -1)
+            if(index == -1 || indexThree == -1 || indexTwo == -1)
             {
                 JOptionPane.showMessageDialog(frame, "WYBIERZ KIERUNEK I PRZYSTANEK, ABY APLIKACJA PODAŁA INFORMACJE", "Nie Wybrano Wszystkich Wymaganych Opcji !!!", JOptionPane.WARNING_MESSAGE);
             }
@@ -676,9 +597,18 @@ public class Gui extends JFrame implements ActionListener {
                                                     {
                                                         differenceHours = differenceHours - 1;
                                                     }
-                                                    label9.setText("<html>Wybrałeś Kierowco linię numer " + busNumber + ", którą poruszasz się w kierunku " + nameDirections[pom2] + " i chcesz zapytać jakie opoźnienie masz do przystanku <br>o nazwie " + nameBusStops[pom] +
-                                                            ". Obecna godzina to: " + hours + ":" + minutes + ". Natomiast ostatni odjazd z tego przystanku przed obecną godziną miał nastąpić<br> o godzinie: " + hoursTwo + ":" + minutesTwo + ". Opóźnienie wynosi: " +
-                                                            differenceHours + " godzin i " + differenceMinutes + " minut.</html>");
+                                                    if(minutes < 10)
+                                                    {
+                                                        label9.setText("<html>Wybrałeś Kierowco linię numer " + busNumber + ", którą poruszasz się w kierunku " + nameDirections[pom2] + " i chcesz zapytać jakie opoźnienie masz do przystanku <br>o nazwie " + nameBusStops[pom] +
+                                                                ". Obecna godzina to: " + hours + ":0" + minutes + ". Natomiast ostatni odjazd z tego przystanku przed obecną godziną miał nastąpić<br> o godzinie: " + hoursTwo + ":" + minutesTwo + ". Opóźnienie wynosi: " +
+                                                                differenceHours + " godzin i " + differenceMinutes + " minut.</html>");
+                                                    }
+                                                    else
+                                                    {
+                                                        label9.setText("<html>Wybrałeś Kierowco linię numer " + busNumber + ", którą poruszasz się w kierunku " + nameDirections[pom2] + " i chcesz zapytać jakie opoźnienie masz do przystanku <br>o nazwie " + nameBusStops[pom] +
+                                                                ". Obecna godzina to: " + hours + ":" + minutes + ". Natomiast ostatni odjazd z tego przystanku przed obecną godziną miał nastąpić<br> o godzinie: " + hoursTwo + ":" + minutesTwo + ". Opóźnienie wynosi: " +
+                                                                differenceHours + " godzin i " + differenceMinutes + " minut.</html>");
+                                                    }
                                                 }
                                             }
                                         }
