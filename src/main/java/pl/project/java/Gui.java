@@ -22,11 +22,21 @@ public class Gui extends JFrame implements ActionListener {
     private final JLabel label7 = new JLabel("Wybierz kierunek podróży:");
     private final JLabel label8 = new JLabel("Wybierz przystanek:");
     private final JLabel label9 = new JLabel();
+    private final JLabel label10 = new JLabel("Wybierz kryterium, po którym chcesz znaleźć autobus, którego szukasz");
     private final JButton button = new JButton("JESTEM KIEROWCĄ");
     private final JButton button1 = new JButton("JESTEM PASAŻEREM");
     private final JButton button2 = new JButton("WRÓĆ DO MENU GŁÓWNEGO");
     private final JButton button3 = new JButton("WRÓĆ DO MENU GŁÓWNEGO");
     private final JButton button4 = new JButton("SPRAWDŹ");
+    private final JButton button5 = new JButton("WRÓĆ DO MENU GŁÓWNEGO");
+    private final JButton button6 = new JButton("WRÓĆ DO MENU GŁÓWNEGO");
+    private final JButton button7 = new JButton("WRÓĆ DO MENU GŁÓWNEGO");
+    private final JButton button8 = new JButton("WYSZUKAJ POŁĄCZENIA PO NUMERZE LINII");
+    private final JButton button9 = new JButton("WYSZUKAJ POŁĄCZENIA PO AKTUALNEJ GODZINIE");
+    private final JButton button10 = new JButton("WYSZUKAJ POŁĄCZENIA PO KONKRETNYM PRZYSTANKU");
+    private final JButton button11 = new JButton("WRÓĆ DO MENU KRYTERIÓW SZUKANIA AUTOBUSU");
+    private final JButton button12 = new JButton("WRÓĆ DO MENU KRYTERIÓW SZUKANIA AUTOBUSU");
+    private final JButton button13 = new JButton("WRÓĆ DO MENU KRYTERIÓW SZUKANIA AUTOBUSU");
     private final Integer[] numberOfBus = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     private final JComboBox<Integer> comboBox = new JComboBox<>(numberOfBus);
     private final JComboBox<String> comboBox2 = new JComboBox<>();
@@ -36,6 +46,9 @@ public class Gui extends JFrame implements ActionListener {
     private final MyJPanel myJPanel = new MyJPanel();
     private final MyJPanel myJPanel2 = new MyJPanel();
     private final MyJPanel myJPanel3 = new MyJPanel();
+    private final MyJPanel myJPanel4 = new MyJPanel();
+    private final MyJPanel myJPanel5 = new MyJPanel();
+    private final MyJPanel myJPanel6 = new MyJPanel();
     protected Bus bus, bus1, bus2, bus3, bus4, bus5, bus6, bus7, bus8, bus9;
     protected BusStop busStop1, busStop2, busStop3, busStop4,busStop5, busStop6, busStop7, busStop8, busStop9, busStop10, busStop11, busStop12, busStop13, busStop14, busStop15, busStop16, busStop17, busStop18, busStop19, busStop20, busStop21,busStop22, busStop23, busStop24, busStop25, busStop26, busStop27, busStop28, busStop29, busStop30, busStop31, busStop32, busStop33, busStop34, busStop35, busStop36, busStop37, busStop38, busStop39, busStop40, busStop41, busStop42, busStop43, busStop44, busStop45, busStop46, busStop47, busStop48, busStop49, busStop50, busStop51, busStop52, busStop53, busStop54, busStop55, busStop56, busStop57, busStop58, busStop59, busStop60, busStop61, busStop62, busStop63, busStop64,busStop65, busStop66, busStop67, busStop68, busStop69, busStop70, busStop71, busStop72, busStop73, busStop75, busStop74, busStop76, busStop77, busStop78, busStop79, busStop80, busStop81, busStop82, busStop83, busStop84, busStop85, busStop86, busStop87, busStop88, busStop89, busStop90, busStop91, busStop92, busStop93, busStop94, busStop95, busStop96, busStop97, busStop98, busStop99, busStop100, busStop101, busStop102, busStop103, busStop104, busStop105, busStop106, busStop107, busStop108, busStop109, busStop110, busStop111, busStop112, busStop113, busStop114, busStop115, busStop116, busStop117, busStop118, busStop119, busStop120, busStop121, busStop122, busStop123, busStop124, busStop125, busStop126, busStop127, busStop132, busStop128, busStop129, busStop130, busStop131, busStop133, busStop134, busStop135, busStop136, busStop137, busStop138, busStop139, busStop140;
 
@@ -52,6 +65,15 @@ public class Gui extends JFrame implements ActionListener {
         button1.addActionListener(e -> cardLayout.show(panel, "3"));
         button2.addActionListener(e -> cardLayout.show(panel, "1"));
         button3.addActionListener(e -> cardLayout.show(panel, "1"));
+        button8.addActionListener(e -> cardLayout.show(panel, "4"));
+        button9.addActionListener(e -> cardLayout.show(panel, "5"));
+        button10.addActionListener(e -> cardLayout.show(panel, "6"));
+        button5.addActionListener(e -> cardLayout.show(panel, "1"));
+        button6.addActionListener(e -> cardLayout.show(panel, "1"));
+        button7.addActionListener(e -> cardLayout.show(panel, "1"));
+        button11.addActionListener(e -> cardLayout.show(panel, "3"));
+        button12.addActionListener(e -> cardLayout.show(panel, "3"));
+        button13.addActionListener(e -> cardLayout.show(panel, "3"));
         comboBox.addActionListener(this);
         comboBox2.addActionListener(this);
         comboBox3.addActionListener(this);
@@ -73,9 +95,15 @@ public class Gui extends JFrame implements ActionListener {
         myJPanel.setLayout(null);
         myJPanel2.setLayout(null);
         myJPanel3.setLayout(null);
+        myJPanel4.setLayout(null);
+        myJPanel5.setLayout(null);
+        myJPanel6.setLayout(null);
         panel.add(myJPanel, "1");
         panel.add(myJPanel2, "2");
         panel.add(myJPanel3, "3");
+        panel.add(myJPanel4, "4");
+        panel.add(myJPanel5, "5");
+        panel.add(myJPanel6, "6");
         cardLayout.show(panel, "1");
         label.setBounds(210, -250, 900, 600);
         label.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
@@ -85,7 +113,7 @@ public class Gui extends JFrame implements ActionListener {
         label2.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
         label3.setBounds(345, -250, 900, 600);
         label3.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
-        label4.setBounds(380, -250, 900, 600);
+        label4.setBounds(420, -250, 900, 600);
         label4.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
         label5.setBounds(170, 230, 300, 100);
         label5.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
@@ -98,6 +126,8 @@ public class Gui extends JFrame implements ActionListener {
         label8.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
         label9.setBounds(0, 400, 1280, 100);
         label9.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
+        label10.setBounds(310, 60, 1250, 100);
+        label10.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         myJPanel.add(label);
         myJPanel.add(label1);
         myJPanel.add(label2);
@@ -111,16 +141,44 @@ public class Gui extends JFrame implements ActionListener {
         myJPanel2.add(label7);
         myJPanel2.add(label8);
         myJPanel2.add(button4);
+        myJPanel3.add(button8);
+        myJPanel3.add(button9);
+        myJPanel3.add(button10);
+        myJPanel3.add(label10);
+        myJPanel4.add(button5);
+        myJPanel5.add(button6);
+        myJPanel6.add(button7);
+        myJPanel4.add(button11);
+        myJPanel5.add(button12);
+        myJPanel6.add(button13);
         button.setBackground(Color.green);
         button1.setBackground(Color.yellow);
         button2.setBackground(Color.cyan);
         button3.setBackground(Color.cyan);
+        button7.setBackground(Color.cyan);
+        button5.setBackground(Color.cyan);
+        button6.setBackground(Color.cyan);
         button4.setBackground(Color.LIGHT_GRAY);
+        button8.setBackground(Color.yellow);
+        button9.setBackground(Color.orange);
+        button10.setBackground(Color.green);
+        button11.setBackground(Color.pink);
+        button12.setBackground(Color.pink);
+        button13.setBackground(Color.pink);
         button.setBounds(100, 200, 200, 100);
         button1.setBounds(900, 200, 200, 100);
         button2.setBounds(440, 600, 400, 50);
         button3.setBounds(440, 600, 400, 50);
         button4.setBounds(535, 350, 180, 33);
+        button5.setBounds(190, 600, 400, 50);
+        button6.setBounds(190, 600, 400, 50);
+        button7.setBounds(190, 600, 400, 50);
+        button8.setBounds(50, 200, 370, 100);
+        button9.setBounds(450, 200, 370, 100);
+        button10.setBounds(850, 200, 370, 100);
+        button11.setBounds(670, 600, 400, 50);
+        button12.setBounds(670, 600, 400, 50);
+        button13.setBounds(670, 600, 400, 50);
         comboBox.setBounds(150, 300, 180, 33);
         comboBox2.setBounds(535, 300, 180, 33);
         comboBox3.setBounds(920, 300, 180, 33);
@@ -599,13 +657,13 @@ public class Gui extends JFrame implements ActionListener {
                                                     }
                                                     if(minutes < 10)
                                                     {
-                                                        label9.setText("<html>Wybrałeś Kierowco linię numer " + busNumber + ", którą poruszasz się w kierunku " + nameDirections[pom2] + " i chcesz zapytać jakie opoźnienie masz do przystanku <br>o nazwie " + nameBusStops[pom] +
+                                                        label9.setText("<html> Wybrałeś Kierowco linię numer " + busNumber + ", którą poruszasz się w kierunku " + nameDirections[pom2] + " i chcesz zapytać jakie opoźnienie masz do przystanku <br> o nazwie " + nameBusStops[pom] +
                                                                 ". Obecna godzina to: " + hours + ":0" + minutes + ". Natomiast ostatni odjazd z tego przystanku przed obecną godziną miał nastąpić<br> o godzinie: " + hoursTwo + ":" + minutesTwo + ". Opóźnienie wynosi: " +
                                                                 differenceHours + " godzin i " + differenceMinutes + " minut.</html>");
                                                     }
                                                     else
                                                     {
-                                                        label9.setText("<html>Wybrałeś Kierowco linię numer " + busNumber + ", którą poruszasz się w kierunku " + nameDirections[pom2] + " i chcesz zapytać jakie opoźnienie masz do przystanku <br>o nazwie " + nameBusStops[pom] +
+                                                        label9.setText("<html> Wybrałeś Kierowco linię numer " + busNumber + ", którą poruszasz się w kierunku " + nameDirections[pom2] + " i chcesz zapytać jakie opoźnienie masz do przystanku <br> o nazwie " + nameBusStops[pom] +
                                                                 ". Obecna godzina to: " + hours + ":" + minutes + ". Natomiast ostatni odjazd z tego przystanku przed obecną godziną miał nastąpić<br> o godzinie: " + hoursTwo + ":" + minutesTwo + ". Opóźnienie wynosi: " +
                                                                 differenceHours + " godzin i " + differenceMinutes + " minut.</html>");
                                                     }
