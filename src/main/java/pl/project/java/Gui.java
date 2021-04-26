@@ -39,6 +39,8 @@ public class Gui extends JFrame implements ActionListener {
     private final JLabel label24 = new JLabel("                                                         ");
     private final JLabel label25 = new JLabel("                                                         ");
     private final JLabel label26 = new JLabel("                                                         ");
+    private final JLabel label27 = new JLabel("Wybierz godzinę:");
+    private final JLabel label28 = new JLabel("Wybierz ilość minut:");
     private final JTextArea jTextArea = new JTextArea();
     private final JScrollPane jScrollPane = new JScrollPane(jTextArea);
     private final JButton button = new JButton("JESTEM KIEROWCĄ");
@@ -56,12 +58,17 @@ public class Gui extends JFrame implements ActionListener {
     private final JButton button12 = new JButton("WRÓĆ DO MENU KRYTERIÓW SZUKANIA AUTOBUSU");
     private final JButton button13 = new JButton("WRÓĆ DO MENU KRYTERIÓW SZUKANIA AUTOBUSU");
     private final JButton button14 = new JButton("SPRAWDŹ");
+    private final JButton button15 = new JButton("SPRAWDŹ");
     private final Integer[] numberOfBus = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    private final String[] minutes = {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"};
+    private final String[] hours = {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"};
     private final JComboBox<Integer> comboBox = new JComboBox<>(numberOfBus);
     private final JComboBox<String> comboBox2 = new JComboBox<>();
     private final JComboBox<String> comboBox3 = new JComboBox<>();
     private final JComboBox<Integer> comboBox4 = new JComboBox<>(numberOfBus);
     private final JComboBox<String> comboBox5 = new JComboBox<>();
+    private final JComboBox<String> comboBox6 = new JComboBox<>(hours);
+    private final JComboBox<String> comboBox7 = new JComboBox<>(minutes);
     private final JPanel panel = new JPanel();
     private final CardLayout cardLayout = new CardLayout();
     private final MyJPanel myJPanel = new MyJPanel();
@@ -100,6 +107,8 @@ public class Gui extends JFrame implements ActionListener {
         comboBox3.addActionListener(this);
         comboBox4.addActionListener(this);
         comboBox5.addActionListener(this);
+        comboBox6.addActionListener(this);
+        comboBox7.addActionListener(this);
         button4.addActionListener(this);
         button14.addActionListener(this);
         frame.setBounds(0, 0, 1280, 720);
@@ -169,6 +178,8 @@ public class Gui extends JFrame implements ActionListener {
         label16.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
         label18.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         label17.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
+        label28.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
+        label27.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         jTextArea.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         jTextArea.setBackground(Color.white);
         jTextArea.setLineWrap(true);
@@ -218,6 +229,11 @@ public class Gui extends JFrame implements ActionListener {
         myJPanel6.add(label13);
         myJPanel5.add(label15);
         myJPanel6.add(label16);
+        myJPanel5.add(comboBox6);
+        myJPanel5.add(comboBox7);
+        myJPanel5.add(label27);
+        myJPanel5.add(label28);
+        myJPanel5.add(button15);
         button.setBackground(Color.green);
         button1.setBackground(Color.yellow);
         button2.setBackground(Color.cyan);
@@ -233,6 +249,7 @@ public class Gui extends JFrame implements ActionListener {
         button12.setBackground(Color.pink);
         button13.setBackground(Color.pink);
         button14.setBackground(Color.green);
+        button15.setBackground(Color.green);
         button.setBounds(100, 200, 200, 100);
         button1.setBounds(900, 200, 200, 100);
         button2.setBounds(440, 600, 400, 50);
@@ -248,6 +265,11 @@ public class Gui extends JFrame implements ActionListener {
         comboBox.setBounds(150, 300, 180, 33);
         comboBox2.setBounds(535, 300, 180, 33);
         comboBox3.setBounds(920, 300, 180, 33);
+        comboBox6.setBounds(200, 200, 180, 33);
+        comboBox7.setBounds(915, 200, 180, 33);
+        label27.setBounds(200, 160, 180, 33);
+        label28.setBounds(915, 160, 180, 33);
+        button15.setBounds(531, 240, 200, 50);
     }
 
     private void audio() throws UnsupportedAudioFileException {
