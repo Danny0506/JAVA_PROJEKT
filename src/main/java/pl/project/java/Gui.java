@@ -824,6 +824,8 @@ public class Gui extends JFrame implements ActionListener {
                                             }
                                         }
                                     }
+                                    if(i == 0)
+                                        jTextArea.setText(null);
                                     LocalTime timeOne = LocalTime.parse(nameStops[pom].getDepartureOneTime());
                                     LocalTime timeTwo = LocalTime.parse(nameStops[pom].getDepartureTwoTime());
                                     LocalTime timeThree = LocalTime.parse(nameStops[pom].getDepartureThreeTime());
