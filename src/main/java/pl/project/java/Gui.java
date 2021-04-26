@@ -23,15 +23,24 @@ public class Gui extends JFrame implements ActionListener {
     private final JLabel label8 = new JLabel("Wybierz przystanek:");
     private final JLabel label9 = new JLabel();
     private final JLabel label10 = new JLabel("Wybierz kryterium, po którym chcesz znaleźć autobus, którego szukasz");
-    private final JLabel label11 = new JLabel("SZUKANIE AUTOBUSU PO NUMERZE LINII");
+    private final JLabel label11 = new JLabel("ANIE AUTOBUSU PO NUMER");
     private final JLabel label12 = new JLabel("SZUKANIE AUTOBUSU PO GODZINIE PODANEJ PRZEZ PASAŻERA");
     private final JLabel label13 = new JLabel("SZUKANIE AUTOBUSU PO KONKRETNYM PRZYSTANKU");
-    private final JLabel label14 = new JLabel("<html>W tej części aplikacji możesz wybrać numer linii, a następnie kierunek który cię interesuje, a aplikacja zwróci wszystkie przystanki tej linii wraz z godziną odjazdu z nich</html>");
+    private final JLabel label14 = new JLabel("          W tej części aplikacji możesz wybrać numer linii, a nas");
     private final JLabel label15 = new JLabel("W tej części apliakcji należy wybrać godzinę oraz liczbę minut, a aplikacja znajdzie pięć odjazdów, które wystąpią najszybciej po wybranej godzinie ");
     private final JLabel label16 = new JLabel("Należy wybrać przystanek z listy dostępnej w bazie, a następnie aplikacja poda numer linii wraz z kierunkem podróży oraz godziną odjazdu z wybranego przystanku");
-    private final JLabel label17 = new JLabel("Wybierz kierunek podróży:");
-    private final JLabel label18 = new JLabel("Wybierz numer linii:");
-    private final JLabel label19 = new JLabel();
+    private final JLabel label17 = new JLabel("                      Wybierz kierunek podróży:");
+    private final JLabel label18 = new JLabel("                   Wybierz numer linii:");
+    private final JLabel label19 = new JLabel("                                          SZUK");
+    private final JLabel label20 = new JLabel("ZE  LINII");
+    private final JLabel label21 = new JLabel();
+    private final JLabel label22 = new JLabel("tępnie kierunek który cię interesuje, a aplikacja zwróci wszy");
+    private final JLabel label23 = new JLabel("stkie przystanki tej linii wraz z godziną odjazdu z nich");
+    private final JLabel label24 = new JLabel("                                                         ");
+    private final JLabel label25 = new JLabel("                                                         ");
+    private final JLabel label26 = new JLabel("                                                         ");
+    private final JTextArea jTextArea = new JTextArea();
+    private final JScrollPane jScrollPane = new JScrollPane(jTextArea);
     private final JButton button = new JButton("JESTEM KIEROWCĄ");
     private final JButton button1 = new JButton("JESTEM PASAŻEREM");
     private final JButton button2 = new JButton("WRÓĆ DO MENU GŁÓWNEGO");
@@ -110,7 +119,7 @@ public class Gui extends JFrame implements ActionListener {
         myJPanel.setLayout(null);
         myJPanel2.setLayout(null);
         myJPanel3.setLayout(null);
-        myJPanel4.setLayout(null);
+        myJPanel4.setLayout(new GridLayout(6,3,0,0));
         myJPanel5.setLayout(null);
         myJPanel6.setLayout(null);
         panel.add(myJPanel, "1");
@@ -145,23 +154,43 @@ public class Gui extends JFrame implements ActionListener {
         label10.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         label11.setBounds(320, -250, 900, 600);
         label11.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
+        label19.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
+        label20.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
         label12.setBounds(150, -250, 1000, 600);
         label12.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
         label13.setBounds(220, -250, 900, 600);
         label13.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
         label14.setBounds(50, 60, 1200, 100);
         label14.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
+        label22.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
+        label23.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
         label15.setBounds(120, 60, 1280, 100);
         label15.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
         label16.setBounds(60, 60, 1280, 100);
         label16.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
-        label18.setBounds(300, 230, 300, 100);
-        label18.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
-        label17.setBounds(770, 230, 300, 100);
-        label17.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
-        label17.setForeground(Color.green);
-        label19.setBounds(0, 400, 1280, 200);
-        label19.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
+        label18.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
+        label17.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
+        jTextArea.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
+        jTextArea.setBackground(Color.white);
+        jTextArea.setLineWrap(true);
+        jTextArea.setEditable(false);
+        jScrollPane.setPreferredSize(new Dimension(500,200));
+        jScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        myJPanel4.add(label19);
+        myJPanel4.add(label11);
+        myJPanel4.add(label20);
+        myJPanel4.add(label14);
+        myJPanel4.add(label22);
+        myJPanel4.add(label23);
+        myJPanel4.add(label18);
+        myJPanel4.add(label21);
+        myJPanel4.add(label17);
+        myJPanel4.add(comboBox4);
+        myJPanel4.add(button14);
+        myJPanel4.add(comboBox5);
+        myJPanel4.add(label24);
+        myJPanel4.add(jScrollPane);
+        myJPanel4.add(label25);
         myJPanel.add(label);
         myJPanel.add(label1);
         myJPanel.add(label2);
@@ -180,22 +209,16 @@ public class Gui extends JFrame implements ActionListener {
         myJPanel3.add(button10);
         myJPanel3.add(label10);
         myJPanel4.add(button5);
+        myJPanel4.add(label26);
         myJPanel5.add(button6);
         myJPanel6.add(button7);
         myJPanel4.add(button11);
         myJPanel5.add(button12);
         myJPanel6.add(button13);
-        myJPanel4.add(label11);
         myJPanel5.add(label12);
         myJPanel6.add(label13);
-        myJPanel4.add(label14);
         myJPanel5.add(label15);
         myJPanel6.add(label16);
-        myJPanel4.add(comboBox4);
-        myJPanel4.add(comboBox5);
-        myJPanel4.add(label17);
-        myJPanel4.add(label18);
-        myJPanel4.add(button14);
         button.setBackground(Color.green);
         button1.setBackground(Color.yellow);
         button2.setBackground(Color.cyan);
@@ -216,21 +239,16 @@ public class Gui extends JFrame implements ActionListener {
         button2.setBounds(440, 600, 400, 50);
         button3.setBounds(440, 600, 400, 50);
         button4.setBounds(535, 350, 180, 33);
-        button5.setBounds(190, 600, 400, 50);
         button6.setBounds(190, 600, 400, 50);
         button7.setBounds(190, 600, 400, 50);
         button8.setBounds(50, 200, 370, 100);
         button9.setBounds(450, 200, 370, 100);
         button10.setBounds(850, 200, 370, 100);
-        button11.setBounds(670, 600, 400, 50);
         button12.setBounds(670, 600, 400, 50);
         button13.setBounds(670, 600, 400, 50);
-        button14.setBounds(535, 350, 180, 33);
         comboBox.setBounds(150, 300, 180, 33);
         comboBox2.setBounds(535, 300, 180, 33);
         comboBox3.setBounds(920, 300, 180, 33);
-        comboBox4.setBounds(285, 300, 180, 33);
-        comboBox5.setBounds(770, 300, 180, 33);
     }
 
     private void audio() throws UnsupportedAudioFileException {
@@ -781,9 +799,8 @@ public class Gui extends JFrame implements ActionListener {
             }
             else
             {
-                myJPanel4.add(label19);
-                label19.setBackground(Color.white);
-                label19.setOpaque(true);
+                jTextArea.setSize(1280,100);
+                jTextArea.setLocation(0,400);
                 int busNumber = indexFour + 1;
                 for(int k = 0; k < 10; k++) {
                     if (k == indexFour) {
@@ -813,14 +830,14 @@ public class Gui extends JFrame implements ActionListener {
                                     LocalTime timeFour = LocalTime.parse(nameStops[pom].getDepartureFourTime());
                                     LocalTime timeFive = LocalTime.parse(nameStops[pom].getDepartureFiveTime());
                                     LocalTime [] array2 = {timeOne, timeTwo, timeThree, timeFour, timeFive};
-                                    int minutesTwo = array2[0].getMinute(), minutesThree = array2[1].getMinute(), minutesFour = array2[2].getMinute(), minutesFive = array2[3].getMinute(), minutesSix = array2[4].getMinute();
-                                    int hoursTwo = array2[0].getHour(), hoursThree = array2[1].getMinute(), hoursFour = array2[2].getMinute(), hoursFive = array2[3].getMinute(), hoursSix = array2[4].getMinute();
-                                    label19.setText("<html>-----------------------------  LINIA NUMER: " + busNumber + " ------------------------------  KIERUNEK: " + nameDirections[pom2] + " ------------------------------  PRZYSTANEK: " + nameBusStops[pom] + "----------------------------" +
-                                                    "<br>Odjazd numer 1 następuje o godzinie: " + hoursTwo + ":" + minutesTwo  +
-                                                    "<br>Odjazd numer 2 następuje o godzinie: " + hoursThree + ":" + minutesThree +
-                                                    "<br>Odjazd numer 3 następuje o godzinie: " + hoursFour + ":" + minutesFour +
-                                                    "<br>Odjazd numer 4 następuje o godzinie: " + hoursFive + ":" + minutesFive +
-                                                    "<br>Odjazd numer 5 następuje o godzinie: " + hoursSix + ":" + minutesSix + "</html>");
+                                    int minutesTwo = array2[0].getMinute(), minutesThree = array2[1].getMinute(),minutesFour = array2[2].getMinute(), minutesFive = array2[3].getMinute(), minutesSix = array2[4].getMinute();
+                                    int hoursTwo = array2[0].getHour(), hoursThree = array2[1].getHour(), hoursFour = array2[2].getHour(), hoursFive = array2[3].getHour(), hoursSix = array2[4].getHour();
+                                    jTextArea.append("\nLINIA NUMER: " + busNumber + "\nKIERUNEK: " + nameDirections[pom2] + "\nPRZYSTANEK: " + nameBusStops[pom] +
+                                            "\nOdjazd numer 1 następuje o godzinie: " + hoursTwo + ":" + minutesTwo  +
+                                            "\nOdjazd numer 2 następuje o godzinie: " + hoursThree + ":" + minutesThree +
+                                            "\nOdjazd numer 3 następuje o godzinie: " + hoursFour + ":" + minutesFour +
+                                            "\nOdjazd numer 4 następuje o godzinie: " + hoursFive + ":" + minutesFive +
+                                            "\nOdjazd numer 5 następuje o godzinie: " + hoursSix + ":" + minutesSix + "\n");
                                 }
                             }
                         }
