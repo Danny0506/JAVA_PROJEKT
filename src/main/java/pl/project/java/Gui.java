@@ -152,7 +152,6 @@ public class Gui extends JFrame implements ActionListener {
         label9.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         label10.setBounds(310, 60, 1250, 100);
         label10.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
-        label11.setBounds(320, -250, 900, 600);
         label11.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
         label19.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
         label20.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
