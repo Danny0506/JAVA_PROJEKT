@@ -912,11 +912,35 @@ public class Gui extends JFrame implements ActionListener {
                         }
                     }
                 }
-                label29.setText("<html>ODJAZD NR 1 LINIA NR: " + busNames.get(0) + " ------ KIERUNEK: " + directionsNames.get(0) + " ------ PRZYSTANEK: " + busStopsNames.get(0) + " ------ GODZINA ODJAZDU: " + times.get(0) + "<br>"
-                        + "ODJAZD NR 2 LINIA NR: " + busNames.get(1) + " ------ KIERUNEK: " + directionsNames.get(1) + " ------ PRZYSTANEK: " + busStopsNames.get(1) + " ------ GODZINA ODJAZDU: " + times.get(1) + "<br>"
-                        + "ODJAZD NR 3 LINIA NR: " + busNames.get(2) + " ------ KIERUNEK: " + directionsNames.get(2) + " ------ PRZYSTANEK: " + busStopsNames.get(2) + " ------ GODZINA ODJAZDU: " + times.get(2) + "<br>"
-                        + "ODJAZD NR 4 LINIA NR: " + busNames.get(3) + " ------ KIERUNEK: " + directionsNames.get(3) + " ------ PRZYSTANEK: " + busStopsNames.get(3) + " ------ GODZINA ODJAZDU: " + times.get(3) + "<br>"
-                        + "ODJAZD NR 5 LINIA NR: " + busNames.get(4) + " ------ KIERUNEK: " + directionsNames.get(4) + " ------ PRZYSTANEK: " + busStopsNames.get(4) + " ------ GODZINA ODJAZDU: " + times.get(4) + "</html>");
+                if(busStopsNames.size() == 4)
+                {
+                    label29.setText("<html>ODJAZD NR 1 LINIA NR: " + busNames.get(0) + " ------ KIERUNEK: " + directionsNames.get(0) + " ------ PRZYSTANEK: " + busStopsNames.get(0) + " ------ GODZINA ODJAZDU: " + times.get(0) + "<br>"
+                            + "ODJAZD NR 2 LINIA NR: " + busNames.get(1) + " ------ KIERUNEK: " + directionsNames.get(1) + " ------ PRZYSTANEK: " + busStopsNames.get(1) + " ------ GODZINA ODJAZDU: " + times.get(1) + "<br>"
+                            + "ODJAZD NR 3 LINIA NR: " + busNames.get(2) + " ------ KIERUNEK: " + directionsNames.get(2) + " ------ PRZYSTANEK: " + busStopsNames.get(2) + " ------ GODZINA ODJAZDU: " + times.get(2) + "<br>"
+                            + "ODJAZD NR 4 LINIA NR: " + busNames.get(3) + " ------ KIERUNEK: " + directionsNames.get(3) + " ------ PRZYSTANEK: " + busStopsNames.get(3) + " ------ GODZINA ODJAZDU: " + times.get(3) + "<br></html>");
+                }
+                if(busStopsNames.size() == 3)
+                {
+                    label29.setText("<html>ODJAZD NR 1 LINIA NR: " + busNames.get(0) + " ------ KIERUNEK: " + directionsNames.get(0) + " ------ PRZYSTANEK: " + busStopsNames.get(0) + " ------ GODZINA ODJAZDU: " + times.get(0) + "<br>"
+                            + "ODJAZD NR 2 LINIA NR: " + busNames.get(1) + " ------ KIERUNEK: " + directionsNames.get(1) + " ------ PRZYSTANEK: " + busStopsNames.get(1) + " ------ GODZINA ODJAZDU: " + times.get(1) + "<br>"
+                            + "ODJAZD NR 3 LINIA NR: " + busNames.get(2) + " ------ KIERUNEK: " + directionsNames.get(2) + " ------ PRZYSTANEK: " + busStopsNames.get(2) + " ------ GODZINA ODJAZDU: " + times.get(2) + "<br></html>");
+                }
+                if(busStopsNames.size() == 2)
+                {
+                    label29.setText("<html>ODJAZD NR 1 LINIA NR: " + busNames.get(0) + " ------ KIERUNEK: " + directionsNames.get(0) + " ------ PRZYSTANEK: " + busStopsNames.get(0) + " ------ GODZINA ODJAZDU: " + times.get(0) + "<br>"
+                            + "ODJAZD NR 2 LINIA NR: " + busNames.get(1) + " ------ KIERUNEK: " + directionsNames.get(1) + " ------ PRZYSTANEK: " + busStopsNames.get(1) + " ------ GODZINA ODJAZDU: " + times.get(1) + "<br></html>");
+                }
+                if(busStopsNames.size() == 1)
+                {
+                    label29.setText("<html>ODJAZD NR 1 LINIA NR: " + busNames.get(0) + " ------ KIERUNEK: " + directionsNames.get(0) + " ------ PRZYSTANEK: " + busStopsNames.get(0) + " ------ GODZINA ODJAZDU: " + times.get(0) + "<br></html>");
+                }
+                if(busStopsNames.size() > 4) {
+                    label29.setText("<html>ODJAZD NR 1 LINIA NR: " + busNames.get(0) + " ------ KIERUNEK: " + directionsNames.get(0) + " ------ PRZYSTANEK: " + busStopsNames.get(0) + " ------ GODZINA ODJAZDU: " + times.get(0) + "<br>"
+                            + "ODJAZD NR 2 LINIA NR: " + busNames.get(1) + " ------ KIERUNEK: " + directionsNames.get(1) + " ------ PRZYSTANEK: " + busStopsNames.get(1) + " ------ GODZINA ODJAZDU: " + times.get(1) + "<br>"
+                            + "ODJAZD NR 3 LINIA NR: " + busNames.get(2) + " ------ KIERUNEK: " + directionsNames.get(2) + " ------ PRZYSTANEK: " + busStopsNames.get(2) + " ------ GODZINA ODJAZDU: " + times.get(2) + "<br>"
+                            + "ODJAZD NR 4 LINIA NR: " + busNames.get(3) + " ------ KIERUNEK: " + directionsNames.get(3) + " ------ PRZYSTANEK: " + busStopsNames.get(3) + " ------ GODZINA ODJAZDU: " + times.get(3) + "<br>"
+                            + "ODJAZD NR 5 LINIA NR: " + busNames.get(4) + " ------ KIERUNEK: " + directionsNames.get(4) + " ------ PRZYSTANEK: " + busStopsNames.get(4) + " ------ GODZINA ODJAZDU: " + times.get(4) + "</html>");
+                }
             }
         }
     }
