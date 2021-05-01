@@ -82,7 +82,7 @@ public class Gui extends JFrame implements ActionListener {
     private final MyJPanel myJPanel5 = new MyJPanel();
     private final MyJPanel myJPanel6 = new MyJPanel();
     protected Bus bus, bus1, bus2, bus3, bus4, bus5, bus6, bus7, bus8, bus9;
-    protected BusStop busStop1, busStop2, busStop3, busStop4,busStop5, busStop6, busStop7, busStop8, busStop9, busStop10, busStop11, busStop12, busStop13, busStop14, busStop15, busStop16, busStop17, busStop18, busStop19, busStop20, busStop21,busStop22, busStop23, busStop24, busStop25, busStop26, busStop27, busStop28, busStop29, busStop30, busStop31, busStop32, busStop33, busStop34, busStop35, busStop36, busStop37, busStop38, busStop39, busStop40, busStop41, busStop42, busStop43, busStop44, busStop45, busStop46, busStop47, busStop48, busStop49, busStop50, busStop51, busStop52, busStop53, busStop54, busStop55, busStop56, busStop57, busStop58, busStop59, busStop60, busStop61, busStop62, busStop63, busStop64,busStop65, busStop66, busStop67, busStop68, busStop69, busStop70, busStop71, busStop72, busStop73, busStop75, busStop74, busStop76, busStop77, busStop78, busStop79, busStop80, busStop81, busStop82, busStop83, busStop84, busStop85, busStop86, busStop87, busStop88, busStop89, busStop90, busStop91, busStop92, busStop93, busStop94, busStop95, busStop96, busStop97, busStop98, busStop99, busStop100, busStop101, busStop102, busStop103, busStop104, busStop105, busStop106, busStop107, busStop108, busStop109, busStop110, busStop111, busStop112, busStop113, busStop114, busStop115, busStop116, busStop117, busStop118, busStop119, busStop120, busStop121, busStop122, busStop123, busStop124, busStop125, busStop126, busStop127, busStop132, busStop128, busStop129, busStop130, busStop131, busStop133, busStop134, busStop135, busStop136, busStop137, busStop138, busStop139, busStop140;
+    protected BusStop busStop1, busStop2, busStop3, busStop4, busStop5, busStop6, busStop7, busStop8, busStop9, busStop10, busStop11, busStop12, busStop13, busStop14, busStop15, busStop16, busStop17, busStop18, busStop19, busStop20, busStop21, busStop22, busStop23, busStop24, busStop25, busStop26, busStop27, busStop28, busStop29, busStop30, busStop31, busStop32, busStop33, busStop34, busStop35, busStop36, busStop37, busStop38, busStop39, busStop40, busStop41, busStop42, busStop43, busStop44, busStop45, busStop46, busStop47, busStop48, busStop49, busStop50, busStop51, busStop52, busStop53, busStop54, busStop55, busStop56, busStop57, busStop58, busStop59, busStop60, busStop61, busStop62, busStop63, busStop64, busStop65, busStop66, busStop67, busStop68, busStop69, busStop70, busStop71, busStop72, busStop73, busStop75, busStop74, busStop76, busStop77, busStop78, busStop79, busStop80, busStop81, busStop82, busStop83, busStop84, busStop85, busStop86, busStop87, busStop88, busStop89, busStop90, busStop91, busStop92, busStop93, busStop94, busStop95, busStop96, busStop97, busStop98, busStop99, busStop100, busStop101, busStop102, busStop103, busStop104, busStop105, busStop106, busStop107, busStop108, busStop109, busStop110, busStop111, busStop112, busStop113, busStop114, busStop115, busStop116, busStop117, busStop118, busStop119, busStop120, busStop121, busStop122, busStop123, busStop124, busStop125, busStop126, busStop127, busStop132, busStop128, busStop129, busStop130, busStop131, busStop133, busStop134, busStop135, busStop136, busStop137, busStop138, busStop139, busStop140;
 
     public Gui() throws UnsupportedAudioFileException {
         frame.setIconImage(new ImageIcon("src/main/java/pl/project/java/bus.jpg").getImage());
@@ -123,7 +123,7 @@ public class Gui extends JFrame implements ActionListener {
         frame.setLocationRelativeTo(null);
     }
 
-    private void init(){
+    private void init() {
         panel.add(myJPanel);
         panel.add(myJPanel2);
         myJPanel.add(button);
@@ -133,7 +133,7 @@ public class Gui extends JFrame implements ActionListener {
         myJPanel.setLayout(null);
         myJPanel2.setLayout(null);
         myJPanel3.setLayout(null);
-        myJPanel4.setLayout(new GridLayout(6,3,0,0));
+        myJPanel4.setLayout(new GridLayout(6, 3, 0, 0));
         myJPanel5.setLayout(null);
         myJPanel6.setLayout(null);
         panel.add(myJPanel, "1");
@@ -191,7 +191,7 @@ public class Gui extends JFrame implements ActionListener {
         jTextArea.setBackground(Color.white);
         jTextArea.setLineWrap(true);
         jTextArea.setEditable(false);
-        jScrollPane.setPreferredSize(new Dimension(500,200));
+        jScrollPane.setPreferredSize(new Dimension(500, 200));
         jScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         myJPanel4.add(label19);
         myJPanel4.add(label11);
@@ -298,8 +298,7 @@ public class Gui extends JFrame implements ActionListener {
         }
     }
 
-    protected void createNewBus()
-    {
+    protected void createNewBus() {
         bus = new Bus(1, "Bukówka", "Pietraszki");
         bus1 = new Bus(2, "Sukowska", "Kolberga");
         bus2 = new Bus(3, "Borków", "Kaczmarka");
@@ -312,8 +311,7 @@ public class Gui extends JFrame implements ActionListener {
         bus9 = new Bus(10, "Ciekoty Żeromszczyzna", "Dworzec Autobusowy");
     }
 
-    protected void createNewBusStop()
-    {
+    protected void createNewBusStop() {
         busStop1 = new BusStop("05:15", "07:18", "13:45", "15:57", "18:32", "Kolberga", 5, "Szybowcowa");
         busStop2 = new BusStop("05:18", "07:25", "13:58", "16:13", "18:40", "1 Maja", 5, "Szybowcowa");
         busStop3 = new BusStop("05:24", "07:48", "14:10", "16:21", "18:53", "IX Wiekow Kielc", 5, "Szybowcowa");
@@ -419,7 +417,7 @@ public class Gui extends JFrame implements ActionListener {
         busStop97 = new BusStop("08:22", "13:44", "17:46", "20:25", "23:24", "Czarnowska", 7, "Dworzec Autobusowy");
         busStop98 = new BusStop("08:34", "13:58", "18:11", "20:41", "23:47", "Dworzec Autobusowy", 7, "Dworzec Autobusowy");
 
-        busStop99 = new BusStop("05:45", "08:55", "14:12", "18:17", "21:37",  "Os. Ślichowice", 8, "Żniwna");
+        busStop99 = new BusStop("05:45", "08:55", "14:12", "18:17", "21:37", "Os. Ślichowice", 8, "Żniwna");
         busStop100 = new BusStop("05:53", "09:11", "14:21", "18:29", "21:47", "Grunwaldzka", 8, "Żniwna");
         busStop101 = new BusStop("06:10", "09:19", "14:34", "18:43", "21:59", "Żytnia", 8, "Żniwna");
         busStop102 = new BusStop("06:21", "09:21", "14:55", "19:11", "22:17", "Seminaryjska", 8, "Żniwna");
@@ -480,9 +478,9 @@ public class Gui extends JFrame implements ActionListener {
         String indexSevenS = (String) comboBox7.getSelectedItem();
         int indexSix = comboBox6.getSelectedIndex();
         int indexSeven = comboBox7.getSelectedIndex();
-        Integer [] lines = {busStop15.getBusLineNumber(), busStop16.getBusLineNumber(), busStop17.getBusLineNumber(), busStop18.getBusLineNumber(), busStop19.getBusLineNumber(), busStop20.getBusLineNumber(), busStop21.getBusLineNumber(), busStop22.getBusLineNumber(), busStop23.getBusLineNumber(), busStop24.getBusLineNumber(), busStop25.getBusLineNumber(),busStop26.getBusLineNumber(),busStop27.getBusLineNumber(),busStop28.getBusLineNumber(), busStop29.getBusLineNumber(), busStop30.getBusLineNumber(), busStop31.getBusLineNumber(), busStop32.getBusLineNumber(),busStop33.getBusLineNumber(),busStop34.getBusLineNumber(),busStop35.getBusLineNumber(), busStop36.getBusLineNumber(), busStop37.getBusLineNumber(), busStop38.getBusLineNumber(), busStop39.getBusLineNumber(), busStop40.getBusLineNumber(), busStop41.getBusLineNumber(), busStop42.getBusLineNumber(),busStop43.getBusLineNumber(), busStop44.getBusLineNumber(), busStop45.getBusLineNumber(), busStop46.getBusLineNumber(), busStop47.getBusLineNumber(), busStop48.getBusLineNumber(), busStop49.getBusLineNumber(), busStop50.getBusLineNumber(), busStop51.getBusLineNumber(), busStop52.getBusLineNumber(), busStop53.getBusLineNumber(),busStop54.getBusLineNumber(),busStop55.getBusLineNumber(),busStop56.getBusLineNumber(), busStop57.getBusLineNumber(), busStop58.getBusLineNumber(), busStop59.getBusLineNumber(), busStop60.getBusLineNumber(), busStop61.getBusLineNumber(), busStop62.getBusLineNumber(), busStop63.getBusLineNumber(), busStop64.getBusLineNumber(), busStop65.getBusLineNumber(), busStop66.getBusLineNumber(), busStop67.getBusLineNumber(),busStop68.getBusLineNumber(),busStop69.getBusLineNumber(),busStop70.getBusLineNumber(), busStop1.getBusLineNumber(), busStop2.getBusLineNumber(), busStop3.getBusLineNumber(), busStop4.getBusLineNumber(), busStop5.getBusLineNumber(), busStop6.getBusLineNumber(), busStop7.getBusLineNumber(), busStop8.getBusLineNumber(), busStop9.getBusLineNumber(), busStop10.getBusLineNumber(), busStop11.getBusLineNumber(),busStop12.getBusLineNumber(),busStop13.getBusLineNumber(),busStop14.getBusLineNumber(), busStop71.getBusLineNumber(), busStop72.getBusLineNumber(), busStop73.getBusLineNumber(), busStop74.getBusLineNumber(), busStop75.getBusLineNumber(), busStop76.getBusLineNumber(), busStop77.getBusLineNumber(), busStop78.getBusLineNumber(), busStop79.getBusLineNumber(), busStop80.getBusLineNumber(), busStop81.getBusLineNumber(),busStop82.getBusLineNumber(),busStop83.getBusLineNumber(),busStop84.getBusLineNumber(), busStop85.getBusLineNumber(), busStop86.getBusLineNumber(), busStop87.getBusLineNumber(), busStop88.getBusLineNumber(), busStop89.getBusLineNumber(), busStop90.getBusLineNumber(), busStop91.getBusLineNumber(), busStop92.getBusLineNumber(), busStop93.getBusLineNumber(), busStop94.getBusLineNumber(), busStop95.getBusLineNumber(),busStop96.getBusLineNumber(),busStop97.getBusLineNumber(),busStop98.getBusLineNumber(), busStop99.getBusLineNumber(), busStop100.getBusLineNumber(), busStop101.getBusLineNumber(), busStop102.getBusLineNumber(), busStop103.getBusLineNumber(), busStop104.getBusLineNumber(), busStop105.getBusLineNumber(), busStop106.getBusLineNumber(), busStop107.getBusLineNumber(), busStop108.getBusLineNumber(), busStop109.getBusLineNumber(),busStop110.getBusLineNumber(),busStop111.getBusLineNumber(),busStop112.getBusLineNumber(), busStop113.getBusLineNumber(), busStop114.getBusLineNumber(), busStop115.getBusLineNumber(), busStop116.getBusLineNumber(), busStop117.getBusLineNumber(), busStop118.getBusLineNumber(), busStop119.getBusLineNumber(), busStop120.getBusLineNumber(), busStop121.getBusLineNumber(), busStop122.getBusLineNumber(), busStop123.getBusLineNumber(),busStop124.getBusLineNumber(),busStop125.getBusLineNumber(),busStop126.getBusLineNumber(), busStop127.getBusLineNumber(), busStop128.getBusLineNumber(), busStop129.getBusLineNumber(), busStop130.getBusLineNumber(), busStop131.getBusLineNumber(), busStop132.getBusLineNumber(), busStop133.getBusLineNumber(), busStop134.getBusLineNumber(), busStop135.getBusLineNumber(), busStop136.getBusLineNumber(), busStop137.getBusLineNumber(),busStop138.getBusLineNumber(),busStop139.getBusLineNumber(),busStop140.getBusLineNumber()};
-        String [] nameBusStops = {busStop15.getBusStopName(), busStop16.getBusStopName(), busStop17.getBusStopName(), busStop18.getBusStopName(), busStop19.getBusStopName(), busStop20.getBusStopName(), busStop21.getBusStopName(), busStop22.getBusStopName(), busStop23.getBusStopName(), busStop24.getBusStopName(), busStop25.getBusStopName(),busStop26.getBusStopName(),busStop27.getBusStopName(),busStop28.getBusStopName(), busStop29.getBusStopName(), busStop30.getBusStopName(), busStop31.getBusStopName(), busStop32.getBusStopName(),busStop33.getBusStopName(),busStop34.getBusStopName(),busStop35.getBusStopName(), busStop36.getBusStopName(), busStop37.getBusStopName(), busStop38.getBusStopName(), busStop39.getBusStopName(), busStop40.getBusStopName(), busStop41.getBusStopName(), busStop42.getBusStopName(),busStop43.getBusStopName(), busStop44.getBusStopName(), busStop45.getBusStopName(), busStop46.getBusStopName(), busStop47.getBusStopName(), busStop48.getBusStopName(), busStop49.getBusStopName(), busStop50.getBusStopName(), busStop51.getBusStopName(), busStop52.getBusStopName(), busStop53.getBusStopName(),busStop54.getBusStopName(),busStop55.getBusStopName(),busStop56.getBusStopName(), busStop57.getBusStopName(), busStop58.getBusStopName(), busStop59.getBusStopName(), busStop60.getBusStopName(), busStop61.getBusStopName(), busStop62.getBusStopName(), busStop63.getBusStopName(), busStop64.getBusStopName(), busStop65.getBusStopName(), busStop66.getBusStopName(), busStop67.getBusStopName(),busStop68.getBusStopName(),busStop69.getBusStopName(),busStop70.getBusStopName(), busStop1.getBusStopName(), busStop2.getBusStopName(), busStop3.getBusStopName(), busStop4.getBusStopName(), busStop5.getBusStopName(), busStop6.getBusStopName(), busStop7.getBusStopName(), busStop8.getBusStopName(), busStop9.getBusStopName(), busStop10.getBusStopName(), busStop11.getBusStopName(),busStop12.getBusStopName(),busStop13.getBusStopName(),busStop14.getBusStopName(), busStop71.getBusStopName(), busStop72.getBusStopName(), busStop73.getBusStopName(), busStop74.getBusStopName(), busStop75.getBusStopName(), busStop76.getBusStopName(), busStop77.getBusStopName(), busStop78.getBusStopName(), busStop79.getBusStopName(), busStop80.getBusStopName(), busStop81.getBusStopName(),busStop82.getBusStopName(),busStop83.getBusStopName(),busStop84.getBusStopName(), busStop85.getBusStopName(), busStop86.getBusStopName(), busStop87.getBusStopName(), busStop88.getBusStopName(), busStop89.getBusStopName(), busStop90.getBusStopName(), busStop91.getBusStopName(), busStop92.getBusStopName(), busStop93.getBusStopName(), busStop94.getBusStopName(), busStop95.getBusStopName(),busStop96.getBusStopName(),busStop97.getBusStopName(),busStop98.getBusStopName(), busStop99.getBusStopName(), busStop100.getBusStopName(), busStop101.getBusStopName(), busStop102.getBusStopName(), busStop103.getBusStopName(), busStop104.getBusStopName(), busStop105.getBusStopName(), busStop106.getBusStopName(), busStop107.getBusStopName(), busStop108.getBusStopName(), busStop109.getBusStopName(),busStop110.getBusStopName(),busStop111.getBusStopName(),busStop112.getBusStopName(), busStop113.getBusStopName(), busStop114.getBusStopName(), busStop115.getBusStopName(), busStop116.getBusStopName(), busStop117.getBusStopName(), busStop118.getBusStopName(), busStop119.getBusStopName(), busStop120.getBusStopName(), busStop121.getBusStopName(), busStop122.getBusStopName(), busStop123.getBusStopName(),busStop124.getBusStopName(),busStop125.getBusStopName(),busStop126.getBusStopName(), busStop127.getBusStopName(), busStop128.getBusStopName(), busStop129.getBusStopName(), busStop130.getBusStopName(), busStop131.getBusStopName(), busStop132.getBusStopName(), busStop133.getBusStopName(), busStop134.getBusStopName(), busStop135.getBusStopName(), busStop136.getBusStopName(), busStop137.getBusStopName(),busStop138.getBusStopName(),busStop139.getBusStopName(),busStop140.getBusStopName()}, nameDirections = {bus.getDirectionOne(), bus.getDirectionTwo(), bus1.getDirectionOne(), bus1.getDirectionTwo(), bus2.getDirectionOne(), bus2.getDirectionTwo(), bus3.getDirectionOne(), bus3.getDirectionTwo(),bus4.getDirectionOne(), bus4.getDirectionTwo(), bus5.getDirectionOne(), bus5.getDirectionTwo(), bus6.getDirectionOne(), bus6.getDirectionTwo(), bus7.getDirectionOne(), bus7.getDirectionTwo(), bus8.getDirectionOne(), bus8.getDirectionTwo(),bus9.getDirectionOne(), bus9.getDirectionTwo()};
-        BusStop [] nameStops = {busStop15, busStop16, busStop17, busStop18, busStop19, busStop20, busStop21, busStop22, busStop23, busStop24, busStop25, busStop26, busStop27, busStop28, busStop29, busStop30, busStop31, busStop32, busStop33, busStop34, busStop35, busStop36, busStop37, busStop38, busStop39, busStop40, busStop41, busStop42, busStop43, busStop44, busStop45, busStop46, busStop47, busStop48, busStop49, busStop50, busStop51, busStop52, busStop53, busStop54, busStop55, busStop56, busStop57, busStop58, busStop59, busStop60, busStop61, busStop62, busStop63, busStop64,busStop65, busStop66, busStop67, busStop68, busStop69, busStop70, busStop1, busStop2, busStop3, busStop4,busStop5, busStop6, busStop7, busStop8, busStop9, busStop10, busStop11, busStop12, busStop13, busStop14,busStop71, busStop72, busStop73, busStop75, busStop74, busStop76, busStop77, busStop78, busStop79, busStop80, busStop81, busStop82, busStop83, busStop84, busStop85, busStop86, busStop87, busStop88, busStop89, busStop90, busStop91, busStop92, busStop93, busStop94, busStop95, busStop96, busStop97, busStop98, busStop99, busStop100, busStop101, busStop102, busStop103, busStop104, busStop105, busStop106, busStop107, busStop108, busStop109, busStop110, busStop111, busStop112, busStop113, busStop114, busStop115, busStop116, busStop117, busStop118, busStop119, busStop120, busStop121, busStop122, busStop123, busStop124, busStop125, busStop126, busStop127, busStop128, busStop129, busStop130, busStop131, busStop132, busStop133, busStop134, busStop135, busStop136, busStop137, busStop138, busStop139, busStop140};
+        Integer[] lines = {busStop15.getBusLineNumber(), busStop16.getBusLineNumber(), busStop17.getBusLineNumber(), busStop18.getBusLineNumber(), busStop19.getBusLineNumber(), busStop20.getBusLineNumber(), busStop21.getBusLineNumber(), busStop22.getBusLineNumber(), busStop23.getBusLineNumber(), busStop24.getBusLineNumber(), busStop25.getBusLineNumber(), busStop26.getBusLineNumber(), busStop27.getBusLineNumber(), busStop28.getBusLineNumber(), busStop29.getBusLineNumber(), busStop30.getBusLineNumber(), busStop31.getBusLineNumber(), busStop32.getBusLineNumber(), busStop33.getBusLineNumber(), busStop34.getBusLineNumber(), busStop35.getBusLineNumber(), busStop36.getBusLineNumber(), busStop37.getBusLineNumber(), busStop38.getBusLineNumber(), busStop39.getBusLineNumber(), busStop40.getBusLineNumber(), busStop41.getBusLineNumber(), busStop42.getBusLineNumber(), busStop43.getBusLineNumber(), busStop44.getBusLineNumber(), busStop45.getBusLineNumber(), busStop46.getBusLineNumber(), busStop47.getBusLineNumber(), busStop48.getBusLineNumber(), busStop49.getBusLineNumber(), busStop50.getBusLineNumber(), busStop51.getBusLineNumber(), busStop52.getBusLineNumber(), busStop53.getBusLineNumber(), busStop54.getBusLineNumber(), busStop55.getBusLineNumber(), busStop56.getBusLineNumber(), busStop57.getBusLineNumber(), busStop58.getBusLineNumber(), busStop59.getBusLineNumber(), busStop60.getBusLineNumber(), busStop61.getBusLineNumber(), busStop62.getBusLineNumber(), busStop63.getBusLineNumber(), busStop64.getBusLineNumber(), busStop65.getBusLineNumber(), busStop66.getBusLineNumber(), busStop67.getBusLineNumber(), busStop68.getBusLineNumber(), busStop69.getBusLineNumber(), busStop70.getBusLineNumber(), busStop1.getBusLineNumber(), busStop2.getBusLineNumber(), busStop3.getBusLineNumber(), busStop4.getBusLineNumber(), busStop5.getBusLineNumber(), busStop6.getBusLineNumber(), busStop7.getBusLineNumber(), busStop8.getBusLineNumber(), busStop9.getBusLineNumber(), busStop10.getBusLineNumber(), busStop11.getBusLineNumber(), busStop12.getBusLineNumber(), busStop13.getBusLineNumber(), busStop14.getBusLineNumber(), busStop71.getBusLineNumber(), busStop72.getBusLineNumber(), busStop73.getBusLineNumber(), busStop74.getBusLineNumber(), busStop75.getBusLineNumber(), busStop76.getBusLineNumber(), busStop77.getBusLineNumber(), busStop78.getBusLineNumber(), busStop79.getBusLineNumber(), busStop80.getBusLineNumber(), busStop81.getBusLineNumber(), busStop82.getBusLineNumber(), busStop83.getBusLineNumber(), busStop84.getBusLineNumber(), busStop85.getBusLineNumber(), busStop86.getBusLineNumber(), busStop87.getBusLineNumber(), busStop88.getBusLineNumber(), busStop89.getBusLineNumber(), busStop90.getBusLineNumber(), busStop91.getBusLineNumber(), busStop92.getBusLineNumber(), busStop93.getBusLineNumber(), busStop94.getBusLineNumber(), busStop95.getBusLineNumber(), busStop96.getBusLineNumber(), busStop97.getBusLineNumber(), busStop98.getBusLineNumber(), busStop99.getBusLineNumber(), busStop100.getBusLineNumber(), busStop101.getBusLineNumber(), busStop102.getBusLineNumber(), busStop103.getBusLineNumber(), busStop104.getBusLineNumber(), busStop105.getBusLineNumber(), busStop106.getBusLineNumber(), busStop107.getBusLineNumber(), busStop108.getBusLineNumber(), busStop109.getBusLineNumber(), busStop110.getBusLineNumber(), busStop111.getBusLineNumber(), busStop112.getBusLineNumber(), busStop113.getBusLineNumber(), busStop114.getBusLineNumber(), busStop115.getBusLineNumber(), busStop116.getBusLineNumber(), busStop117.getBusLineNumber(), busStop118.getBusLineNumber(), busStop119.getBusLineNumber(), busStop120.getBusLineNumber(), busStop121.getBusLineNumber(), busStop122.getBusLineNumber(), busStop123.getBusLineNumber(), busStop124.getBusLineNumber(), busStop125.getBusLineNumber(), busStop126.getBusLineNumber(), busStop127.getBusLineNumber(), busStop128.getBusLineNumber(), busStop129.getBusLineNumber(), busStop130.getBusLineNumber(), busStop131.getBusLineNumber(), busStop132.getBusLineNumber(), busStop133.getBusLineNumber(), busStop134.getBusLineNumber(), busStop135.getBusLineNumber(), busStop136.getBusLineNumber(), busStop137.getBusLineNumber(), busStop138.getBusLineNumber(), busStop139.getBusLineNumber(), busStop140.getBusLineNumber()};
+        String[] nameBusStops = {busStop15.getBusStopName(), busStop16.getBusStopName(), busStop17.getBusStopName(), busStop18.getBusStopName(), busStop19.getBusStopName(), busStop20.getBusStopName(), busStop21.getBusStopName(), busStop22.getBusStopName(), busStop23.getBusStopName(), busStop24.getBusStopName(), busStop25.getBusStopName(), busStop26.getBusStopName(), busStop27.getBusStopName(), busStop28.getBusStopName(), busStop29.getBusStopName(), busStop30.getBusStopName(), busStop31.getBusStopName(), busStop32.getBusStopName(), busStop33.getBusStopName(), busStop34.getBusStopName(), busStop35.getBusStopName(), busStop36.getBusStopName(), busStop37.getBusStopName(), busStop38.getBusStopName(), busStop39.getBusStopName(), busStop40.getBusStopName(), busStop41.getBusStopName(), busStop42.getBusStopName(), busStop43.getBusStopName(), busStop44.getBusStopName(), busStop45.getBusStopName(), busStop46.getBusStopName(), busStop47.getBusStopName(), busStop48.getBusStopName(), busStop49.getBusStopName(), busStop50.getBusStopName(), busStop51.getBusStopName(), busStop52.getBusStopName(), busStop53.getBusStopName(), busStop54.getBusStopName(), busStop55.getBusStopName(), busStop56.getBusStopName(), busStop57.getBusStopName(), busStop58.getBusStopName(), busStop59.getBusStopName(), busStop60.getBusStopName(), busStop61.getBusStopName(), busStop62.getBusStopName(), busStop63.getBusStopName(), busStop64.getBusStopName(), busStop65.getBusStopName(), busStop66.getBusStopName(), busStop67.getBusStopName(), busStop68.getBusStopName(), busStop69.getBusStopName(), busStop70.getBusStopName(), busStop1.getBusStopName(), busStop2.getBusStopName(), busStop3.getBusStopName(), busStop4.getBusStopName(), busStop5.getBusStopName(), busStop6.getBusStopName(), busStop7.getBusStopName(), busStop8.getBusStopName(), busStop9.getBusStopName(), busStop10.getBusStopName(), busStop11.getBusStopName(), busStop12.getBusStopName(), busStop13.getBusStopName(), busStop14.getBusStopName(), busStop71.getBusStopName(), busStop72.getBusStopName(), busStop73.getBusStopName(), busStop74.getBusStopName(), busStop75.getBusStopName(), busStop76.getBusStopName(), busStop77.getBusStopName(), busStop78.getBusStopName(), busStop79.getBusStopName(), busStop80.getBusStopName(), busStop81.getBusStopName(), busStop82.getBusStopName(), busStop83.getBusStopName(), busStop84.getBusStopName(), busStop85.getBusStopName(), busStop86.getBusStopName(), busStop87.getBusStopName(), busStop88.getBusStopName(), busStop89.getBusStopName(), busStop90.getBusStopName(), busStop91.getBusStopName(), busStop92.getBusStopName(), busStop93.getBusStopName(), busStop94.getBusStopName(), busStop95.getBusStopName(), busStop96.getBusStopName(), busStop97.getBusStopName(), busStop98.getBusStopName(), busStop99.getBusStopName(), busStop100.getBusStopName(), busStop101.getBusStopName(), busStop102.getBusStopName(), busStop103.getBusStopName(), busStop104.getBusStopName(), busStop105.getBusStopName(), busStop106.getBusStopName(), busStop107.getBusStopName(), busStop108.getBusStopName(), busStop109.getBusStopName(), busStop110.getBusStopName(), busStop111.getBusStopName(), busStop112.getBusStopName(), busStop113.getBusStopName(), busStop114.getBusStopName(), busStop115.getBusStopName(), busStop116.getBusStopName(), busStop117.getBusStopName(), busStop118.getBusStopName(), busStop119.getBusStopName(), busStop120.getBusStopName(), busStop121.getBusStopName(), busStop122.getBusStopName(), busStop123.getBusStopName(), busStop124.getBusStopName(), busStop125.getBusStopName(), busStop126.getBusStopName(), busStop127.getBusStopName(), busStop128.getBusStopName(), busStop129.getBusStopName(), busStop130.getBusStopName(), busStop131.getBusStopName(), busStop132.getBusStopName(), busStop133.getBusStopName(), busStop134.getBusStopName(), busStop135.getBusStopName(), busStop136.getBusStopName(), busStop137.getBusStopName(), busStop138.getBusStopName(), busStop139.getBusStopName(), busStop140.getBusStopName()}, nameDirections = {bus.getDirectionOne(), bus.getDirectionTwo(), bus1.getDirectionOne(), bus1.getDirectionTwo(), bus2.getDirectionOne(), bus2.getDirectionTwo(), bus3.getDirectionOne(), bus3.getDirectionTwo(), bus4.getDirectionOne(), bus4.getDirectionTwo(), bus5.getDirectionOne(), bus5.getDirectionTwo(), bus6.getDirectionOne(), bus6.getDirectionTwo(), bus7.getDirectionOne(), bus7.getDirectionTwo(), bus8.getDirectionOne(), bus8.getDirectionTwo(), bus9.getDirectionOne(), bus9.getDirectionTwo()};
+        BusStop[] nameStops = {busStop15, busStop16, busStop17, busStop18, busStop19, busStop20, busStop21, busStop22, busStop23, busStop24, busStop25, busStop26, busStop27, busStop28, busStop29, busStop30, busStop31, busStop32, busStop33, busStop34, busStop35, busStop36, busStop37, busStop38, busStop39, busStop40, busStop41, busStop42, busStop43, busStop44, busStop45, busStop46, busStop47, busStop48, busStop49, busStop50, busStop51, busStop52, busStop53, busStop54, busStop55, busStop56, busStop57, busStop58, busStop59, busStop60, busStop61, busStop62, busStop63, busStop64, busStop65, busStop66, busStop67, busStop68, busStop69, busStop70, busStop1, busStop2, busStop3, busStop4, busStop5, busStop6, busStop7, busStop8, busStop9, busStop10, busStop11, busStop12, busStop13, busStop14, busStop71, busStop72, busStop73, busStop75, busStop74, busStop76, busStop77, busStop78, busStop79, busStop80, busStop81, busStop82, busStop83, busStop84, busStop85, busStop86, busStop87, busStop88, busStop89, busStop90, busStop91, busStop92, busStop93, busStop94, busStop95, busStop96, busStop97, busStop98, busStop99, busStop100, busStop101, busStop102, busStop103, busStop104, busStop105, busStop106, busStop107, busStop108, busStop109, busStop110, busStop111, busStop112, busStop113, busStop114, busStop115, busStop116, busStop117, busStop118, busStop119, busStop120, busStop121, busStop122, busStop123, busStop124, busStop125, busStop126, busStop127, busStop128, busStop129, busStop130, busStop131, busStop132, busStop133, busStop134, busStop135, busStop136, busStop137, busStop138, busStop139, busStop140};
 
         if (source == comboBox) {
             if (index == 0) {
@@ -526,9 +524,7 @@ public class Gui extends JFrame implements ActionListener {
                 comboBox2.addItem(bus9.getDirectionOne());
                 comboBox2.addItem(bus9.getDirectionTwo());
             }
-        }
-        else if(source == comboBox4)
-        {
+        } else if (source == comboBox4) {
             if (indexFour == 0) {
                 comboBox5.removeAllItems();
                 comboBox5.addItem(bus.getDirectionOne());
@@ -570,197 +566,141 @@ public class Gui extends JFrame implements ActionListener {
                 comboBox5.addItem(bus9.getDirectionOne());
                 comboBox5.addItem(bus9.getDirectionTwo());
             }
-        }
-        else if(source == comboBox2)
-        {
-            String [] busStopsOne = {busStop15.getBusStopName(), busStop16.getBusStopName(), busStop17.getBusStopName(), busStop18.getBusStopName(), busStop19.getBusStopName(), busStop20.getBusStopName(),busStop21.getBusStopName()}, busStopsTwo = {busStop22.getBusStopName(), busStop23.getBusStopName(), busStop24.getBusStopName(), busStop25.getBusStopName(), busStop26.getBusStopName(), busStop27.getBusStopName(),busStop28.getBusStopName()}, busStopsThree = {busStop36.getBusStopName(), busStop37.getBusStopName(), busStop38.getBusStopName(), busStop39.getBusStopName(), busStop40.getBusStopName(), busStop41.getBusStopName(),busStop42.getBusStopName()}, busStopsFour = {busStop29.getBusStopName(), busStop30.getBusStopName(), busStop31.getBusStopName(), busStop32.getBusStopName(), busStop33.getBusStopName(), busStop34.getBusStopName(),busStop35.getBusStopName()}, busStopsFive = {busStop43.getBusStopName(), busStop44.getBusStopName(), busStop45.getBusStopName(), busStop46.getBusStopName(), busStop47.getBusStopName(), busStop48.getBusStopName(),busStop49.getBusStopName()},busStopsSix = {busStop50.getBusStopName(), busStop51.getBusStopName(), busStop52.getBusStopName(), busStop53.getBusStopName(), busStop54.getBusStopName(), busStop55.getBusStopName(),busStop56.getBusStopName()},busStopsSeven = {busStop57.getBusStopName(), busStop58.getBusStopName(), busStop59.getBusStopName(), busStop60.getBusStopName(), busStop61.getBusStopName(), busStop62.getBusStopName(),busStop63.getBusStopName()},busStopsEight = {busStop64.getBusStopName(), busStop65.getBusStopName(), busStop66.getBusStopName(), busStop67.getBusStopName(), busStop68.getBusStopName(), busStop69.getBusStopName(),busStop70.getBusStopName()},busStopsNine = {busStop8.getBusStopName(), busStop9.getBusStopName(), busStop10.getBusStopName(), busStop11.getBusStopName(), busStop12.getBusStopName(), busStop13.getBusStopName(),busStop14.getBusStopName()},busStopsTen = {busStop1.getBusStopName(), busStop2.getBusStopName(), busStop3.getBusStopName(), busStop4.getBusStopName(), busStop5.getBusStopName(), busStop6.getBusStopName(),busStop7.getBusStopName()},busStopsEleven = {busStop71.getBusStopName(), busStop72.getBusStopName(), busStop73.getBusStopName(), busStop74.getBusStopName(), busStop75.getBusStopName(), busStop76.getBusStopName(),busStop77.getBusStopName()},busStopsTwelve = {busStop78.getBusStopName(), busStop79.getBusStopName(), busStop80.getBusStopName(), busStop81.getBusStopName(), busStop82.getBusStopName(), busStop83.getBusStopName(),busStop84.getBusStopName()},busStopsThreeteen = {busStop85.getBusStopName(), busStop86.getBusStopName(), busStop87.getBusStopName(), busStop88.getBusStopName(), busStop89.getBusStopName(), busStop90.getBusStopName(),busStop91.getBusStopName()},busStopsFourteen = {busStop92.getBusStopName(), busStop93.getBusStopName(), busStop94.getBusStopName(), busStop95.getBusStopName(), busStop96.getBusStopName(), busStop97.getBusStopName(),busStop98.getBusStopName()},busStopsFiveteen = {busStop99.getBusStopName(), busStop100.getBusStopName(), busStop101.getBusStopName(), busStop102.getBusStopName(), busStop103.getBusStopName(), busStop104.getBusStopName(),busStop105.getBusStopName()},busStopsSixteen = {busStop106.getBusStopName(), busStop107.getBusStopName(), busStop108.getBusStopName(), busStop109.getBusStopName(), busStop110.getBusStopName(), busStop111.getBusStopName(),busStop112.getBusStopName()},busStopsSeventeen = {busStop113.getBusStopName(), busStop114.getBusStopName(), busStop115.getBusStopName(), busStop116.getBusStopName(), busStop117.getBusStopName(), busStop118.getBusStopName(),busStop119.getBusStopName()},busStopsEightteen = {busStop120.getBusStopName(), busStop121.getBusStopName(), busStop122.getBusStopName(), busStop123.getBusStopName(), busStop124.getBusStopName(), busStop125.getBusStopName(),busStop126.getBusStopName()},busStopsNineteen = {busStop127.getBusStopName(), busStop128.getBusStopName(), busStop129.getBusStopName(), busStop130.getBusStopName(), busStop131.getBusStopName(), busStop132.getBusStopName(),busStop133.getBusStopName()},busStopsTwenty = {busStop134.getBusStopName(), busStop135.getBusStopName(), busStop136.getBusStopName(), busStop137.getBusStopName(), busStop138.getBusStopName(), busStop139.getBusStopName(),busStop140.getBusStopName()};
-            if(index == 0 && indexTwo == 0)
-            {
+        } else if (source == comboBox2) {
+            String[] busStopsOne = {busStop15.getBusStopName(), busStop16.getBusStopName(), busStop17.getBusStopName(), busStop18.getBusStopName(), busStop19.getBusStopName(), busStop20.getBusStopName(), busStop21.getBusStopName()}, busStopsTwo = {busStop22.getBusStopName(), busStop23.getBusStopName(), busStop24.getBusStopName(), busStop25.getBusStopName(), busStop26.getBusStopName(), busStop27.getBusStopName(), busStop28.getBusStopName()}, busStopsThree = {busStop36.getBusStopName(), busStop37.getBusStopName(), busStop38.getBusStopName(), busStop39.getBusStopName(), busStop40.getBusStopName(), busStop41.getBusStopName(), busStop42.getBusStopName()}, busStopsFour = {busStop29.getBusStopName(), busStop30.getBusStopName(), busStop31.getBusStopName(), busStop32.getBusStopName(), busStop33.getBusStopName(), busStop34.getBusStopName(), busStop35.getBusStopName()}, busStopsFive = {busStop43.getBusStopName(), busStop44.getBusStopName(), busStop45.getBusStopName(), busStop46.getBusStopName(), busStop47.getBusStopName(), busStop48.getBusStopName(), busStop49.getBusStopName()}, busStopsSix = {busStop50.getBusStopName(), busStop51.getBusStopName(), busStop52.getBusStopName(), busStop53.getBusStopName(), busStop54.getBusStopName(), busStop55.getBusStopName(), busStop56.getBusStopName()}, busStopsSeven = {busStop57.getBusStopName(), busStop58.getBusStopName(), busStop59.getBusStopName(), busStop60.getBusStopName(), busStop61.getBusStopName(), busStop62.getBusStopName(), busStop63.getBusStopName()}, busStopsEight = {busStop64.getBusStopName(), busStop65.getBusStopName(), busStop66.getBusStopName(), busStop67.getBusStopName(), busStop68.getBusStopName(), busStop69.getBusStopName(), busStop70.getBusStopName()}, busStopsNine = {busStop8.getBusStopName(), busStop9.getBusStopName(), busStop10.getBusStopName(), busStop11.getBusStopName(), busStop12.getBusStopName(), busStop13.getBusStopName(), busStop14.getBusStopName()}, busStopsTen = {busStop1.getBusStopName(), busStop2.getBusStopName(), busStop3.getBusStopName(), busStop4.getBusStopName(), busStop5.getBusStopName(), busStop6.getBusStopName(), busStop7.getBusStopName()}, busStopsEleven = {busStop71.getBusStopName(), busStop72.getBusStopName(), busStop73.getBusStopName(), busStop74.getBusStopName(), busStop75.getBusStopName(), busStop76.getBusStopName(), busStop77.getBusStopName()}, busStopsTwelve = {busStop78.getBusStopName(), busStop79.getBusStopName(), busStop80.getBusStopName(), busStop81.getBusStopName(), busStop82.getBusStopName(), busStop83.getBusStopName(), busStop84.getBusStopName()}, busStopsThreeteen = {busStop85.getBusStopName(), busStop86.getBusStopName(), busStop87.getBusStopName(), busStop88.getBusStopName(), busStop89.getBusStopName(), busStop90.getBusStopName(), busStop91.getBusStopName()}, busStopsFourteen = {busStop92.getBusStopName(), busStop93.getBusStopName(), busStop94.getBusStopName(), busStop95.getBusStopName(), busStop96.getBusStopName(), busStop97.getBusStopName(), busStop98.getBusStopName()}, busStopsFiveteen = {busStop99.getBusStopName(), busStop100.getBusStopName(), busStop101.getBusStopName(), busStop102.getBusStopName(), busStop103.getBusStopName(), busStop104.getBusStopName(), busStop105.getBusStopName()}, busStopsSixteen = {busStop106.getBusStopName(), busStop107.getBusStopName(), busStop108.getBusStopName(), busStop109.getBusStopName(), busStop110.getBusStopName(), busStop111.getBusStopName(), busStop112.getBusStopName()}, busStopsSeventeen = {busStop113.getBusStopName(), busStop114.getBusStopName(), busStop115.getBusStopName(), busStop116.getBusStopName(), busStop117.getBusStopName(), busStop118.getBusStopName(), busStop119.getBusStopName()}, busStopsEightteen = {busStop120.getBusStopName(), busStop121.getBusStopName(), busStop122.getBusStopName(), busStop123.getBusStopName(), busStop124.getBusStopName(), busStop125.getBusStopName(), busStop126.getBusStopName()}, busStopsNineteen = {busStop127.getBusStopName(), busStop128.getBusStopName(), busStop129.getBusStopName(), busStop130.getBusStopName(), busStop131.getBusStopName(), busStop132.getBusStopName(), busStop133.getBusStopName()}, busStopsTwenty = {busStop134.getBusStopName(), busStop135.getBusStopName(), busStop136.getBusStopName(), busStop137.getBusStopName(), busStop138.getBusStopName(), busStop139.getBusStopName(), busStop140.getBusStopName()};
+            if (index == 0 && indexTwo == 0) {
                 comboBox3.removeAllItems();
-                for (String bus: busStopsOne) {
+                for (String bus : busStopsOne) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 0 && indexTwo == 1) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsTwo) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 1 && indexTwo == 1) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsThree) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 1 && indexTwo == 0) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsFour) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 2 && indexTwo == 0) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsFive) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 2 && indexTwo == 1) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsSix) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 3 && indexTwo == 0) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsSeven) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 3 && indexTwo == 1) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsEight) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 4 && indexTwo == 1) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsNine) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 4 && indexTwo == 0) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsTen) {
                     comboBox3.addItem(bus);
                 }
             }
-            else if(index == 0 && indexTwo == 1)
-            {
+            if (index == 5 && indexTwo == 0) {
                 comboBox3.removeAllItems();
-                for (String bus: busStopsTwo) {
+                for (String bus : busStopsEleven) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 5 && indexTwo == 1) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsTwelve) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 6 && indexTwo == 0) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsThreeteen) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 6 && indexTwo == 1) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsFourteen) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 7 && indexTwo == 0) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsFiveteen) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 7 && indexTwo == 1) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsSixteen) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 8 && indexTwo == 0) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsSeventeen) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 8 && indexTwo == 1) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsEightteen) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 9 && indexTwo == 0) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsNineteen) {
+                    comboBox3.addItem(bus);
+                }
+            } else if (index == 9 && indexTwo == 1) {
+                comboBox3.removeAllItems();
+                for (String bus : busStopsTwenty) {
                     comboBox3.addItem(bus);
                 }
             }
-            else if(index == 1 && indexTwo == 1)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsThree) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            else if(index == 1 && indexTwo == 0)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsFour) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            else if(index == 2 && indexTwo == 0)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsFive) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            else if(index == 2 && indexTwo == 1)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsSix) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            else if(index == 3 && indexTwo == 0)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsSeven) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            else if(index == 3 && indexTwo == 1)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsEight) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            else if(index == 4 && indexTwo == 1)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsNine) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            else if(index == 4 && indexTwo == 0)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsTen) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            if(index == 5 && indexTwo == 0)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsEleven) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            else if(index == 5 && indexTwo == 1)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsTwelve) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            else if(index == 6 && indexTwo == 0)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsThreeteen) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            else if(index == 6 && indexTwo == 1)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsFourteen) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            else if(index == 7 && indexTwo == 0)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsFiveteen) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            else if(index == 7 && indexTwo == 1)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsSixteen) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            else if(index == 8 && indexTwo == 0)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsSeventeen) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            else if(index == 8 && indexTwo == 1)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsEightteen) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            else if(index == 9 && indexTwo == 0)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsNineteen) {
-                    comboBox3.addItem(bus);
-                }
-            }
-            else if(index == 9 && indexTwo == 1)
-            {
-                comboBox3.removeAllItems();
-                for (String bus: busStopsTwenty) {
-                    comboBox3.addItem(bus);
-                }
-            }
-        }
-        else if(source == button4)
-        {
-            if(index == -1 || indexThree == -1 || indexTwo == -1)
-            {
+        } else if (source == button4) {
+            if (index == -1 || indexThree == -1 || indexTwo == -1) {
                 JOptionPane.showMessageDialog(frame, "WYBIERZ KIERUNEK I PRZYSTANEK, ABY APLIKACJA PODAŁA INFORMACJE", "Nie Wybrano Wszystkich Wymaganych Opcji !!!", JOptionPane.WARNING_MESSAGE);
-            }
-            else {
+            } else {
                 myJPanel2.add(label9);
                 label9.setBackground(Color.white);
                 label9.setOpaque(true);
                 int busNumber = index + 1;
-                for(int k = 0; k < 10; k++)
-                {
-                    if(k == index)
-                    {
-                        for(int j = 0; j < 2; j++)
-                        {
-                            if(j == indexTwo)
-                            {
-                                for(int i = 0; i < 7; i++)
-                                {
+                for (int k = 0; k < 10; k++) {
+                    if (k == index) {
+                        for (int j = 0; j < 2; j++) {
+                            if (j == indexTwo) {
+                                for (int i = 0; i < 7; i++) {
                                     int pom = i;
                                     int pom2 = j;
-                                    if(k == 0 && j == 1)
-                                    {
+                                    if (k == 0 && j == 1) {
                                         pom = i + 7;
                                     }
-                                    if(k > 0)
-                                    {
-                                        for(int counter = 1; counter < 10; counter++)
-                                        {
+                                    if (k > 0) {
+                                        for (int counter = 1; counter < 10; counter++) {
                                             int busNumberTwo = k + 1;
-                                            if(busNumberTwo == counter + 1 && j == 0)
-                                            {
+                                            if (busNumberTwo == counter + 1 && j == 0) {
                                                 pom = 7 * ((2 * busNumberTwo) - 2) + i;
                                                 pom2 = k * 2;
-                                            }
-                                            else if(busNumberTwo == counter + 1)
-                                            {
+                                            } else if (busNumberTwo == counter + 1) {
                                                 pom = 7 * ((2 * busNumberTwo) - 1) + i;
                                                 pom2 = k * 2 + 1;
                                             }
                                         }
                                     }
-                                    if(i == indexThree)
-                                    {
+                                    if (i == indexThree) {
                                         int tmp = 0;
                                         LocalTime timeOne = LocalTime.parse(nameStops[pom].getDepartureOneTime());
                                         LocalTime timeTwo = LocalTime.parse(nameStops[pom].getDepartureTwoTime());
@@ -772,42 +712,33 @@ public class Gui extends JFrame implements ActionListener {
                                         boolean resultThree = timeThree.isBefore(localTime);
                                         boolean resultFour = timeFour.isBefore(localTime);
                                         boolean resultFive = timeFive.isBefore(localTime);
-                                        Boolean [] array = {result, resultTwo, resultThree, resultFour, resultFive};
-                                        LocalTime [] array2 = {timeOne, timeTwo, timeThree, timeFour, timeFive};
-                                        for(int p = 0; p < array.length; p++)
-                                        {
-                                            if(array[p] || array.length - 1 == p)
-                                            {
+                                        Boolean[] array = {result, resultTwo, resultThree, resultFour, resultFive};
+                                        LocalTime[] array2 = {timeOne, timeTwo, timeThree, timeFour, timeFive};
+                                        for (int p = 0; p < array.length; p++) {
+                                            if (array[p] || array.length - 1 == p) {
                                                 tmp++;
-                                                if(array.length - 1 == p)
-                                                {
+                                                if (array.length - 1 == p) {
                                                     tmp = tmp - 2;
                                                     int flag = 0;
                                                     int minutesTwo = array2[tmp].getMinute();
                                                     int hoursTwo = array2[tmp].getHour();
                                                     int differenceHours = hours - hoursTwo;
                                                     int differenceMinutes = minutes - minutesTwo;
-                                                    if(hoursTwo > hours)
-                                                    {
+                                                    if (hoursTwo > hours) {
                                                         differenceHours = 0;
                                                     }
-                                                    if(minutesTwo > minutes)
-                                                    {
+                                                    if (minutesTwo > minutes) {
                                                         differenceMinutes = (60 - minutesTwo) + minutes;
                                                         flag++;
                                                     }
-                                                    if(flag == 1)
-                                                    {
+                                                    if (flag == 1) {
                                                         differenceHours = differenceHours - 1;
                                                     }
-                                                    if(minutes < 10)
-                                                    {
+                                                    if (minutes < 10) {
                                                         label9.setText("<html> Wybrałeś Kierowco linię numer " + busNumber + ", którą poruszasz się w kierunku " + nameDirections[pom2] + " i chcesz zapytać jakie opoźnienie masz do przystanku <br> o nazwie " + nameBusStops[pom] +
                                                                 ". Obecna godzina to: " + hours + ":0" + minutes + ". Natomiast ostatni odjazd z tego przystanku przed obecną godziną miał nastąpić<br> o godzinie: " + hoursTwo + ":" + minutesTwo + ". Opóźnienie wynosi: " +
                                                                 differenceHours + " godzin i " + differenceMinutes + " minut.</html>");
-                                                    }
-                                                    else
-                                                    {
+                                                    } else {
                                                         label9.setText("<html> Wybrałeś Kierowco linię numer " + busNumber + ", którą poruszasz się w kierunku " + nameDirections[pom2] + " i chcesz zapytać jakie opoźnienie masz do przystanku <br> o nazwie " + nameBusStops[pom] +
                                                                 ". Obecna godzina to: " + hours + ":" + minutes + ". Natomiast ostatni odjazd z tego przystanku przed obecną godziną miał nastąpić<br> o godzinie: " + hoursTwo + ":" + minutesTwo + ". Opóźnienie wynosi: " +
                                                                 differenceHours + " godzin i " + differenceMinutes + " minut.</html>");
@@ -823,19 +754,14 @@ public class Gui extends JFrame implements ActionListener {
                     }
                 }
             }
-        }
-        else if(source == button14)
-        {
-            if(indexFour == -1 || indexFive == -1)
-            {
+        } else if (source == button14) {
+            if (indexFour == -1 || indexFive == -1) {
                 JOptionPane.showMessageDialog(frame, "WYBIERZ KIERUNEK, ABY APLIKACJA PODAŁA INFORMACJE", "Nie Wybrano Wszystkich Wymaganych Opcji !!!", JOptionPane.WARNING_MESSAGE);
-            }
-            else
-            {
-                jTextArea.setSize(1280,100);
-                jTextArea.setLocation(0,400);
+            } else {
+                jTextArea.setSize(1280, 100);
+                jTextArea.setLocation(0, 400);
                 int busNumber = indexFour + 1;
-                for(int k = 0; k < 10; k++) {
+                for (int k = 0; k < 10; k++) {
                     if (k == indexFour) {
                         for (int j = 0; j < 2; j++) {
                             if (j == indexFive) {
@@ -857,18 +783,18 @@ public class Gui extends JFrame implements ActionListener {
                                             }
                                         }
                                     }
-                                    if(i == 0)
+                                    if (i == 0)
                                         jTextArea.setText(null);
                                     LocalTime timeOne = LocalTime.parse(nameStops[pom].getDepartureOneTime());
                                     LocalTime timeTwo = LocalTime.parse(nameStops[pom].getDepartureTwoTime());
                                     LocalTime timeThree = LocalTime.parse(nameStops[pom].getDepartureThreeTime());
                                     LocalTime timeFour = LocalTime.parse(nameStops[pom].getDepartureFourTime());
                                     LocalTime timeFive = LocalTime.parse(nameStops[pom].getDepartureFiveTime());
-                                    LocalTime [] array2 = {timeOne, timeTwo, timeThree, timeFour, timeFive};
-                                    int minutesTwo = array2[0].getMinute(), minutesThree = array2[1].getMinute(),minutesFour = array2[2].getMinute(), minutesFive = array2[3].getMinute(), minutesSix = array2[4].getMinute();
+                                    LocalTime[] array2 = {timeOne, timeTwo, timeThree, timeFour, timeFive};
+                                    int minutesTwo = array2[0].getMinute(), minutesThree = array2[1].getMinute(), minutesFour = array2[2].getMinute(), minutesFive = array2[3].getMinute(), minutesSix = array2[4].getMinute();
                                     int hoursTwo = array2[0].getHour(), hoursThree = array2[1].getHour(), hoursFour = array2[2].getHour(), hoursFive = array2[3].getHour(), hoursSix = array2[4].getHour();
                                     jTextArea.append("\nLINIA NUMER: " + busNumber + "\nKIERUNEK: " + nameDirections[pom2] + "\nPRZYSTANEK: " + nameBusStops[pom] +
-                                            "\nOdjazd numer 1 następuje o godzinie: " + hoursTwo + ":" + minutesTwo  +
+                                            "\nOdjazd numer 1 następuje o godzinie: " + hoursTwo + ":" + minutesTwo +
                                             "\nOdjazd numer 2 następuje o godzinie: " + hoursThree + ":" + minutesThree +
                                             "\nOdjazd numer 3 następuje o godzinie: " + hoursFour + ":" + minutesFour +
                                             "\nOdjazd numer 4 następuje o godzinie: " + hoursFive + ":" + minutesFive +
@@ -879,15 +805,10 @@ public class Gui extends JFrame implements ActionListener {
                     }
                 }
             }
-        }
-        else if(source == button15)
-        {
-            if(indexSix == -1 || indexSeven == -1)
-            {
+        } else if (source == button15) {
+            if (indexSix == -1 || indexSeven == -1) {
                 JOptionPane.showMessageDialog(frame, "WYBIERZ GODZINE I LICZBE MINUT, ABY APLIKACJA PODAŁA INFORMACJE", "Nie Wybrano Wszystkich Wymaganych Opcji !!!", JOptionPane.WARNING_MESSAGE);
-            }
-            else
-            {
+            } else {
                 ArrayList<LocalTime> times = new ArrayList<>();
                 ArrayList<String> directionsNames = new ArrayList<>();
                 ArrayList<String> busStopsNames = new ArrayList<>();
@@ -896,8 +817,7 @@ public class Gui extends JFrame implements ActionListener {
                 label29.setBackground(Color.white);
                 label29.setOpaque(true);
                 String userTime = indexSixS + ":" + indexSevenS;
-                for(int k = 0; k < 10; k++)
-                {
+                for (int k = 0; k < 10; k++) {
                     for (int j = 0; j < 2; j++) {
                         for (int i = 0; i < 7; i++) {
                             int pom = i;
@@ -926,10 +846,8 @@ public class Gui extends JFrame implements ActionListener {
                             boolean resultFive = timeFive.isBefore(LocalTime.parse(userTime));
                             Boolean[] array = {result, resultTwo, resultThree, resultFour, resultFive};
                             LocalTime[] array2 = {timeOne, timeTwo, timeThree, timeFour, timeFive};
-                            for (int m = 0; m < 5; m++)
-                            {
-                                if (!array[m])
-                                {
+                            for (int m = 0; m < 5; m++) {
+                                if (!array[m]) {
                                     times.add(array2[m]);
                                     break;
                                 }
@@ -939,21 +857,18 @@ public class Gui extends JFrame implements ActionListener {
                 }
                 int n = 0;
                 Collections.sort(times);
-                LocalTime [] lastTimes = new LocalTime[5];
-                for (LocalTime counter: times)
-                {
-                    if(n == 5)
+                LocalTime[] lastTimes = new LocalTime[5];
+                for (LocalTime counter : times) {
+                    if (n == 5)
                         break;
                     lastTimes[n] = counter;
                     n++;
                 }
-                for(int a = 0; a < 5; a++)
-                {
-                    for(int k = 0; k < 10; k++)
-                    {
+                int flag = -1, flagTwo = -1, flagThree = -1, flagFour = -1;
+                for (int a = 0; a < 5; a++) {
+                    for (int k = 0; k < 10; k++) {
                         for (int j = 0; j < 2; j++) {
-                            for (int i = 0; i < 7; i++)
-                            {
+                            for (int i = 0; i < 7; i++) {
                                 int pom = i;
                                 int pom2 = j;
                                 if (k == 0 && j == 1) {
@@ -976,22 +891,32 @@ public class Gui extends JFrame implements ActionListener {
                                 LocalTime timeThree = LocalTime.parse(nameStops[pom].getDepartureThreeTime());
                                 LocalTime timeFour = LocalTime.parse(nameStops[pom].getDepartureFourTime());
                                 LocalTime timeFive = LocalTime.parse(nameStops[pom].getDepartureFiveTime());
-                                if((timeOne.equals(lastTimes[a]) || timeTwo.equals(lastTimes[a]) || timeThree.equals(lastTimes[a]) || timeFour.equals(lastTimes[a]) || timeFive.equals(lastTimes[a])))
+                                if ((timeOne.equals(lastTimes[a]) || timeTwo.equals(lastTimes[a]) || timeThree.equals(lastTimes[a]) || timeFour.equals(lastTimes[a]) || timeFive.equals(lastTimes[a])) && ((flag != i && flagTwo != k && a % 2 != 0) || (flagThree != i && flagFour != k && a % 2 != 1)))
                                 {
-                                     directionsNames.add(nameDirections[pom2]);
-                                     busStopsNames.add(nameBusStops[pom]);
-                                     busNames.add(k + 1);
-                                     break;
+                                    directionsNames.add(nameDirections[pom2]);
+                                    busStopsNames.add(nameBusStops[pom]);
+                                    busNames.add(k + 1);
+                                    if(a % 2 == 0)
+                                    {
+                                        flag = i;
+                                        flagTwo = k;
+                                    }
+                                    if(a % 2 == 1)
+                                    {
+                                        flagThree = i;
+                                        flagFour = k;
+                                    }
+                                    break;
                                 }
                             }
                         }
                     }
                 }
                 label29.setText("<html>ODJAZD NR 1 LINIA NR: " + busNames.get(0) + " ------ KIERUNEK: " + directionsNames.get(0) + " ------ PRZYSTANEK: " + busStopsNames.get(0) + " ------ GODZINA ODJAZDU: " + times.get(0) + "<br>"
-                            + "ODJAZD NR 2 LINIA NR: " + busNames.get(1) + " ------ KIERUNEK: " + directionsNames.get(1) + " ------ PRZYSTANEK: " + busStopsNames.get(1) + " ------ GODZINA ODJAZDU: " + times.get(1) + "<br>"
-                            + "ODJAZD NR 3 LINIA NR: " + busNames.get(4) + " ------ KIERUNEK: " + directionsNames.get(4) + " ------ PRZYSTANEK: " + busStopsNames.get(4) + " ------ GODZINA ODJAZDU: " + times.get(2) + "<br>"
-                            + "ODJAZD NR 4 LINIA NR: " + busNames.get(5) + " ------ KIERUNEK: " + directionsNames.get(5) + " ------ PRZYSTANEK: " + busStopsNames.get(5) + " ------ GODZINA ODJAZDU: " + times.get(3) + "<br>"
-                            + "ODJAZD NR 5 LINIA NR: " + busNames.get(8) + " ------ KIERUNEK: " + directionsNames.get(8) + " ------ PRZYSTANEK: " + busStopsNames.get(8) + " ------ GODZINA ODJAZDU: " + times.get(4) +"</html>");
+                        + "ODJAZD NR 2 LINIA NR: " + busNames.get(1) + " ------ KIERUNEK: " + directionsNames.get(1) + " ------ PRZYSTANEK: " + busStopsNames.get(1) + " ------ GODZINA ODJAZDU: " + times.get(1) + "<br>"
+                        + "ODJAZD NR 3 LINIA NR: " + busNames.get(2) + " ------ KIERUNEK: " + directionsNames.get(2) + " ------ PRZYSTANEK: " + busStopsNames.get(2) + " ------ GODZINA ODJAZDU: " + times.get(2) + "<br>"
+                        + "ODJAZD NR 4 LINIA NR: " + busNames.get(3) + " ------ KIERUNEK: " + directionsNames.get(3) + " ------ PRZYSTANEK: " + busStopsNames.get(3) + " ------ GODZINA ODJAZDU: " + times.get(3) + "<br>"
+                        + "ODJAZD NR 5 LINIA NR: " + busNames.get(4) + " ------ KIERUNEK: " + directionsNames.get(4) + " ------ PRZYSTANEK: " + busStopsNames.get(4) + " ------ GODZINA ODJAZDU: " + times.get(4) + "</html>");
             }
         }
     }
