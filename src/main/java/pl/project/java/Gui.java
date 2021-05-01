@@ -934,7 +934,6 @@ public class Gui extends JFrame implements ActionListener {
                                     break;
                                 }
                             }
-
                         }
                     }
                 }
@@ -981,7 +980,7 @@ public class Gui extends JFrame implements ActionListener {
                                 {
                                     directionsNames.add(nameDirections[pom2]);
                                     busStopsNames.add(nameBusStops[pom]);
-                                    busNames.add(k+1);
+                                    busNames.add(k + 1);
                                     break;
                                 }
                             }
