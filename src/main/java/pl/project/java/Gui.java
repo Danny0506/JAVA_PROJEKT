@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.io.SequenceInputStream;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
+
 
 public class Gui extends JFrame implements ActionListener {
     JFrame frame = new JFrame("System Obsługi Komunikacji Miejskiej");
@@ -890,7 +890,7 @@ public class Gui extends JFrame implements ActionListener {
             {
                 ArrayList<LocalTime> times = new ArrayList<>();
                 ArrayList<String> directionsNames = new ArrayList<>();
-                ArrayList<String> busStopsNames =  new ArrayList<>();
+                ArrayList<String> busStopsNames = new ArrayList<>();
                 ArrayList<Integer> busNames = new ArrayList<>();
                 myJPanel5.add(label29);
                 label29.setBackground(Color.white);
@@ -976,12 +976,12 @@ public class Gui extends JFrame implements ActionListener {
                                 LocalTime timeThree = LocalTime.parse(nameStops[pom].getDepartureThreeTime());
                                 LocalTime timeFour = LocalTime.parse(nameStops[pom].getDepartureFourTime());
                                 LocalTime timeFive = LocalTime.parse(nameStops[pom].getDepartureFiveTime());
-                                if(timeOne.equals(lastTimes[a]) || timeTwo.equals(lastTimes[a]) || timeThree.equals(lastTimes[a]) || timeFour.equals(lastTimes[a]) || timeFive.equals(lastTimes[a]))
+                                if((timeOne.equals(lastTimes[a]) || timeTwo.equals(lastTimes[a]) || timeThree.equals(lastTimes[a]) || timeFour.equals(lastTimes[a]) || timeFive.equals(lastTimes[a])))
                                 {
-                                    directionsNames.add(nameDirections[pom2]);
-                                    busStopsNames.add(nameBusStops[pom]);
-                                    busNames.add(k + 1);
-                                    break;
+                                     directionsNames.add(nameDirections[pom2]);
+                                     busStopsNames.add(nameBusStops[pom]);
+                                     busNames.add(k + 1);
+                                     break;
                                 }
                             }
                         }
@@ -989,9 +989,9 @@ public class Gui extends JFrame implements ActionListener {
                 }
                 label29.setText("<html>ODJAZD NR 1 LINIA NR: " + busNames.get(0) + " ------ KIERUNEK: " + directionsNames.get(0) + " ------ PRZYSTANEK: " + busStopsNames.get(0) + " ------ GODZINA ODJAZDU: " + times.get(0) + "<br>"
                             + "ODJAZD NR 2 LINIA NR: " + busNames.get(1) + " ------ KIERUNEK: " + directionsNames.get(1) + " ------ PRZYSTANEK: " + busStopsNames.get(1) + " ------ GODZINA ODJAZDU: " + times.get(1) + "<br>"
-                            + "ODJAZD NR 3 LINIA NR: " + busNames.get(2) + " ------ KIERUNEK: " + directionsNames.get(2) + " ------ PRZYSTANEK: " + busStopsNames.get(2) + " ------ GODZINA ODJAZDU: " + times.get(2) + "<br>"
-                            + "ODJAZD NR 4 LINIA NR: " + busNames.get(3) + " ------ KIERUNEK: " + directionsNames.get(3) + " ------ PRZYSTANEK: " + busStopsNames.get(3) + " ------ GODZINA ODJAZDU: " + times.get(3) + "<br>"
-                            + "ODJAZD NR 5 LINIA NR: " + busNames.get(4) + " ------ KIERUNEK: " + directionsNames.get(4) + " ------ PRZYSTANEK: " + busStopsNames.get(4) + " ------ GODZINA ODJAZDU: " + times.get(4) +"</html>");
+                            + "ODJAZD NR 3 LINIA NR: " + busNames.get(4) + " ------ KIERUNEK: " + directionsNames.get(4) + " ------ PRZYSTANEK: " + busStopsNames.get(4) + " ------ GODZINA ODJAZDU: " + times.get(2) + "<br>"
+                            + "ODJAZD NR 4 LINIA NR: " + busNames.get(5) + " ------ KIERUNEK: " + directionsNames.get(5) + " ------ PRZYSTANEK: " + busStopsNames.get(5) + " ------ GODZINA ODJAZDU: " + times.get(3) + "<br>"
+                            + "ODJAZD NR 5 LINIA NR: " + busNames.get(8) + " ------ KIERUNEK: " + directionsNames.get(8) + " ------ PRZYSTANEK: " + busStopsNames.get(8) + " ------ GODZINA ODJAZDU: " + times.get(4) +"</html>");
             }
         }
     }
