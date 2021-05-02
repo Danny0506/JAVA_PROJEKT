@@ -45,6 +45,7 @@ public class Gui extends JFrame implements ActionListener {
     private final JLabel label27 = new JLabel("Wybierz godzinę:");
     private final JLabel label28 = new JLabel("Wybierz ilość minut:");
     private final JLabel label29 = new JLabel();
+    private final JLabel label30 = new JLabel("UWAGA!!! W przypadku, gdy odbędzie się mniej niż 5 odjazdów ze względu na porę dnia, zostaną wyświetlone wszystkie odjazdy, które pozostały");
     private final JTextArea jTextArea = new JTextArea();
     private final JScrollPane jScrollPane = new JScrollPane(jTextArea);
     private final JButton button = new JButton("JESTEM KIEROWCĄ");
@@ -187,6 +188,8 @@ public class Gui extends JFrame implements ActionListener {
         label27.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         label29.setBounds(0, 400, 1280, 180);
         label29.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
+        label30.setBounds(130, 85, 1280, 100);
+        label30.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
         jTextArea.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         jTextArea.setBackground(Color.white);
         jTextArea.setLineWrap(true);
@@ -240,6 +243,7 @@ public class Gui extends JFrame implements ActionListener {
         myJPanel5.add(comboBox7);
         myJPanel5.add(label27);
         myJPanel5.add(label28);
+        myJPanel5.add(label30);
         myJPanel5.add(button15);
         button.setBackground(Color.green);
         button1.setBackground(Color.yellow);
@@ -355,7 +359,7 @@ public class Gui extends JFrame implements ActionListener {
         busStop39 = new BusStop("08:14", "12:21", "16:59", "20:49", "23:43", "Żytnia", 2, "Kolberga");
         busStop40 = new BusStop("08:20", "12:45", "17:23", "20:58", "23:48", "Jagielońska", 2, "Kolberga");
         busStop41 = new BusStop("08:24", "13:27", "17:52", "21:10", "23:57", "Hoża", 2, "Kolberga");
-        busStop42 = new BusStop("08:35", "13:55", "18:05", "21:26", "23:59", "Kolberga", 2, "Kolberga");
+        busStop42 = new BusStop("08:35", "13:55", "18:14", "21:26", "23:59", "Kolberga", 2, "Kolberga");
 
         busStop43 = new BusStop("04:45", "08:24", "13:23", "17:17", "19:55", "Kaczmarka", 3, "Borków");
         busStop44 = new BusStop("04:58", "08:32", "13:47", "17:28", "20:11", "Żytnia", 3, "Borków");
@@ -376,21 +380,21 @@ public class Gui extends JFrame implements ActionListener {
         busStop58 = new BusStop("04:18", "06:25", "14:15", "17:59", "20:40", "Pakosz", 4, "Zagnańska Areszt");
         busStop59 = new BusStop("04:24", "06:48", "14:26", "18:26", "20:53", "Krakowska", 4, "Zagnańska Areszt");
         busStop60 = new BusStop("04:33", "07:21", "14:48", "18:33", "21:10", "Seminaryjska", 4, "Zagnańska Areszt");
-        busStop61 = new BusStop("04:45", "07:55", "15:06", "18:45", "21:21", "Tarnowska", 4, "Zagnańska Areszt");
+        busStop61 = new BusStop("04:45", "07:55", "14:58", "18:45", "21:21", "Tarnowska", 4, "Zagnańska Areszt");
         busStop62 = new BusStop("04:59", "08:41", "15:15", "18:57", "21:32", "Jesionowa", 4, "Zagnańska Areszt");
         busStop63 = new BusStop("05:11", "09:22", "15:26", "19:11", "21:42", "Zagnańska Areszt", 4, "Zagnańska Areszt");
         busStop64 = new BusStop("05:20", "10:44", "15:45", "19:25", "21:50", "Zagnańska Areszt", 4, "al. Na Stadion");
-        busStop65 = new BusStop("05:37", "11:12", "15:59", "19:35", "22:03", "Jesionowa", 4, "al. Na Stadion");
+        busStop65 = new BusStop("05:37", "11:12", "15:59", "19:35", "21:59", "Jesionowa", 4, "al. Na Stadion");
         busStop66 = new BusStop("05:48", "11:30", "16:12", "19:47", "22:12", "Tarnowska", 4, "al. Na Stadion");
         busStop67 = new BusStop("05:57", "11:46", "16:23", "19:59", "22:23", "Seminaryjska", 4, "al. Na Stadion");
-        busStop68 = new BusStop("06:03", "12:57", "16:45", "20:11", "22:35", "Krakowska", 4, "al. Na Stadion");
-        busStop69 = new BusStop("06:10", "13:01", "16:52", "20:20", "22:47", "Pakosz", 4, "al. Na Stadion");
+        busStop68 = new BusStop("05:59", "12:57", "16:45", "20:11", "22:35", "Krakowska", 4, "al. Na Stadion");
+        busStop69 = new BusStop("06:10", "13:13", "16:52", "20:20", "22:47", "Pakosz", 4, "al. Na Stadion");
         busStop70 = new BusStop("06:13", "13:27", "16:59", "20:26", "22:51", "al. Na Stadion", 4, "al. Na Stadion");
 
         busStop71 = new BusStop("05:15", "07:18", "13:45", "15:57", "18:32", "Dworzec Autobusowy", 6, "Niestachów pętla");
         busStop72 = new BusStop("05:18", "07:25", "13:58", "16:10", "18:40", "Czarnowska", 6, "Niestachów pętla");
         busStop73 = new BusStop("05:24", "07:48", "14:10", "16:21", "18:53", "Sandomierska", 6, "Niestachów pętla");
-        busStop74 = new BusStop("05:33", "08:21", "14:21", "16:33", "19:07", "Cedzyna", 6, "Niestachów pętla");
+        busStop74 = new BusStop("05:33", "08:21", "14:21", "16:33", "19:11", "Cedzyna", 6, "Niestachów pętla");
         busStop75 = new BusStop("05:45", "08:55", "14:38", "16:41", "19:21", "Radlin", 6, "Niestachów pętla");
         busStop76 = new BusStop("05:59", "09:41", "14:55", "16:57", "19:32", "Radlin/Niestachów", 6, "Niestachów pętla");
         busStop77 = new BusStop("06:10", "10:22", "15:11", "17:11", "19:42", "Niestachów pętla", 6, "Niestachów pętla");
@@ -402,17 +406,17 @@ public class Gui extends JFrame implements ActionListener {
         busStop83 = new BusStop("07:10", "13:13", "15:52", "18:20", "20:47", "Czarnowska", 6, "Dworzec Autobusowy");
         busStop84 = new BusStop("07:13", "13:27", "15:55", "18:26", "20:51", "Dworzec Autobusowy", 6, "Dworzec Autobusowy");
 
-        busStop85 = new BusStop("05:29", "08:55", "14:21", "18:24", "20:55", "Dworzec Autobusowy", 7, "Zagnańsk Szkoła");
-        busStop86 = new BusStop("05:45", "09:11", "14:40", "18:09", "21:11", "Czarnowska", 7, "Zagnańsk Szkoła");
+        busStop85 = new BusStop("05:29", "08:55", "14:21", "18:17", "20:55", "Dworzec Autobusowy", 7, "Zagnańsk Szkoła");
+        busStop86 = new BusStop("05:45", "09:11", "14:40", "18:21", "21:11", "Czarnowska", 7, "Zagnańsk Szkoła");
         busStop87 = new BusStop("05:53", "09:18", "14:57", "18:23", "21:22", "Jesionowa", 7, "Zagnańsk Szkoła");
         busStop88 = new BusStop("06:11", "09:29", "15:17", "18:33", "21:30", "Warszawska/Uroczysko", 7, "Zagnańsk Szkoła");
         busStop89 = new BusStop("06:29", "09:42", "15:35", "18:51", "21:52", "Dąbrowa", 7, "Zagnańsk Szkoła");
         busStop90 = new BusStop("06:52", "09:55", "15:51", "18:57", "21:58", "Kajetanów", 7, "Zagnańsk Szkoła");
         busStop91 = new BusStop("07:11", "10:17", "16:12", "19:11", "22:22", "Zagnańsk Szkoła", 7, "Zagnańsk Szkoła");
         busStop92 = new BusStop("07:20", "10:29", "16:23", "19:23", "22:32", "Zagnańsk Szkoła", 7, "Dworzec Autobusowy");
-        busStop93 = new BusStop("07:51", "11:02", "16:32", "19:35", "22:40", "Kajetanów", 7, "Dworzec Autobusowy");
+        busStop93 = new BusStop("07:51", "11:11", "16:32", "19:35", "22:40", "Kajetanów", 7, "Dworzec Autobusowy");
         busStop94 = new BusStop("07:59", "11:45", "16:55", "19:47", "22:47", "Dąbrowa", 7, "Dworzec Autobusowy");
-        busStop95 = new BusStop("08:05", "12:12", "16:59", "19:59", "22:58", "Warszawska/Uroczysko", 7, "Dworzec Autobusowy");
+        busStop95 = new BusStop("08:10", "12:12", "16:59", "19:59", "22:58", "Warszawska/Uroczysko", 7, "Dworzec Autobusowy");
         busStop96 = new BusStop("08:16", "12:56", "17:28", "20:10", "23:14", "Jesionowa", 7, "Dworzec Autobusowy");
         busStop97 = new BusStop("08:22", "13:44", "17:46", "20:25", "23:24", "Czarnowska", 7, "Dworzec Autobusowy");
         busStop98 = new BusStop("08:34", "13:58", "18:11", "20:41", "23:47", "Dworzec Autobusowy", 7, "Dworzec Autobusowy");
@@ -421,7 +425,7 @@ public class Gui extends JFrame implements ActionListener {
         busStop100 = new BusStop("05:53", "09:11", "14:21", "18:29", "21:47", "Grunwaldzka", 8, "Żniwna");
         busStop101 = new BusStop("06:10", "09:19", "14:34", "18:43", "21:59", "Żytnia", 8, "Żniwna");
         busStop102 = new BusStop("06:21", "09:21", "14:55", "19:11", "22:17", "Seminaryjska", 8, "Żniwna");
-        busStop103 = new BusStop("06:32", "09:40", "15:07", "19:26", "22:25", "Zagórska", 8, "Żniwna");
+        busStop103 = new BusStop("06:32", "09:40", "15:15", "19:26", "22:25", "Zagórska", 8, "Żniwna");
         busStop104 = new BusStop("06:51", "10:10", "15:24", "19:33", "22:39", "Poleska", 8, "Żniwna");
         busStop105 = new BusStop("06:59", "10:26", "15:45", "19:41", "22:53", "Żniwna", 8, "Żniwna");
         busStop106 = new BusStop("07:21", "10:51", "16:13", "19:55", "22:58", "Żniwna", 8, "Os. Ślichowice");
