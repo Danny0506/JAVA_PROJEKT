@@ -103,11 +103,20 @@ public class Gui extends JFrame implements ActionListener {
     protected Bus bus, bus1, bus2, bus3, bus4, bus5, bus6, bus7, bus8, bus9;
     protected BusStop busStop1, busStop2, busStop3, busStop4, busStop5, busStop6, busStop7, busStop8, busStop9, busStop10, busStop11, busStop12, busStop13, busStop14, busStop15, busStop16, busStop17, busStop18, busStop19, busStop20, busStop21, busStop22, busStop23, busStop24, busStop25, busStop26, busStop27, busStop28, busStop29, busStop30, busStop31, busStop32, busStop33, busStop34, busStop35, busStop36, busStop37, busStop38, busStop39, busStop40, busStop41, busStop42, busStop43, busStop44, busStop45, busStop46, busStop47, busStop48, busStop49, busStop50, busStop51, busStop52, busStop53, busStop54, busStop55, busStop56, busStop57, busStop58, busStop59, busStop60, busStop61, busStop62, busStop63, busStop64, busStop65, busStop66, busStop67, busStop68, busStop69, busStop70, busStop71, busStop72, busStop73, busStop75, busStop74, busStop76, busStop77, busStop78, busStop79, busStop80, busStop81, busStop82, busStop83, busStop84, busStop85, busStop86, busStop87, busStop88, busStop89, busStop90, busStop91, busStop92, busStop93, busStop94, busStop95, busStop96, busStop97, busStop98, busStop99, busStop100, busStop101, busStop102, busStop103, busStop104, busStop105, busStop106, busStop107, busStop108, busStop109, busStop110, busStop111, busStop112, busStop113, busStop114, busStop115, busStop116, busStop117, busStop118, busStop119, busStop120, busStop121, busStop122, busStop123, busStop124, busStop125, busStop126, busStop127, busStop132, busStop128, busStop129, busStop130, busStop131, busStop133, busStop134, busStop135, busStop136, busStop137, busStop138, busStop139, busStop140;
 
+    /**
+     * Konstruktor klasy Gui
+     * Konstruktor zawiera wczytanie ikonki aplikacji
+     * Ustawiono layout jako cardLayout, aby moc obslugiwac wiele okien czyli panelow
+     * Ustawiono rozmiar okna na 1280x720 pikseli oraz zakaz mozliwosci modyfikowania rozmiaru okna
+     * Nastepnie wywolane sa metody obslugujace rozmieszczenie elementow na panelach oraz metode zarzadzajaca audio czy tez metody tworzace obiekty, ktore pozniej sa dodawane do bazy danych, a takze metoda obslugujaca zdarzenia
+     * Na koncu kosntruktora mamy ustawiona lokalizacje okna po wlaczeniu aplikacji, dodanie panelu glownego do aplikacji czy tez mozliwosc zamkniecia aplikacji poprzez nacisniecia przycisku krzyzyka w prawym gornym rogu aplikacji
+     * @throws UnsupportedAudioFileException wyrzucenie wyjatku gdy mamy do czynienia z plikiem audio, ktorego format nie jest wspierany
+     */
     public Gui() throws UnsupportedAudioFileException {
         frame.setIconImage(new ImageIcon("src/main/resources/bus.jpg").getImage());
         panel.setLayout(cardLayout);
-        frame.setBounds(0, 0, 720, 1280);
         frame.setResizable(false);
+        frame.setBounds(0, 0, 1280, 720);
         createNewBus();
         createNewBusStop();
         initButtons();
@@ -117,7 +126,16 @@ public class Gui extends JFrame implements ActionListener {
         initLayouts();
         panelService();
         addElementsToPanels();
+        action();
         audio();
+        frame.add(panel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+    }
+
+    private void action()
+    {
         button.addActionListener(e -> cardLayout.show(panel, "2"));
         button1.addActionListener(e -> cardLayout.show(panel, "3"));
         button2.addActionListener(e -> cardLayout.show(panel, "1"));
@@ -144,11 +162,6 @@ public class Gui extends JFrame implements ActionListener {
         button15.addActionListener(this);
         button16.addActionListener(this);
         button17.addActionListener(this);
-        frame.setBounds(0, 0, 1280, 720);
-        frame.add(panel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
     }
 
     private void initButtons()
