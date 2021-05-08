@@ -14,6 +14,17 @@ import java.util.*;
 /**
  * @author Daniel Palak
  * Klasa Gui dziedziczy po klasie JFrame i implementuje interfejs ActionListener
+ * Dla obiektu frame tworzymy tytul na pasku aplikacji okienkowej jako "System Obsługi Komunikacji Miejskiej"
+ * Kolejnymi polami sa labele, ktore maja nadany okreslony tekst, ktory przekazuje uzytkowniki konkretne informacje
+ * Kolejnym rodzajem pol w klasie sa dwa pola jTextArea, ktore maja za zadanie byc miejscem do wyswietlania informacji, ktore aplikacja zwroci dla uzytkownika
+ * Kolejnym rodzajem pola w klasie jest pole jScrollPane, ktory umozliwia przewijanie dlugiego tekstu w jTextArea
+ * Nastepnie mamy pola w klasie, ktore sa przyciskami obslugujacymi rozne zdarzenia w programie. Na poczatku zostaly zadeklarowane jedynie teksty, ktore sa wyswietlane na przyciskach
+ * Nastepnie mamy trzy tablice, ktore przechowuja numery linii autobusowych wystepujacych w aplikacji oraz liczbe minut i godzin wedlug zegara systemowego
+ * Nastepnie mamy zadeklarowane pola obiektow JComboBox, ktore pelnia role wyswietlania dostepnych opcji dla uzytkownika np. dostepnych przystankow, kierunkow jazdy autobusow
+ * Kolejnym polem jest pole panelu czyli glownego okna aplikacji
+ * Nastepnie mamy pola MyJPanelow czyli panelow, ktore sa kolejnymi oknami w aplikacji
+ * Przedostatnim polem w klasie sa obiekty typu Bus przedstawiajace pojedynczy autobus
+ * Ostatnim polem w klasie sa obiekty typu BusStop przedstawiajace pojedynczy przystanek autobusowy
  */
 public class Gui extends JFrame implements ActionListener {
     JFrame frame = new JFrame("System Obsługi Komunikacji Miejskiej");
