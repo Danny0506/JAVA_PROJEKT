@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
+ * @author Daniel Palak
  *  Klasa MyJPanel dziedzicza po klasie JPanel umozliwiajaca ustawienie tla panelu jako dowolny obrazek umieszczony w zasobach projektu
  */
 public class MyJPanel extends JPanel

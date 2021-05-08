@@ -11,6 +11,10 @@ import java.io.SequenceInputStream;
 import java.time.LocalTime;
 import java.util.*;
 
+/**
+ * @author Daniel Palak
+ * Klasa Gui dziedziczy po klasie JFrame i implementuje interfejs ActionListener
+ */
 public class Gui extends JFrame implements ActionListener {
     JFrame frame = new JFrame("System Obsługi Komunikacji Miejskiej");
     private final JLabel label = new JLabel("WITAMY W SYSTEMIE OBSŁUGI KOMUNIKACJI MIEJSKIEJ");
@@ -95,7 +99,13 @@ public class Gui extends JFrame implements ActionListener {
         frame.setResizable(false);
         createNewBus();
         createNewBusStop();
-        init();
+        initButtons();
+        initLabels();
+        initComboBoxes();
+        initTextAreas();
+        initLayouts();
+        panelService();
+        addElementsToPanels();
         audio();
         button.addActionListener(e -> cardLayout.show(panel, "2"));
         button1.addActionListener(e -> cardLayout.show(panel, "3"));
@@ -130,26 +140,45 @@ public class Gui extends JFrame implements ActionListener {
         frame.setLocationRelativeTo(null);
     }
 
-    private void init() {
-        panel.add(myJPanel);
-        panel.add(myJPanel2);
-        myJPanel.add(button);
-        myJPanel.add(button1);
-        myJPanel2.add(button2);
-        myJPanel3.add(button3);
-        myJPanel.setLayout(null);
-        myJPanel2.setLayout(null);
-        myJPanel3.setLayout(null);
-        myJPanel4.setLayout(new GridLayout(6, 3, 0, 0));
-        myJPanel5.setLayout(null);
-        myJPanel6.setLayout(null);
-        panel.add(myJPanel, "1");
-        panel.add(myJPanel2, "2");
-        panel.add(myJPanel3, "3");
-        panel.add(myJPanel4, "4");
-        panel.add(myJPanel5, "5");
-        panel.add(myJPanel6, "6");
-        cardLayout.show(panel, "1");
+    private void initButtons()
+    {
+        button.setBackground(Color.green);
+        button1.setBackground(Color.yellow);
+        button2.setBackground(Color.cyan);
+        button3.setBackground(Color.cyan);
+        button4.setBackground(Color.LIGHT_GRAY);
+        button5.setBackground(Color.cyan);
+        button6.setBackground(Color.cyan);
+        button7.setBackground(Color.cyan);
+        button8.setBackground(Color.yellow);
+        button9.setBackground(Color.orange);
+        button10.setBackground(Color.green);
+        button11.setBackground(Color.pink);
+        button12.setBackground(Color.pink);
+        button13.setBackground(Color.pink);
+        button14.setBackground(Color.green);
+        button15.setBackground(Color.green);
+        button16.setBackground(Color.green);
+        button17.setBackground(Color.cyan);
+        button.setBounds(100, 200, 200, 100);
+        button1.setBounds(900, 200, 200, 100);
+        button2.setBounds(440, 600, 400, 50);
+        button3.setBounds(440, 600, 400, 50);
+        button4.setBounds(535, 350, 180, 33);
+        button6.setBounds(190, 600, 400, 50);
+        button7.setBounds(190, 600, 400, 50);
+        button8.setBounds(50, 200, 370, 100);
+        button9.setBounds(450, 200, 370, 100);
+        button10.setBounds(850, 200, 370, 100);
+        button12.setBounds(670, 600, 400, 50);
+        button13.setBounds(670, 600, 400, 50);
+        button15.setBounds(531, 240, 200, 50);
+        button16.setBounds(536, 260, 200, 40);
+        button17.setBounds(836, 200, 250, 40);
+    }
+
+    private void initLabels()
+    {
         label.setBounds(210, -250, 900, 600);
         label.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
         label1.setBounds(20, 120, 500, 100);
@@ -174,22 +203,22 @@ public class Gui extends JFrame implements ActionListener {
         label10.setBounds(310, 60, 1250, 100);
         label10.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         label11.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
-        label19.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
-        label20.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
         label12.setBounds(150, -250, 1000, 600);
         label12.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
         label13.setBounds(220, -250, 900, 600);
         label13.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
         label14.setBounds(50, 60, 1200, 100);
         label14.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
-        label22.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
-        label23.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
         label15.setBounds(0, 60, 1280, 100);
         label15.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
         label16.setBounds(60, 60, 1280, 100);
         label16.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
-        label18.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         label17.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
+        label18.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
+        label19.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
+        label20.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
+        label22.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
+        label23.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
         label28.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         label27.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         label29.setBounds(0, 400, 1280, 180);
@@ -198,6 +227,22 @@ public class Gui extends JFrame implements ActionListener {
         label30.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
         label31.setBounds(544, 125, 300, 100);
         label31.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
+        label27.setBounds(200, 160, 180, 33);
+        label28.setBounds(915, 160, 180, 33);
+    }
+
+    private void initComboBoxes()
+    {
+        comboBox.setBounds(150, 300, 180, 33);
+        comboBox2.setBounds(535, 300, 180, 33);
+        comboBox3.setBounds(920, 300, 180, 33);
+        comboBox6.setBounds(200, 200, 180, 33);
+        comboBox7.setBounds(915, 200, 180, 33);
+        comboBox8.setBounds(500, 200, 270, 40);
+    }
+
+    private void initTextAreas()
+    {
         jTextArea.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         jTextArea.setBackground(Color.white);
         jTextArea.setLineWrap(true);
@@ -208,6 +253,36 @@ public class Gui extends JFrame implements ActionListener {
         jTextArea2.setEditable(false);
         jScrollPane.setPreferredSize(new Dimension(500, 200));
         jScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+    }
+
+    private void initLayouts()
+    {
+        myJPanel.setLayout(null);
+        myJPanel2.setLayout(null);
+        myJPanel3.setLayout(null);
+        myJPanel4.setLayout(new GridLayout(6, 3, 0, 0));
+        myJPanel5.setLayout(null);
+        myJPanel6.setLayout(null);
+    }
+
+    private void panelService()
+    {
+        panel.add(myJPanel);
+        panel.add(myJPanel2);
+        panel.add(myJPanel, "1");
+        panel.add(myJPanel2, "2");
+        panel.add(myJPanel3, "3");
+        panel.add(myJPanel4, "4");
+        panel.add(myJPanel5, "5");
+        panel.add(myJPanel6, "6");
+        cardLayout.show(panel, "1");
+    }
+    private void addElementsToPanels()
+    {
+        myJPanel.add(button);
+        myJPanel.add(button1);
+        myJPanel2.add(button2);
+        myJPanel3.add(button3);
         myJPanel4.add(label19);
         myJPanel4.add(label11);
         myJPanel4.add(label20);
@@ -262,47 +337,6 @@ public class Gui extends JFrame implements ActionListener {
         myJPanel6.add(button16);
         myJPanel6.add(button17);
         myJPanel6.add(jTextArea2);
-        button.setBackground(Color.green);
-        button1.setBackground(Color.yellow);
-        button2.setBackground(Color.cyan);
-        button3.setBackground(Color.cyan);
-        button7.setBackground(Color.cyan);
-        button5.setBackground(Color.cyan);
-        button6.setBackground(Color.cyan);
-        button4.setBackground(Color.LIGHT_GRAY);
-        button8.setBackground(Color.yellow);
-        button9.setBackground(Color.orange);
-        button10.setBackground(Color.green);
-        button11.setBackground(Color.pink);
-        button12.setBackground(Color.pink);
-        button13.setBackground(Color.pink);
-        button14.setBackground(Color.green);
-        button15.setBackground(Color.green);
-        button16.setBackground(Color.green);
-        button17.setBackground(Color.cyan);
-        button.setBounds(100, 200, 200, 100);
-        button1.setBounds(900, 200, 200, 100);
-        button2.setBounds(440, 600, 400, 50);
-        button3.setBounds(440, 600, 400, 50);
-        button4.setBounds(535, 350, 180, 33);
-        button6.setBounds(190, 600, 400, 50);
-        button7.setBounds(190, 600, 400, 50);
-        button8.setBounds(50, 200, 370, 100);
-        button9.setBounds(450, 200, 370, 100);
-        button10.setBounds(850, 200, 370, 100);
-        button12.setBounds(670, 600, 400, 50);
-        button13.setBounds(670, 600, 400, 50);
-        comboBox.setBounds(150, 300, 180, 33);
-        comboBox2.setBounds(535, 300, 180, 33);
-        comboBox3.setBounds(920, 300, 180, 33);
-        comboBox6.setBounds(200, 200, 180, 33);
-        comboBox7.setBounds(915, 200, 180, 33);
-        comboBox8.setBounds(500, 200, 270, 40);
-        label27.setBounds(200, 160, 180, 33);
-        label28.setBounds(915, 160, 180, 33);
-        button15.setBounds(531, 240, 200, 50);
-        button16.setBounds(536, 260, 200, 40);
-        button17.setBounds(836, 200, 250, 40);
     }
 
     private void audio() throws UnsupportedAudioFileException {
