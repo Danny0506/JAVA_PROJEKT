@@ -9,7 +9,7 @@ public class MyJPanel extends JPanel
     protected void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-        Image image = getToolkit().getImage("src/main/java/pl/project/java/bus2.jpg");
+        Image image = getToolkit().getImage("src/main/resources/bus2.jpg");
         g.drawImage(image, 0,0, this);
     }
 }

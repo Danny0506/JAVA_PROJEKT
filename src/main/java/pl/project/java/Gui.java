@@ -89,13 +89,13 @@ public class Gui extends JFrame implements ActionListener {
     protected BusStop busStop1, busStop2, busStop3, busStop4, busStop5, busStop6, busStop7, busStop8, busStop9, busStop10, busStop11, busStop12, busStop13, busStop14, busStop15, busStop16, busStop17, busStop18, busStop19, busStop20, busStop21, busStop22, busStop23, busStop24, busStop25, busStop26, busStop27, busStop28, busStop29, busStop30, busStop31, busStop32, busStop33, busStop34, busStop35, busStop36, busStop37, busStop38, busStop39, busStop40, busStop41, busStop42, busStop43, busStop44, busStop45, busStop46, busStop47, busStop48, busStop49, busStop50, busStop51, busStop52, busStop53, busStop54, busStop55, busStop56, busStop57, busStop58, busStop59, busStop60, busStop61, busStop62, busStop63, busStop64, busStop65, busStop66, busStop67, busStop68, busStop69, busStop70, busStop71, busStop72, busStop73, busStop75, busStop74, busStop76, busStop77, busStop78, busStop79, busStop80, busStop81, busStop82, busStop83, busStop84, busStop85, busStop86, busStop87, busStop88, busStop89, busStop90, busStop91, busStop92, busStop93, busStop94, busStop95, busStop96, busStop97, busStop98, busStop99, busStop100, busStop101, busStop102, busStop103, busStop104, busStop105, busStop106, busStop107, busStop108, busStop109, busStop110, busStop111, busStop112, busStop113, busStop114, busStop115, busStop116, busStop117, busStop118, busStop119, busStop120, busStop121, busStop122, busStop123, busStop124, busStop125, busStop126, busStop127, busStop132, busStop128, busStop129, busStop130, busStop131, busStop133, busStop134, busStop135, busStop136, busStop137, busStop138, busStop139, busStop140;
 
     public Gui() throws UnsupportedAudioFileException {
-        frame.setIconImage(new ImageIcon("src/main/java/pl/project/java/bus.jpg").getImage());
+        frame.setIconImage(new ImageIcon("src/main/resources/bus.jpg").getImage());
         panel.setLayout(cardLayout);
         frame.setBounds(0, 0, 720, 1280);
         frame.setResizable(false);
-        init();
         createNewBus();
         createNewBusStop();
+        init();
         audio();
         button.addActionListener(e -> cardLayout.show(panel, "2"));
         button1.addActionListener(e -> cardLayout.show(panel, "3"));
@@ -306,8 +306,8 @@ public class Gui extends JFrame implements ActionListener {
     }
 
     private void audio() throws UnsupportedAudioFileException {
-        File soundFile = new File("src/main/java/pl/project/java/Jason Derulo - Lifestyle (feat. Adam Levine) [Official Dance Video].wav");
-        File soundFile2 = new File("src/main/java/pl/project/java/Jason-Derulo-Take-You-Dancing-_Official-Dance-Video_.wav");
+        File soundFile = new File("src/main/resources/Jason Derulo - Lifestyle (feat. Adam Levine) [Official Dance Video].wav");
+        File soundFile2 = new File("src/main/resources/Jason-Derulo-Take-You-Dancing-_Official-Dance-Video_.wav");
 
         try {
             AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
@@ -324,7 +324,8 @@ public class Gui extends JFrame implements ActionListener {
         }
     }
 
-    protected void createNewBus() {
+    protected void createNewBus()
+    {
         bus = new Bus(1, "Bukówka", "Pietraszki");
         bus1 = new Bus(2, "Sukowska", "Kolberga");
         bus2 = new Bus(3, "Borków", "Kaczmarka");
@@ -337,7 +338,8 @@ public class Gui extends JFrame implements ActionListener {
         bus9 = new Bus(10, "Ciekoty Żeromszczyzna", "Dworzec Autobusowy");
     }
 
-    protected void createNewBusStop() {
+    protected void createNewBusStop()
+    {
         busStop1 = new BusStop("05:15", "07:18", "13:45", "15:57", "18:32", "Kolberga", 5, "Szybowcowa");
         busStop2 = new BusStop("05:18", "07:25", "13:58", "16:13", "18:40", "1 Maja", 5, "Szybowcowa");
         busStop3 = new BusStop("05:24", "07:48", "14:10", "16:21", "18:53", "IX Wiekow Kielc", 5, "Szybowcowa");
