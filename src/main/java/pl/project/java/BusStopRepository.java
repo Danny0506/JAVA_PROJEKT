@@ -6,6 +6,10 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
+/**
+ * Klasa BusStopRepository, ktora dziedziczy po klasie BusRepository
+ * Pole statyczne, prywatne EntityManagerFactory factory tworzy
+ */
 public class BusStopRepository extends BusRepository {
 
     private static final EntityManagerFactory factory = Persistence.createEntityManagerFactory("BusBase");
