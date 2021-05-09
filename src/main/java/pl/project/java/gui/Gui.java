@@ -595,7 +595,14 @@ public class Gui extends JFrame implements ActionListener {
 
     /**
      * W metodzie actionPerformed sa obslugiwane wszystkie zdarzenia w aplikacji dla konkretnych przyciskow
+     * Adnotacja @Override oznacza nadpisanie metody
      * @param e oznacza obiekt ActionEvent, ktorego pozniej pobieramy zrodlo
+     * Nastepnie tworzymy obiekt localtime, aby pobrac obecna godzine z systemu
+     * Nastepnie dla kazdego przycisku typu JComboBox pobieramy obecnie wybrany indeks
+     * Nastepnie w tablicach przechowujemy nazwy przystankow autobusowych, kierunkow w jakie autobus sie porusza czy tez po prostu obiekty typu BusStop
+     * Kolejnym elementem w tej metodzie jest dodanie do JComboBoxow odpowiednich kierunkow podrozy autobusow, gdy zrodlem wcisniecia przyciskow bedzie przycisk comboBox
+     * To samo dzieje sie jezeli zrodlem wcisniecia przycisku jest comboBox4, lecz wtedy kierunki autobusowe dodawane sa do comboBox5 a nie comboBox2 jak wyzej
+     * Nastepnie gdy zrodlem bedzie comboBox5 to dla kazdego przypadku dodawane sa odpowiednie przystanki dla comboBox3
      */
     @Override
     public void actionPerformed(ActionEvent e) {
