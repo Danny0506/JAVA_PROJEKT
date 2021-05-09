@@ -603,6 +603,11 @@ public class Gui extends JFrame implements ActionListener {
      * Kolejnym elementem w tej metodzie jest dodanie do JComboBoxow odpowiednich kierunkow podrozy autobusow, gdy zrodlem wcisniecia przyciskow bedzie przycisk comboBox
      * To samo dzieje sie jezeli zrodlem wcisniecia przycisku jest comboBox4, lecz wtedy kierunki autobusowe dodawane sa do comboBox5 a nie comboBox2 jak wyzej
      * Nastepnie gdy zrodlem bedzie comboBox5 to dla kazdego przypadku dodawane sa odpowiednie przystanki dla comboBox3
+     * Nastepnie jesli zrodlem bedzie button4 to aplikacja obliczy jakie opoznienie ma kierowca autobusu dla podanego przystanka dla danej linii i kierunku jazdy, ktory wybierze uzytkownik
+     * Aplikacja za pomoca klasy LocalTime i metod dostepnych dla tej klasy ma mozliwosc odnalezienia przystanka, godziny i innych informacji, ktore sa pozniej wyswietlane dla uzytkownika
+     * Jezeli zrodlem bedzie button14 to aplikacja poprosi o podanie numeru linii i kierunku jazdy autobusu,a nastepnie wyswietli informacje o wszystkich odjazdach z przystankow wystepujacych na danej linii
+     * Natomiast gdy zrodlem bedzie button15 to aplikacja poprosi o podanie liczby minut i sekund po czym wyswietli informacje na temat najblizszych pieciu odjazdow po godzinie podanej przez uzytkownika
+     * Natomiast gdy zrodlem bedzie button17 to aplikacja poprosi o wybor przystanka z listy i wyswietli wszystkie odjazdy z niego niezaleznie od numerow linii czy kierunkow jazdy
      */
     @Override
     public void actionPerformed(ActionEvent e) {
