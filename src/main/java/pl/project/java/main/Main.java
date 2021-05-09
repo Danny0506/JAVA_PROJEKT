@@ -1,4 +1,6 @@
-package pl.project.java;
+package pl.project.java.main;
+
+import pl.project.java.repositories.BusStopRepository;
 
 import javax.sound.sampled.UnsupportedAudioFileException;
 

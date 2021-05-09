@@ -1,4 +1,6 @@
-package pl.project.java;
+package pl.project.java.repositories;
+
+import pl.project.java.gui.Gui;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

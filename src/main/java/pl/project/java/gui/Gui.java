@@ -1,4 +1,7 @@
-package pl.project.java;
+package pl.project.java.gui;
+
+import pl.project.java.entities.Bus;
+import pl.project.java.entities.BusStop;
 
 import javax.sound.sampled.*;
 import javax.swing.*;
@@ -113,7 +116,7 @@ public class Gui extends JFrame implements ActionListener {
      * @throws UnsupportedAudioFileException wyrzucenie wyjatku gdy mamy do czynienia z plikiem audio, ktorego format nie jest wspierany
      */
     public Gui() throws UnsupportedAudioFileException {
-        frame.setIconImage(new ImageIcon("src/main/resources/bus.jpg").getImage());
+        frame.setIconImage(new ImageIcon("src/main/resources/pictures/bus.jpg").getImage());
         panel.setLayout(cardLayout);
         frame.setResizable(false);
         frame.setBounds(0, 0, 1280, 720);
@@ -134,6 +137,11 @@ public class Gui extends JFrame implements ActionListener {
         frame.setLocationRelativeTo(null);
     }
 
+    /**
+     * Metoda action zawiera w sobie obslugi zdarzen dla wszystkich przyciskow dostepnych w aplikacji oraz przyciskow typow JComboBox
+     * Dla zwyklych buttonow wywolano zdarzenia polegajace na zmianie wyswietlanego panelu w aktualnym momencie oraz wybraniu opcji z menu czy podmenu
+     * Dla przyciskow JComboBox wywolano zdarzenia, ktore polegaja na wybarniu jednej z dostepnych opcji
+     */
     private void action()
     {
         button.addActionListener(e -> cardLayout.show(panel, "2"));
@@ -164,6 +172,9 @@ public class Gui extends JFrame implements ActionListener {
         button17.addActionListener(this);
     }
 
+    /**
+     * Metoda initButtons inicjuje wszystkie przyciski typu Button w aplikacji. Ustalany jest tutaj rozmiar, kolor oraz wspolrzedne rozmieszczenia przycisku
+     */
     private void initButtons()
     {
         button.setBackground(Color.green);
@@ -201,6 +212,9 @@ public class Gui extends JFrame implements ActionListener {
         button17.setBounds(836, 200, 250, 40);
     }
 
+    /**
+     * W metodzie initLabels inicjowane sa wszystkie labele dostepne w aplikacji. Ustalana jest czcionka, rozmiar czy rozmieszczenie na panelu konkretnych napisow
+     */
     private void initLabels()
     {
         label.setBounds(210, -250, 900, 600);
@@ -255,6 +269,9 @@ public class Gui extends JFrame implements ActionListener {
         label28.setBounds(915, 160, 180, 33);
     }
 
+    /**
+     * W metodzie initComboBoxes inicjowane sa przyciski typu JComcboBox, a dokladniej ich wielkosc i rozmieszczenie na panelach
+     */
     private void initComboBoxes()
     {
         comboBox.setBounds(150, 300, 180, 33);
@@ -265,6 +282,10 @@ public class Gui extends JFrame implements ActionListener {
         comboBox8.setBounds(500, 200, 270, 40);
     }
 
+    /**
+     * W metodzie initTextAreas inicjowane sa pola typu jTextArea, ktore beda przechowywac bardzo dlugie wiadomosci tekstowe. Ustalany jest tutaj rozmiar czcionki, kolor tla czy tez brak mozliwosci edytowania wiadomosci wygenerowanej dla uzytkownika przez aplikacje
+     * Dodatkowo dla jednego pola jTextArea mamy dodany jScrollPane, aby mozna bylo przewijac cala zawartosc pola jTextArea
+     */
     private void initTextAreas()
     {
         jTextArea.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
@@ -279,6 +300,9 @@ public class Gui extends JFrame implements ActionListener {
         jScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
     }
 
+    /**
+     * W metodzie initLayouts inicjujemy rodzaj layoutu dla kazdego panelu. Wszedzie oprocz panelu czwartego ustawiamy layout na null czyli panel bez layoutu. W tym jedynym przypadky bylo konieczne ustawienie layoutu z powodu uzycia jScrollPane
+     */
     private void initLayouts()
     {
         myJPanel.setLayout(null);
@@ -289,6 +313,9 @@ public class Gui extends JFrame implements ActionListener {
         myJPanel6.setLayout(null);
     }
 
+    /**
+     * W metodzie panelService mamy obsluge panelow dostepnych w aplikacji. Dla macierzystego panelu dodane sa inne panele, ktore maja swoj numer, aby rozroznic przelaczanie miedzy innymi oknami
+     */
     private void panelService()
     {
         panel.add(myJPanel);
@@ -301,6 +328,10 @@ public class Gui extends JFrame implements ActionListener {
         panel.add(myJPanel6, "6");
         cardLayout.show(panel, "1");
     }
+
+    /**
+     * W metodzie addElementsToPanels do kazdego z paneli dodawane sa labele, buttony oraz inne niezbedne obiekty, ktore sa potrzebne do obslugi aplikacji przez uzytkownika
+     */
     private void addElementsToPanels()
     {
         myJPanel.add(button);
@@ -363,9 +394,16 @@ public class Gui extends JFrame implements ActionListener {
         myJPanel6.add(jTextArea2);
     }
 
+    /**
+     * W metodzie audio tworzymy dwa obiekty typu File, ktore przechowuja sciezke do plikow audio formatu wav
+     * Nastepnie kazdy z tych plikow dodajemy do mozliwosci odtworzenia w aplikacji
+     * Nastepnie obydwa pliki dodajemy do siebie, aby po jednym pliku audio zaczal sie kolejny
+     * Ustalmy glosnosc odtwarzania plikow audio oraz zapetlamy ich odtwarzanie
+     * @throws UnsupportedAudioFileException wyrzucenie wyjatku gdy mamy do czynienia z plikiem audio, ktorego format nie jest wspierany
+     */
     private void audio() throws UnsupportedAudioFileException {
-        File soundFile = new File("src/main/resources/Jason Derulo - Lifestyle (feat. Adam Levine) [Official Dance Video].wav");
-        File soundFile2 = new File("src/main/resources/Jason-Derulo-Take-You-Dancing-_Official-Dance-Video_.wav");
+        File soundFile = new File("src/main/resources/songs/Jason Derulo - Lifestyle (feat. Adam Levine) [Official Dance Video].wav");
+        File soundFile2 = new File("src/main/resources/songs/Jason-Derulo-Take-You-Dancing-_Official-Dance-Video_.wav");
 
         try {
             AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
@@ -382,6 +420,9 @@ public class Gui extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * W metodzie createNewBus tworzymy 10 obiektow autobusow, ktore przechowuja dane odpowiednie dla siebie
+     */
     protected void createNewBus()
     {
         bus = new Bus(1, "Bukówka", "Pietraszki");
@@ -396,6 +437,9 @@ public class Gui extends JFrame implements ActionListener {
         bus9 = new Bus(10, "Ciekoty Żeromszczyzna", "Dworzec Autobusowy");
     }
 
+    /**
+     * W metodzie createNewBusStop tworzymy 140 obiektow przystankow, ktore przechowuja dane odpowiednie dla siebie
+     */
     protected void createNewBusStop()
     {
         busStop1 = new BusStop("05:15", "07:18", "13:45", "15:57", "18:32", "Kolberga", 5, "Szybowcowa");
@@ -549,6 +593,10 @@ public class Gui extends JFrame implements ActionListener {
         busStop140 = new BusStop("06:13", "13:27", "16:59", "20:26", "22:51", "Dworzec Autobusowy", 10, "Dworzec Autobusowy");
     }
 
+    /**
+     * W metodzie actionPerformed sa obslugiwane wszystkie zdarzenia w aplikacji dla konkretnych przyciskow
+     * @param e oznacza obiekt ActionEvent, ktorego pozniej pobieramy zrodlo
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();

@@ -1,4 +1,4 @@
-package pl.project.java;
+package pl.project.java.entities;
 
 import javax.persistence.*;
 import java.util.Set;
