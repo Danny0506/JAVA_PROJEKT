@@ -1,2 +1,2 @@
 # JAVA_PROJEKT
-still in progress
+Project is complete
