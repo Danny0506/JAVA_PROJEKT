@@ -30,60 +30,60 @@ import java.util.*;
  * Ostatnim polem w klasie sa obiekty typu BusStop przedstawiajace pojedynczy przystanek autobusowy
  */
 public class Gui extends JFrame implements ActionListener {
-    JFrame frame = new JFrame("System Obsługi Komunikacji Miejskiej");
-    private final JLabel label = new JLabel("WITAMY W SYSTEMIE OBSŁUGI KOMUNIKACJI MIEJSKIEJ");
-    private final JLabel label1 = new JLabel("Część Aplikacji przeznaczona dla Kierowców Autobusów");
-    private final JLabel label2 = new JLabel("Część Aplikacji przeznaczona dla Pasażerów Komunikacji Miejskiej");
+    JFrame frame = new JFrame("System Obslugi Komunikacji Miejskiej");
+    private final JLabel label = new JLabel("WITAMY W SYSTEMIE OBSLUGI KOMUNIKACJI MIEJSKIEJ");
+    private final JLabel label1 = new JLabel("Czesc Aplikacji przeznaczona dla Kierowcow Autobusow");
+    private final JLabel label2 = new JLabel("Czesc Aplikacji przeznaczona dla Pasazerow Komunikacji Miejskiej");
     private final JLabel label3 = new JLabel("WITAMY W STREFIE KIEROWCY ZTM/MPK");
-    private final JLabel label4 = new JLabel("WITAMY W STREFIE PASAŻERA");
+    private final JLabel label4 = new JLabel("WITAMY W STREFIE PASAZERA");
     private final JLabel label5 = new JLabel("Wybierz numer linii:");
-    private final JLabel label6 = new JLabel("W tej części aplikacji możesz odpytać jakie kierowca ma opóźnienie do przystanku, który wybierze w aplikacji");
-    private final JLabel label7 = new JLabel("Wybierz kierunek podróży:");
+    private final JLabel label6 = new JLabel("W tej czesci aplikacji możesz odpytac jakie kierowca ma opoznienie do przystanku, który wybierze w aplikacji");
+    private final JLabel label7 = new JLabel("Wybierz kierunek podrozy:");
     private final JLabel label8 = new JLabel("Wybierz przystanek:");
     private final JLabel label9 = new JLabel();
-    private final JLabel label10 = new JLabel("Wybierz kryterium, po którym chcesz znaleźć autobus, którego szukasz");
+    private final JLabel label10 = new JLabel("Wybierz kryterium, po ktorym chcesz znalezc autobus, ktorego szukasz");
     private final JLabel label11 = new JLabel("ANIE AUTOBUSU PO NUMER");
-    private final JLabel label12 = new JLabel("SZUKANIE AUTOBUSU PO GODZINIE PODANEJ PRZEZ PASAŻERA");
+    private final JLabel label12 = new JLabel("SZUKANIE AUTOBUSU PO GODZINIE PODANEJ PRZEZ PASAZERA");
     private final JLabel label13 = new JLabel("SZUKANIE AUTOBUSU PO KONKRETNYM PRZYSTANKU");
-    private final JLabel label14 = new JLabel("          W tej części aplikacji możesz wybrać numer linii, a nas");
-    private final JLabel label15 = new JLabel("W tej części apliakcji należy wybrać godzinę oraz liczbę minut, a aplikacja znajdzie 5 najbliższych odjazdów, które wystąpią o danej godzinie lub po godzinie podanej przez pasażera");
-    private final JLabel label16 = new JLabel("Należy wybrać przystanek z listy dostępnej w bazie, a następnie aplikacja poda numer linii wraz z kierunkem podróży oraz godziną odjazdu z wybranego przystanku");
-    private final JLabel label17 = new JLabel("                      Wybierz kierunek podróży:");
+    private final JLabel label14 = new JLabel("          W tej czesci aplikacji możesz wybrać numer linii, a nas");
+    private final JLabel label15 = new JLabel("W tej części apliakcji należy wybrac godzine oraz liczbe minut, a aplikacja znajdzie 5 najblizszych odjazdow, które wystąpia o danej godzinie lub po godzinie podanej przez pasazera");
+    private final JLabel label16 = new JLabel("Nalezy wybrac przystanek z listy dostępnej w bazie, a następnie aplikacja poda numer linii wraz z kierunkem podrozy oraz godzina odjazdu z wybranego przystanku");
+    private final JLabel label17 = new JLabel("                      Wybierz kierunek podrozy:");
     private final JLabel label18 = new JLabel("                   Wybierz numer linii:");
     private final JLabel label19 = new JLabel("                                          SZUK");
     private final JLabel label20 = new JLabel("ZE  LINII");
     private final JLabel label21 = new JLabel();
-    private final JLabel label22 = new JLabel("tępnie kierunek który cię interesuje, a aplikacja zwróci wszy");
-    private final JLabel label23 = new JLabel("stkie przystanki tej linii wraz z godziną odjazdu z nich");
+    private final JLabel label22 = new JLabel("tepnie kierunek ktory cię interesuje, a aplikacja zwroci wszy");
+    private final JLabel label23 = new JLabel("stkie przystanki tej linii wraz z godzina odjazdu z nich");
     private final JLabel label24 = new JLabel("                                                         ");
     private final JLabel label25 = new JLabel("                                                         ");
     private final JLabel label26 = new JLabel("                                                         ");
-    private final JLabel label27 = new JLabel("Wybierz godzinę:");
-    private final JLabel label28 = new JLabel("Wybierz ilość minut:");
+    private final JLabel label27 = new JLabel("Wybierz godzine:");
+    private final JLabel label28 = new JLabel("Wybierz ilosc minut:");
     private final JLabel label29 = new JLabel();
-    private final JLabel label30 = new JLabel("UWAGA!!! W przypadku, gdy odbędzie się mniej niż 5 odjazdów ze względu na porę dnia, zostaną wyświetlone wszystkie odjazdy, które pozostały");
+    private final JLabel label30 = new JLabel("UWAGA!!! W przypadku, gdy odbedzie się mniej niz 5 odjazdow ze względu na pore dnia, zostaną wyswietlone wszystkie odjazdy, ktore pozostaly");
     private final JLabel label31 = new JLabel("Wybierz Przystanek:");
     private final JTextArea jTextArea = new JTextArea();
     private final JTextArea jTextArea2 = new JTextArea();
     private final JScrollPane jScrollPane = new JScrollPane(jTextArea);
     private final JButton button = new JButton("JESTEM KIEROWCĄ");
-    private final JButton button1 = new JButton("JESTEM PASAŻEREM");
-    private final JButton button2 = new JButton("WRÓĆ DO MENU GŁÓWNEGO");
-    private final JButton button3 = new JButton("WRÓĆ DO MENU GŁÓWNEGO");
-    private final JButton button4 = new JButton("SPRAWDŹ");
-    private final JButton button5 = new JButton("WRÓĆ DO MENU GŁÓWNEGO");
-    private final JButton button6 = new JButton("WRÓĆ DO MENU GŁÓWNEGO");
-    private final JButton button7 = new JButton("WRÓĆ DO MENU GŁÓWNEGO");
-    private final JButton button8 = new JButton("WYSZUKAJ POŁĄCZENIA PO NUMERZE LINII");
-    private final JButton button9 = new JButton("WYSZUKAJ POŁĄCZENIA PO GODZINIE");
-    private final JButton button10 = new JButton("WYSZUKAJ POŁĄCZENIA PO KONKRETNYM PRZYSTANKU");
-    private final JButton button11 = new JButton("WRÓĆ DO MENU KRYTERIÓW SZUKANIA AUTOBUSU");
-    private final JButton button12 = new JButton("WRÓĆ DO MENU KRYTERIÓW SZUKANIA AUTOBUSU");
-    private final JButton button13 = new JButton("WRÓĆ DO MENU KRYTERIÓW SZUKANIA AUTOBUSU");
-    private final JButton button14 = new JButton("SPRAWDŹ");
-    private final JButton button15 = new JButton("SPRAWDŹ");
-    private final JButton button16 = new JButton("SPRAWDŹ");
-    private final JButton button17 = new JButton("POKAŻ DOSTĘPNE PRZYSTANKI");
+    private final JButton button1 = new JButton("JESTEM PASAZEREM");
+    private final JButton button2 = new JButton("COFNIJ SIE DO MENU GLOWNEGO");
+    private final JButton button3 = new JButton("COFNIJ SIE DO MENU GLOWNEGO");
+    private final JButton button4 = new JButton("SPRAWDZ");
+    private final JButton button5 = new JButton("COFNIJ SIE DO MENU GLOWNEGO");
+    private final JButton button6 = new JButton("COFNIJ SIE DO MENU GLOWNEGO");
+    private final JButton button7 = new JButton("COFNIJ SIE DO MENU GLOWNEGO");
+    private final JButton button8 = new JButton("WYSZUKAJ POLACZENIA PO NUMERZE LINII");
+    private final JButton button9 = new JButton("WYSZUKAJ POLACZENIA PO GODZINIE");
+    private final JButton button10 = new JButton("WYSZUKAJ POLACZENIA PO KONKRETNYM PRZYSTANKU");
+    private final JButton button11 = new JButton("COFNIJ SIE DO MENU KRYTERIOW SZUKANIA AUTOBUSU");
+    private final JButton button12 = new JButton("COFNIJ SIE DO MENU KRYTERIOW SZUKANIA AUTOBUSU");
+    private final JButton button13 = new JButton("COFNIJ SIE DO MENU KRYTERIOW SZUKANIA AUTOBUSU");
+    private final JButton button14 = new JButton("SPRAWDZ");
+    private final JButton button15 = new JButton("SPRAWDZ");
+    private final JButton button16 = new JButton("SPRAWDZ");
+    private final JButton button17 = new JButton("POKAZ DOSTEPNE PRZYSTANKI");
     private final Integer[] numberOfBus = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     private final String[] minutes = {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"};
     private final String[] hours = {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"};
@@ -442,6 +442,7 @@ public class Gui extends JFrame implements ActionListener {
      */
     protected void createNewBusStop()
     {
+
         busStop1 = new BusStop("05:15", "07:18", "13:45", "15:57", "18:32", "Kolberga", 5, "Szybowcowa");
         busStop2 = new BusStop("05:18", "07:25", "13:58", "16:13", "18:40", "1 Maja", 5, "Szybowcowa");
         busStop3 = new BusStop("05:24", "07:48", "14:10", "16:21", "18:53", "IX Wiekow Kielc", 5, "Szybowcowa");
@@ -457,15 +458,15 @@ public class Gui extends JFrame implements ActionListener {
         busStop13 = new BusStop("07:12", "13:11", "15:52", "18:20", "20:47", "1 Maja", 5, "Kolberga");
         busStop14 = new BusStop("07:13", "13:27", "15:55", "18:26", "20:51", "Kolberga", 5, "Kolberga");
 
-        busStop15 = new BusStop("05:29", "08:55", "14:21", "18:24", "20:55", "Pietraszki", 1, "Bukówka");
-        busStop16 = new BusStop("05:45", "09:11", "14:40", "18:11", "21:11", "Kolonia I", 1, "Bukówka");
-        busStop17 = new BusStop("05:53", "09:18", "14:57", "18:23", "21:22", "Fabryczna", 1, "Bukówka");
-        busStop18 = new BusStop("06:11", "09:29", "15:17", "18:33", "21:30", "Krakowska Biesak", 1, "Bukówka");
-        busStop19 = new BusStop("06:29", "09:42", "15:35", "18:51", "21:52", "Jagielońska", 1, "Bukówka");
-        busStop20 = new BusStop("06:52", "09:55", "15:51", "18:58", "21:58", "Żytnia", 1, "Bukówka");
-        busStop21 = new BusStop("07:11", "10:17", "16:15", "19:11", "22:22", "Bukówka", 1, "Bukówka");
-        busStop22 = new BusStop("07:20", "10:29", "16:23", "19:23", "22:32", "Bukówka", 1, "Pietraszki");
-        busStop23 = new BusStop("07:51", "11:21", "16:32", "19:35", "22:40", "Żytnia", 1, "Pietraszki");
+        busStop15 = new BusStop("05:29", "08:55", "14:21", "18:24", "20:55", "Pietraszki", 1, "Bukowka");
+        busStop16 = new BusStop("05:45", "09:11", "14:40", "18:11", "21:11", "Kolonia I", 1, "Bukowka");
+        busStop17 = new BusStop("05:53", "09:18", "14:57", "18:23", "21:22", "Fabryczna", 1, "Bukowka");
+        busStop18 = new BusStop("06:11", "09:29", "15:17", "18:33", "21:30", "Krakowska Biesak", 1, "Bukowka");
+        busStop19 = new BusStop("06:29", "09:42", "15:35", "18:51", "21:52", "Jagielońska", 1, "Bukowka");
+        busStop20 = new BusStop("06:52", "09:55", "15:51", "18:58", "21:58", "Zytnia", 1, "Bukowka");
+        busStop21 = new BusStop("07:11", "10:17", "16:15", "19:11", "22:22", "Bukowka", 1, "Bukowka");
+        busStop22 = new BusStop("07:20", "10:29", "16:23", "19:23", "22:32", "Bukowka", 1, "Pietraszki");
+        busStop23 = new BusStop("07:51", "11:21", "16:32", "19:35", "22:40", "Zytnia", 1, "Pietraszki");
         busStop24 = new BusStop("07:59", "11:45", "16:55", "19:47", "22:47", "Jagielońska", 1, "Pietraszki");
         busStop25 = new BusStop("08:10", "12:12", "16:59", "19:59", "22:58", "Krakowska Biesak", 1, "Pietraszki");
         busStop26 = new BusStop("08:16", "12:56", "17:28", "20:10", "23:14", "Fabryczna", 1, "Pietraszki");
@@ -473,43 +474,43 @@ public class Gui extends JFrame implements ActionListener {
         busStop28 = new BusStop("08:34", "13:58", "18:11", "20:41", "23:47", "Pietraszki", 1, "Pietraszki");
 
         busStop29 = new BusStop("05:45", "08:55", "14:14", "18:17", "21:37", "Kolberga", 2, "Sukowska");
-        busStop30 = new BusStop("05:53", "09:11", "14:21", "18:29", "21:47", "Hoża", 2, "Sukowska");
-        busStop31 = new BusStop("06:10", "09:19", "14:34", "18:43", "21:59", "Jagielońska", 2, "Sukowska");
-        busStop32 = new BusStop("06:21", "09:21", "14:55", "19:11", "22:17", "Żytnia", 2, "Sukowska");
+        busStop30 = new BusStop("05:53", "09:11", "14:21", "18:29", "21:47", "Hoza", 2, "Sukowska");
+        busStop31 = new BusStop("06:10", "09:19", "14:34", "18:43", "21:59", "Jagielonska", 2, "Sukowska");
+        busStop32 = new BusStop("06:21", "09:21", "14:55", "19:11", "22:17", "Zytnia", 2, "Sukowska");
         busStop33 = new BusStop("06:32", "09:40", "15:13", "19:26", "22:25", "Sciegiennego", 2, "Sukowska");
         busStop34 = new BusStop("06:51", "10:11", "15:24", "19:33", "22:39", "Kalinowa", 2, "Sukowska");
         busStop35 = new BusStop("06:59", "10:26", "15:45", "19:41", "22:53", "Sukowska", 2, "Sukowska");
         busStop36 = new BusStop("07:21", "10:51", "16:10", "19:55", "22:58", "Sukowska", 2, "Kolberga");
         busStop37 = new BusStop("07:39", "11:12", "16:24", "20:15", "23:15", "Kalinowa", 2, "Kolberga");
         busStop38 = new BusStop("07:55", "11:30", "16:41", "20:24", "23:26", "Sciegiennego", 2, "Kolberga");
-        busStop39 = new BusStop("08:14", "12:21", "16:59", "20:49", "23:43", "Żytnia", 2, "Kolberga");
+        busStop39 = new BusStop("08:14", "12:21", "16:59", "20:49", "23:43", "Zytnia", 2, "Kolberga");
         busStop40 = new BusStop("08:20", "12:45", "17:23", "20:58", "23:48", "Jagielońska", 2, "Kolberga");
-        busStop41 = new BusStop("08:24", "13:27", "17:52", "21:10", "23:57", "Hoża", 2, "Kolberga");
+        busStop41 = new BusStop("08:24", "13:27", "17:52", "21:10", "23:57", "Hoza", 2, "Kolberga");
         busStop42 = new BusStop("08:35", "13:55", "18:14", "21:26", "23:59", "Kolberga", 2, "Kolberga");
 
-        busStop43 = new BusStop("04:45", "08:24", "13:23", "17:17", "19:55", "Kaczmarka", 3, "Borków");
-        busStop44 = new BusStop("04:58", "08:32", "13:47", "17:28", "20:11", "Żytnia", 3, "Borków");
-        busStop45 = new BusStop("05:11", "08:48", "13:59", "17:40", "20:23", "IX Wiekow Kielc", 3, "Borków");
-        busStop46 = new BusStop("05:26", "08:59", "14:21", "17:53", "20:35", "Tarnowska", 3, "Borków");
-        busStop47 = new BusStop("05:49", "09:11", "14:45", "17:59", "20:46", "Wrzosowa", 3, "Borków");
-        busStop48 = new BusStop("06:12", "09:30", "14:57", "18:11", "20:59", "Suków", 3, "Borków");
-        busStop49 = new BusStop("06:26", "10:17", "15:13", "18:14", "21:11", "Borków", 3, "Borków");
-        busStop50 = new BusStop("06:47", "10:34", "15:26", "18:26", "21:26", "Borków", 3, "Kaczmarka");
-        busStop51 = new BusStop("06:59", "11:12", "15:45", "18:37", "21:45", "Suków", 3, "Kaczmarka");
+        busStop43 = new BusStop("04:45", "08:24", "13:23", "17:17", "19:55", "Kaczmarka", 3, "Borkow");
+        busStop44 = new BusStop("04:58", "08:32", "13:47", "17:28", "20:11", "Zytnia", 3, "Borkow");
+        busStop45 = new BusStop("05:11", "08:48", "13:59", "17:40", "20:23", "IX Wiekow Kielc", 3, "Borkow");
+        busStop46 = new BusStop("05:26", "08:59", "14:21", "17:53", "20:35", "Tarnowska", 3, "Borkow");
+        busStop47 = new BusStop("05:49", "09:11", "14:45", "17:59", "20:46", "Wrzosowa", 3, "Borkow");
+        busStop48 = new BusStop("06:12", "09:30", "14:57", "18:11", "20:59", "Sukow", 3, "Borkow");
+        busStop49 = new BusStop("06:26", "10:17", "15:13", "18:14", "21:11", "Borkow", 3, "Borkow");
+        busStop50 = new BusStop("06:47", "10:34", "15:26", "18:26", "21:26", "Borkow", 3, "Kaczmarka");
+        busStop51 = new BusStop("06:59", "11:12", "15:45", "18:37", "21:45", "Sukow", 3, "Kaczmarka");
         busStop52 = new BusStop("07:11", "11:30", "15:54", "18:44", "21:58", "Wrzosowa", 3, "Kaczmarka");
         busStop53 = new BusStop("07:27", "11:41", "16:12", "18:59", "22:16", "Tarnowska", 3, "Kaczmarka");
         busStop54 = new BusStop("07:44", "11:58", "16:28", "19:11", "22:55", "IX Wiekow Kielc", 3, "Kaczmarka");
-        busStop55 = new BusStop("07:56", "12:41", "16:42", "19:23", "23:12", "Żytnia", 3, "Kaczmarka");
+        busStop55 = new BusStop("07:56", "12:41", "16:42", "19:23", "23:12", "Zytnia", 3, "Kaczmarka");
         busStop56 = new BusStop("08:13", "13:10", "16:55", "19:42", "23:44", "Kaczmarka", 3, "Kaczmarka");
 
-        busStop57 = new BusStop("04:15", "06:18", "13:52", "17:37", "20:32", "al. Na Stadion", 4, "Zagnańska Areszt");
-        busStop58 = new BusStop("04:18", "06:25", "14:15", "17:59", "20:40", "Pakosz", 4, "Zagnańska Areszt");
-        busStop59 = new BusStop("04:24", "06:48", "14:26", "18:26", "20:53", "Krakowska", 4, "Zagnańska Areszt");
-        busStop60 = new BusStop("04:33", "07:21", "14:48", "18:33", "21:10", "Seminaryjska", 4, "Zagnańska Areszt");
-        busStop61 = new BusStop("04:45", "07:55", "14:58", "18:45", "21:21", "Tarnowska", 4, "Zagnańska Areszt");
-        busStop62 = new BusStop("04:59", "08:41", "15:15", "18:57", "21:32", "Jesionowa", 4, "Zagnańska Areszt");
-        busStop63 = new BusStop("05:11", "09:22", "15:26", "19:11", "21:42", "Zagnańska Areszt", 4, "Zagnańska Areszt");
-        busStop64 = new BusStop("05:20", "10:44", "15:45", "19:25", "21:50", "Zagnańska Areszt", 4, "al. Na Stadion");
+        busStop57 = new BusStop("04:15", "06:18", "13:52", "17:37", "20:32", "al. Na Stadion", 4, "Zagnanska Areszt");
+        busStop58 = new BusStop("04:18", "06:25", "14:15", "17:59", "20:40", "Pakosz", 4, "Zagnanska Areszt");
+        busStop59 = new BusStop("04:24", "06:48", "14:26", "18:26", "20:53", "Krakowska", 4, "Zagnanska Areszt");
+        busStop60 = new BusStop("04:33", "07:21", "14:48", "18:33", "21:10", "Seminaryjska", 4, "Zagnanska Areszt");
+        busStop61 = new BusStop("04:45", "07:55", "14:58", "18:45", "21:21", "Tarnowska", 4, "Zagnanska Areszt");
+        busStop62 = new BusStop("04:59", "08:41", "15:15", "18:57", "21:32", "Jesionowa", 4, "Zagnanska Areszt");
+        busStop63 = new BusStop("05:11", "09:22", "15:26", "19:11", "21:42", "Zagnanska Areszt", 4, "Zagnanska Areszt");
+        busStop64 = new BusStop("05:20", "10:44", "15:45", "19:25", "21:50", "Zagnanska Areszt", 4, "al. Na Stadion");
         busStop65 = new BusStop("05:37", "11:12", "15:59", "19:35", "21:59", "Jesionowa", 4, "al. Na Stadion");
         busStop66 = new BusStop("05:48", "11:30", "16:12", "19:47", "22:12", "Tarnowska", 4, "al. Na Stadion");
         busStop67 = new BusStop("05:57", "11:46", "16:23", "19:59", "22:23", "Seminaryjska", 4, "al. Na Stadion");
@@ -517,14 +518,14 @@ public class Gui extends JFrame implements ActionListener {
         busStop69 = new BusStop("06:10", "13:13", "16:52", "20:20", "22:47", "Pakosz", 4, "al. Na Stadion");
         busStop70 = new BusStop("06:13", "13:27", "16:59", "20:26", "22:51", "al. Na Stadion", 4, "al. Na Stadion");
 
-        busStop71 = new BusStop("05:15", "07:18", "13:45", "15:57", "18:32", "Dworzec Autobusowy", 6, "Niestachów pętla");
-        busStop72 = new BusStop("05:18", "07:25", "13:58", "16:10", "18:40", "Czarnowska", 6, "Niestachów pętla");
-        busStop73 = new BusStop("05:24", "07:48", "14:10", "16:21", "18:53", "Sandomierska", 6, "Niestachów pętla");
-        busStop74 = new BusStop("05:33", "08:21", "14:21", "16:33", "19:11", "Cedzyna", 6, "Niestachów pętla");
-        busStop75 = new BusStop("05:45", "08:55", "14:38", "16:41", "19:21", "Radlin", 6, "Niestachów pętla");
-        busStop76 = new BusStop("05:59", "09:41", "14:55", "16:57", "19:32", "Radlin/Niestachów", 6, "Niestachów pętla");
-        busStop77 = new BusStop("06:10", "10:22", "15:11", "17:11", "19:42", "Niestachów pętla", 6, "Niestachów pętla");
-        busStop78 = new BusStop("06:20", "11:44", "15:18", "17:25", "19:50", "Niestachów pętla", 6, "Dworzec Autobusowy");
+        busStop71 = new BusStop("05:15", "07:18", "13:45", "15:57", "18:32", "Dworzec Autobusowy", 6, "Niestachów petla");
+        busStop72 = new BusStop("05:18", "07:25", "13:58", "16:10", "18:40", "Czarnowska", 6, "Niestachów petla");
+        busStop73 = new BusStop("05:24", "07:48", "14:10", "16:21", "18:53", "Sandomierska", 6, "Niestachów petla");
+        busStop74 = new BusStop("05:33", "08:21", "14:21", "16:33", "19:11", "Cedzyna", 6, "Niestachów petla");
+        busStop75 = new BusStop("05:45", "08:55", "14:38", "16:41", "19:21", "Radlin", 6, "Niestachów petla");
+        busStop76 = new BusStop("05:59", "09:41", "14:55", "16:57", "19:32", "Radlin/Niestachow", 6, "Niestachów petla");
+        busStop77 = new BusStop("06:10", "10:22", "15:11", "17:11", "19:42", "Niestachów petla", 6, "Niestachów petla");
+        busStop78 = new BusStop("06:20", "11:44", "15:18", "17:25", "19:50", "Niestachów petla", 6, "Dworzec Autobusowy");
         busStop79 = new BusStop("06:37", "12:12", "15:29", "17:35", "19:59", "Radlin/Niestachów", 6, "Dworzec Autobusowy");
         busStop80 = new BusStop("06:48", "12:30", "15:37", "17:47", "20:12", "Radlin", 6, "Dworzec Autobusowy");
         busStop81 = new BusStop("06:57", "12:46", "15:45", "17:59", "20:23", "Cedzyna", 6, "Dworzec Autobusowy");
@@ -532,60 +533,60 @@ public class Gui extends JFrame implements ActionListener {
         busStop83 = new BusStop("07:10", "13:13", "15:52", "18:20", "20:47", "Czarnowska", 6, "Dworzec Autobusowy");
         busStop84 = new BusStop("07:13", "13:27", "15:55", "18:26", "20:51", "Dworzec Autobusowy", 6, "Dworzec Autobusowy");
 
-        busStop85 = new BusStop("05:29", "08:55", "14:21", "18:17", "20:55", "Dworzec Autobusowy", 7, "Zagnańsk Szkoła");
-        busStop86 = new BusStop("05:45", "09:11", "14:40", "18:21", "21:11", "Czarnowska", 7, "Zagnańsk Szkoła");
-        busStop87 = new BusStop("05:53", "09:18", "14:57", "18:23", "21:22", "Jesionowa", 7, "Zagnańsk Szkoła");
-        busStop88 = new BusStop("06:11", "09:29", "15:17", "18:33", "21:30", "Warszawska/Uroczysko", 7, "Zagnańsk Szkoła");
-        busStop89 = new BusStop("06:29", "09:42", "15:35", "18:51", "21:52", "Dąbrowa", 7, "Zagnańsk Szkoła");
-        busStop90 = new BusStop("06:52", "09:55", "15:51", "18:57", "21:58", "Kajetanów", 7, "Zagnańsk Szkoła");
-        busStop91 = new BusStop("07:11", "10:17", "16:12", "19:11", "22:22", "Zagnańsk Szkoła", 7, "Zagnańsk Szkoła");
-        busStop92 = new BusStop("07:20", "10:29", "16:23", "19:23", "22:32", "Zagnańsk Szkoła", 7, "Dworzec Autobusowy");
-        busStop93 = new BusStop("07:51", "11:11", "16:32", "19:35", "22:40", "Kajetanów", 7, "Dworzec Autobusowy");
-        busStop94 = new BusStop("07:59", "11:45", "16:55", "19:47", "22:47", "Dąbrowa", 7, "Dworzec Autobusowy");
+        busStop85 = new BusStop("05:29", "08:55", "14:21", "18:17", "20:55", "Dworzec Autobusowy", 7, "Zagnansk Szkola");
+        busStop86 = new BusStop("05:45", "09:11", "14:40", "18:21", "21:11", "Czarnowska", 7, "Zagnansk Szkola");
+        busStop87 = new BusStop("05:53", "09:18", "14:57", "18:23", "21:22", "Jesionowa", 7, "Zagnansk Szkola");
+        busStop88 = new BusStop("06:11", "09:29", "15:17", "18:33", "21:30", "Warszawska/Uroczysko", 7, "Zagnansk Szkola");
+        busStop89 = new BusStop("06:29", "09:42", "15:35", "18:51", "21:52", "Dabrowa", 7, "Zagnansk Szkola");
+        busStop90 = new BusStop("06:52", "09:55", "15:51", "18:57", "21:58", "Kajetanów", 7, "Zagnansk Szkola");
+        busStop91 = new BusStop("07:11", "10:17", "16:12", "19:11", "22:22", "Zagnansk Szkola", 7, "Zagnansk Szkola");
+        busStop92 = new BusStop("07:20", "10:29", "16:23", "19:23", "22:32", "Zagnansk Szkola", 7, "Dworzec Autobusowy");
+        busStop93 = new BusStop("07:51", "11:11", "16:32", "19:35", "22:40", "Kajetanow", 7, "Dworzec Autobusowy");
+        busStop94 = new BusStop("07:59", "11:45", "16:55", "19:47", "22:47", "Dabrowa", 7, "Dworzec Autobusowy");
         busStop95 = new BusStop("08:10", "12:12", "16:59", "19:59", "22:58", "Warszawska/Uroczysko", 7, "Dworzec Autobusowy");
         busStop96 = new BusStop("08:16", "12:56", "17:28", "20:10", "23:14", "Jesionowa", 7, "Dworzec Autobusowy");
         busStop97 = new BusStop("08:22", "13:44", "17:46", "20:25", "23:24", "Czarnowska", 7, "Dworzec Autobusowy");
         busStop98 = new BusStop("08:34", "13:58", "18:11", "20:41", "23:47", "Dworzec Autobusowy", 7, "Dworzec Autobusowy");
 
-        busStop99 = new BusStop("05:45", "08:55", "14:12", "18:17", "21:37", "Os. Ślichowice", 8, "Żniwna");
-        busStop100 = new BusStop("05:53", "09:11", "14:21", "18:29", "21:47", "Grunwaldzka", 8, "Żniwna");
-        busStop101 = new BusStop("06:10", "09:19", "14:34", "18:43", "21:59", "Żytnia", 8, "Żniwna");
-        busStop102 = new BusStop("06:21", "09:21", "14:55", "19:11", "22:17", "Seminaryjska", 8, "Żniwna");
-        busStop103 = new BusStop("06:32", "09:40", "15:15", "19:26", "22:25", "Zagórska", 8, "Żniwna");
-        busStop104 = new BusStop("06:51", "10:10", "15:24", "19:33", "22:39", "Poleska", 8, "Żniwna");
-        busStop105 = new BusStop("06:59", "10:26", "15:45", "19:41", "22:53", "Żniwna", 8, "Żniwna");
-        busStop106 = new BusStop("07:21", "10:51", "16:13", "19:55", "22:58", "Żniwna", 8, "Os. Ślichowice");
-        busStop107 = new BusStop("07:39", "11:12", "16:24", "20:12", "23:15", "Poleska", 8, "Os. Ślichowice");
-        busStop108 = new BusStop("07:48", "11:30", "16:41", "20:24", "23:26", "Zagórska", 8, "Os. Ślichowice");
-        busStop109 = new BusStop("08:14", "12:17", "16:59", "20:49", "23:43", "Seminaryjska", 8, "Os. Ślichowice");
-        busStop110 = new BusStop("08:20", "12:45", "17:23", "20:58", "23:48", "Żytnia", 8, "Os. Ślichowice");
-        busStop111 = new BusStop("08:24", "13:27", "17:52", "21:10", "23:57", "Grunwaldzka", 8, "Os. Ślichowice");
-        busStop112 = new BusStop("08:35", "13:55", "18:11", "21:26", "23:59", "Os. Ślichowice", 8, "Os. Ślichowice");
+        busStop99 = new BusStop("05:45", "08:55", "14:12", "18:17", "21:37", "Os. Slichowice", 8, "Zniwna");
+        busStop100 = new BusStop("05:53", "09:11", "14:21", "18:29", "21:47", "Grunwaldzka", 8, "Zniwna");
+        busStop101 = new BusStop("06:10", "09:19", "14:34", "18:43", "21:59", "Zytnia", 8, "Zniwna");
+        busStop102 = new BusStop("06:21", "09:21", "14:55", "19:11", "22:17", "Seminaryjska", 8, "Zniwna");
+        busStop103 = new BusStop("06:32", "09:40", "15:15", "19:26", "22:25", "Zagorska", 8, "Zniwna");
+        busStop104 = new BusStop("06:51", "10:10", "15:24", "19:33", "22:39", "Poleska", 8, "Zniwna");
+        busStop105 = new BusStop("06:59", "10:26", "15:45", "19:41", "22:53", "Zniwna", 8, "Zniwna");
+        busStop106 = new BusStop("07:21", "10:51", "16:13", "19:55", "22:58", "Zniwna", 8, "Os. Slichowice");
+        busStop107 = new BusStop("07:39", "11:12", "16:24", "20:12", "23:15", "Poleska", 8, "Os. Slichowice");
+        busStop108 = new BusStop("07:48", "11:30", "16:41", "20:24", "23:26", "Zagorska", 8, "Os. Slichowice");
+        busStop109 = new BusStop("08:14", "12:17", "16:59", "20:49", "23:43", "Seminaryjska", 8, "Os. Slichowice");
+        busStop110 = new BusStop("08:20", "12:45", "17:23", "20:58", "23:48", "Zytnia", 8, "Os. Slichowice");
+        busStop111 = new BusStop("08:24", "13:27", "17:52", "21:10", "23:57", "Grunwaldzka", 8, "Os. Slichowice");
+        busStop112 = new BusStop("08:35", "13:55", "18:11", "21:26", "23:59", "Os. Slichowice", 8, "Os. Slichowice");
 
-        busStop113 = new BusStop("04:45", "08:24", "13:23", "17:17", "19:55", "Os. Ślichowice", 9, "Ćmińsk");
-        busStop114 = new BusStop("04:58", "08:32", "13:47", "17:28", "20:11", "Czarnowska", 9, "Ćmińsk");
-        busStop115 = new BusStop("05:11", "08:48", "13:59", "17:40", "20:23", "Zagnańska", 9, "Ćmińsk");
-        busStop116 = new BusStop("05:26", "08:59", "14:21", "17:53", "20:35", "Łódzka", 9, "Ćmińsk");
-        busStop117 = new BusStop("05:49", "09:11", "14:45", "17:59", "20:46", "Kostomłoty", 9, "Ćmińsk");
-        busStop118 = new BusStop("06:12", "09:30", "14:57", "18:11", "20:59", "Miedziana Góra", 9, "Ćmińsk");
-        busStop119 = new BusStop("06:26", "10:16", "15:13", "18:14", "21:11", "Ćmińsk", 9, "Ćmińsk");
-        busStop120 = new BusStop("06:47", "10:34", "15:26", "18:26", "21:26", "Ćmińsk", 9, "Os. Ślichowice");
-        busStop121 = new BusStop("06:59", "11:12", "15:45", "18:37", "21:45", "Miedziana Góra", 9, "Os. Ślichowice");
-        busStop122 = new BusStop("07:11", "11:30", "15:54", "18:44", "21:58", "Kostomłoty", 9, "Os. Ślichowice");
-        busStop123 = new BusStop("07:27", "11:41", "16:12", "18:59", "22:16", "Łódzka", 9, "Os. Ślichowice");
-        busStop124 = new BusStop("07:44", "11:58", "16:28", "19:11", "22:55", "Zagnańska", 9, "Os. Ślichowice");
-        busStop125 = new BusStop("07:56", "12:41", "16:42", "19:23", "23:12", "Czarnowska", 9, "Os. Ślichowice");
-        busStop126 = new BusStop("08:13", "13:13", "16:55", "19:42", "23:44", "Os. Ślichowice", 9, "Os. Ślichowice");
+        busStop113 = new BusStop("04:45", "08:24", "13:23", "17:17", "19:55", "Os. Ślichowice", 9, "Cminsk");
+        busStop114 = new BusStop("04:58", "08:32", "13:47", "17:28", "20:11", "Czarnowska", 9, "Cminsk");
+        busStop115 = new BusStop("05:11", "08:48", "13:59", "17:40", "20:23", "Zagnanska", 9, "Cminsk");
+        busStop116 = new BusStop("05:26", "08:59", "14:21", "17:53", "20:35", "Lodzka", 9, "Cminsk");
+        busStop117 = new BusStop("05:49", "09:11", "14:45", "17:59", "20:46", "Kostomloty", 9, "Cminsk");
+        busStop118 = new BusStop("06:12", "09:30", "14:57", "18:11", "20:59", "Miedziana Gora", 9, "Cminsk");
+        busStop119 = new BusStop("06:26", "10:16", "15:13", "18:14", "21:11", "Cminsk", 9, "Cminsk");
+        busStop120 = new BusStop("06:47", "10:34", "15:26", "18:26", "21:26", "Cminsk", 9, "Os. Slichowice");
+        busStop121 = new BusStop("06:59", "11:12", "15:45", "18:37", "21:45", "Miedziana Gora", 9, "Os. Slichowice");
+        busStop122 = new BusStop("07:11", "11:30", "15:54", "18:44", "21:58", "Kostomloty", 9, "Os. Slichowice");
+        busStop123 = new BusStop("07:27", "11:41", "16:12", "18:59", "22:16", "Lodzka", 9, "Os. Slichowice");
+        busStop124 = new BusStop("07:44", "11:58", "16:28", "19:11", "22:55", "Zagnanska", 9, "Os. Slichowice");
+        busStop125 = new BusStop("07:56", "12:41", "16:42", "19:23", "23:12", "Czarnowska", 9, "Os. Slichowice");
+        busStop126 = new BusStop("08:13", "13:13", "16:55", "19:42", "23:44", "Os. Slichowice", 9, "Os. Slichowice");
 
-        busStop127 = new BusStop("04:15", "06:18", "13:52", "17:37", "20:32", "Dworzec Autobusowy", 10, "Ciekoty Żeromszczyzna");
-        busStop128 = new BusStop("04:18", "06:25", "14:15", "17:59", "20:40", "Czarnowska", 10, "Ciekoty Żeromszczyzna");
-        busStop129 = new BusStop("04:24", "06:48", "14:26", "18:26", "20:53", "Sandomierska", 10, "Ciekoty Żeromszczyzna");
-        busStop130 = new BusStop("04:33", "07:21", "14:48", "18:33", "21:10", "Cedzyna", 10, "Ciekoty Żeromszczyzna");
-        busStop131 = new BusStop("04:45", "07:55", "15:11", "18:45", "21:21", "Leszczyny", 10, "Ciekoty Żeromszczyzna");
-        busStop132 = new BusStop("04:59", "08:41", "15:15", "18:57", "21:32", "Mąchocice", 10, "Ciekoty Żeromszczyzna");
-        busStop133 = new BusStop("05:11", "09:22", "15:26", "19:11", "21:42", "Ciekoty Żeromszczyzna", 10, "Ciekoty Żeromszczyzna");
-        busStop134 = new BusStop("05:20", "10:44", "15:45", "19:25", "21:50", "Ciekoty Żeromszczyzna", 10, "Dworzec Autobusowy");
-        busStop135 = new BusStop("05:37", "11:12", "15:59", "19:35", "21:59", "Mąchocice", 10, "Dworzec Autobusowy");
+        busStop127 = new BusStop("04:15", "06:18", "13:52", "17:37", "20:32", "Dworzec Autobusowy", 10, "Ciekoty Zeromszczyzna");
+        busStop128 = new BusStop("04:18", "06:25", "14:15", "17:59", "20:40", "Czarnowska", 10, "Ciekoty Zeromszczyzna");
+        busStop129 = new BusStop("04:24", "06:48", "14:26", "18:26", "20:53", "Sandomierska", 10, "Ciekoty Zeromszczyzna");
+        busStop130 = new BusStop("04:33", "07:21", "14:48", "18:33", "21:10", "Cedzyna", 10, "Ciekoty Zeromszczyzna");
+        busStop131 = new BusStop("04:45", "07:55", "15:11", "18:45", "21:21", "Leszczyny", 10, "Ciekoty Zeromszczyzna");
+        busStop132 = new BusStop("04:59", "08:41", "15:15", "18:57", "21:32", "Machocice", 10, "Ciekoty Zeromszczyzna");
+        busStop133 = new BusStop("05:11", "09:22", "15:26", "19:11", "21:42", "Ciekoty Zeromszczyzna", 10, "Ciekoty Zeromszczyzna");
+        busStop134 = new BusStop("05:20", "10:44", "15:45", "19:25", "21:50", "Ciekoty Zeromszczyzna", 10, "Dworzec Autobusowy");
+        busStop135 = new BusStop("05:37", "11:12", "15:59", "19:35", "21:59", "Machocice", 10, "Dworzec Autobusowy");
         busStop136 = new BusStop("05:48", "11:30", "16:12", "19:47", "22:12", "Leszczyny", 10, "Dworzec Autobusowy");
         busStop137 = new BusStop("05:57", "11:46", "16:23", "19:59", "22:23", "Cedzyna", 10, "Dworzec Autobusowy");
         busStop138 = new BusStop("05:59", "12:57", "16:45", "20:11", "22:35", "Sandomierska", 10, "Dworzec Autobusowy");
@@ -818,7 +819,7 @@ public class Gui extends JFrame implements ActionListener {
         }
         else if (source == button4) {
             if (index == -1 || indexThree == -1 || indexTwo == -1) {
-                JOptionPane.showMessageDialog(frame, "WYBIERZ KIERUNEK I PRZYSTANEK, ABY APLIKACJA PODAŁA INFORMACJE", "Nie Wybrano Wszystkich Wymaganych Opcji !!!", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(frame, "WYBIERZ KIERUNEK I PRZYSTANEK, ABY APLIKACJA PODALA INFORMACJE", "Nie Wybrano Wszystkich Wymaganych Opcji !!!", JOptionPane.WARNING_MESSAGE);
             } else {
                 myJPanel2.add(label9);
                 label9.setBackground(Color.white);
@@ -881,12 +882,12 @@ public class Gui extends JFrame implements ActionListener {
                                                         differenceHours = differenceHours - 1;
                                                     }
                                                     if (minutes < 10) {
-                                                        label9.setText("<html> Wybrałeś Kierowco linię numer " + busNumber + ", którą poruszasz się w kierunku " + nameDirections[pom2] + " i chcesz zapytać jakie opoźnienie masz do przystanku <br> o nazwie " + nameBusStops[pom] +
-                                                                ". Obecna godzina to: " + hours + ":0" + minutes + ". Natomiast ostatni odjazd z tego przystanku przed obecną godziną miał nastąpić<br> o godzinie: " + hoursTwo + ":" + minutesTwo + ". Opóźnienie wynosi: " +
+                                                        label9.setText("<html> Wybrales Kierowco linie numer " + busNumber + ", ktora poruszasz się w kierunku " + nameDirections[pom2] + " i chcesz zapytac jakie opoznienie masz do przystanku <br> o nazwie " + nameBusStops[pom] +
+                                                                ". Obecna godzina to: " + hours + ":0" + minutes + ". Natomiast ostatni odjazd z tego przystanku przed obecną godziną mial nastapic<br> o godzinie: " + hoursTwo + ":" + minutesTwo + ". Opoznienie wynosi: " +
                                                                 differenceHours + " godzin i " + differenceMinutes + " minut.</html>");
                                                     } else {
-                                                        label9.setText("<html> Wybrałeś Kierowco linię numer " + busNumber + ", którą poruszasz się w kierunku " + nameDirections[pom2] + " i chcesz zapytać jakie opoźnienie masz do przystanku <br> o nazwie " + nameBusStops[pom] +
-                                                                ". Obecna godzina to: " + hours + ":" + minutes + ". Natomiast ostatni odjazd z tego przystanku przed obecną godziną miał nastąpić<br> o godzinie: " + hoursTwo + ":" + minutesTwo + ". Opóźnienie wynosi: " +
+                                                        label9.setText("<html> Wybrales Kierowco linie numer " + busNumber + ", ktora poruszasz się w kierunku " + nameDirections[pom2] + " i chcesz zapytac jakie opoznienie masz do przystanku <br> o nazwie " + nameBusStops[pom] +
+                                                                ". Obecna godzina to: " + hours + ":" + minutes + ". Natomiast ostatni odjazd z tego przystanku przed obecną godziną mial nastapic<br> o godzinie: " + hoursTwo + ":" + minutesTwo + ". Opoznienie wynosi: " +
                                                                 differenceHours + " godzin i " + differenceMinutes + " minut.</html>");
                                                     }
                                                 }
@@ -902,7 +903,7 @@ public class Gui extends JFrame implements ActionListener {
             }
         } else if (source == button14) {
             if (indexFour == -1 || indexFive == -1) {
-                JOptionPane.showMessageDialog(frame, "WYBIERZ KIERUNEK, ABY APLIKACJA PODAŁA INFORMACJE", "Nie Wybrano Wszystkich Wymaganych Opcji !!!", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(frame, "WYBIERZ KIERUNEK, ABY APLIKACJA PODALA INFORMACJE", "Nie Wybrano Wszystkich Wymaganych Opcji !!!", JOptionPane.WARNING_MESSAGE);
             } else {
                 jTextArea.setSize(1280, 100);
                 jTextArea.setLocation(0, 400);
@@ -940,11 +941,11 @@ public class Gui extends JFrame implements ActionListener {
                                     int minutesTwo = array2[0].getMinute(), minutesThree = array2[1].getMinute(), minutesFour = array2[2].getMinute(), minutesFive = array2[3].getMinute(), minutesSix = array2[4].getMinute();
                                     int hoursTwo = array2[0].getHour(), hoursThree = array2[1].getHour(), hoursFour = array2[2].getHour(), hoursFive = array2[3].getHour(), hoursSix = array2[4].getHour();
                                     jTextArea.append("\nLINIA NUMER: " + busNumber + "\nKIERUNEK: " + nameDirections[pom2] + "\nPRZYSTANEK: " + nameBusStops[pom] +
-                                            "\nOdjazd numer 1 następuje o godzinie: " + hoursTwo + ":" + minutesTwo +
-                                            "\nOdjazd numer 2 następuje o godzinie: " + hoursThree + ":" + minutesThree +
-                                            "\nOdjazd numer 3 następuje o godzinie: " + hoursFour + ":" + minutesFour +
-                                            "\nOdjazd numer 4 następuje o godzinie: " + hoursFive + ":" + minutesFive +
-                                            "\nOdjazd numer 5 następuje o godzinie: " + hoursSix + ":" + minutesSix + "\n");
+                                            "\nOdjazd numer 1 nastepuje o godzinie: " + hoursTwo + ":" + minutesTwo +
+                                            "\nOdjazd numer 2 nastepuje o godzinie: " + hoursThree + ":" + minutesThree +
+                                            "\nOdjazd numer 3 nastepuje o godzinie: " + hoursFour + ":" + minutesFour +
+                                            "\nOdjazd numer 4 nastepuje o godzinie: " + hoursFive + ":" + minutesFive +
+                                            "\nOdjazd numer 5 nastepuje o godzinie: " + hoursSix + ":" + minutesSix + "\n");
                                 }
                             }
                         }
@@ -953,7 +954,7 @@ public class Gui extends JFrame implements ActionListener {
             }
         } else if (source == button15) {
             if (indexSix == -1 || indexSeven == -1) {
-                JOptionPane.showMessageDialog(frame, "WYBIERZ GODZINE I LICZBE MINUT, ABY APLIKACJA PODAŁA INFORMACJE", "Nie Wybrano Wszystkich Wymaganych Opcji !!!", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(frame, "WYBIERZ GODZINE I LICZBE MINUT, ABY APLIKACJA PODALA INFORMACJE", "Nie Wybrano Wszystkich Wymaganych Opcji !!!", JOptionPane.WARNING_MESSAGE);
             } else {
                 ArrayList<LocalTime> times = new ArrayList<>();
                 ArrayList<String> directionsNames = new ArrayList<>();
@@ -1100,7 +1101,7 @@ public class Gui extends JFrame implements ActionListener {
         else if(source == button16)
         {
             if (indexEight == -1) {
-                JOptionPane.showMessageDialog(frame, "WYBIERZ PRZYSTANEK, ABY APLIKACJA PODAŁA INFORMACJE", "Nie Wybrano Wszystkich Wymaganych Opcji !!!", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(frame, "WYBIERZ PRZYSTANEK, ABY APLIKACJA PODALA INFORMACJE", "Nie Wybrano Wszystkich Wymaganych Opcji !!!", JOptionPane.WARNING_MESSAGE);
             }
             else {
                 jTextArea2.setSize(1280, 250);
