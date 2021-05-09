@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"pl.project.java.entities"},{"l":"pl.project.java.gui"},{"l":"pl.project.java.main"},{"l":"pl.project.java.repositories"}]
