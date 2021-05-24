@@ -11,6 +11,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.SequenceInputStream;
+import java.time.LocalTime;
 
 public class TestGui {
 
@@ -454,5 +455,47 @@ public class TestGui {
         Assertions.assertNotNull(busStop138);
         Assertions.assertNotNull(busStop139);
         Assertions.assertNotNull(busStop140);
+    }
+
+    @Test
+    @DisplayName("Test sprawdzajacy czy przyciski typu JComboBox oraz zmienne typu String pobrane jako elementy z zawartosci JComboBox nie sa nullami")
+    public void TestActionPerformed()
+    {
+        Integer[] numberOfBus = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        String[] minutes = {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"};
+        String[] hours = {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"};
+        JComboBox<Integer> comboBox = new JComboBox<>(numberOfBus);
+        JComboBox<String> comboBox2 = new JComboBox<>();
+        JComboBox<String> comboBox3 = new JComboBox<>();
+        JComboBox<Integer> comboBox4 = new JComboBox<>(numberOfBus);
+        JComboBox<String> comboBox5 = new JComboBox<>();
+        JComboBox<String> comboBox6 = new JComboBox<>(hours);
+        JComboBox<String> comboBox7 = new JComboBox<>(minutes);
+        JComboBox<String> comboBox8 = new JComboBox<>();
+
+        LocalTime localTime = LocalTime.now();
+        int hoursTwo = localTime.getHour();
+        int minutesTwo = localTime.getMinute();
+        int index = comboBox.getSelectedIndex();
+        int indexTwo = comboBox2.getSelectedIndex();
+        int indexThree = comboBox3.getSelectedIndex();
+        int indexFour = comboBox4.getSelectedIndex();
+        int indexFive = comboBox5.getSelectedIndex();
+        String indexSixS = (String) comboBox6.getSelectedItem();
+        String indexSevenS = (String) comboBox7.getSelectedItem();
+        int indexSix = comboBox6.getSelectedIndex();
+        int indexSeven = comboBox7.getSelectedIndex();
+        int indexEight = comboBox8.getSelectedIndex();
+
+        Assertions.assertNotNull(comboBox);
+        Assertions.assertNotNull(comboBox2);
+        Assertions.assertNotNull(comboBox3);
+        Assertions.assertNotNull(comboBox4);
+        Assertions.assertNotNull(comboBox5);
+        Assertions.assertNotNull(comboBox6);
+        Assertions.assertNotNull(comboBox7);
+        Assertions.assertNotNull(comboBox8);
+        Assertions.assertNotNull(indexSixS);
+        Assertions.assertNotNull(indexSevenS);
     }
 }
