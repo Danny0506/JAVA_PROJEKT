@@ -1,7 +1,5 @@
 package pl.project.java.repositories;
 
-import pl.project.java.repositories.BusRepository;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;

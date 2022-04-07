@@ -113,6 +113,7 @@ public class Gui extends JFrame implements ActionListener {
      * Ustawiono rozmiar okna na 1280x720 pikseli oraz zakaz mozliwosci modyfikowania rozmiaru okna
      * Nastepnie wywolane sa metody obslugujace rozmieszczenie elementow na panelach oraz metode zarzadzajaca audio czy tez metody tworzace obiekty, ktore pozniej sa dodawane do bazy danych, a takze metoda obslugujaca zdarzenia
      * Na koncu kosntruktora mamy ustawiona lokalizacje okna po wlaczeniu aplikacji, dodanie panelu glownego do aplikacji czy tez mozliwosc zamkniecia aplikacji poprzez nacisniecia przycisku krzyzyka w prawym gornym rogu aplikacji
+     *
      * @throws UnsupportedAudioFileException wyrzucenie wyjatku gdy mamy do czynienia z plikiem audio, ktorego format nie jest wspierany
      */
     public Gui() throws UnsupportedAudioFileException {
@@ -142,8 +143,7 @@ public class Gui extends JFrame implements ActionListener {
      * Dla zwyklych buttonow wywolano zdarzenia polegajace na zmianie wyswietlanego panelu w aktualnym momencie oraz wybraniu opcji z menu czy podmenu
      * Dla przyciskow JComboBox wywolano zdarzenia, ktore polegaja na wybarniu jednej z dostepnych opcji
      */
-    private void action()
-    {
+    private void action() {
         button.addActionListener(e -> cardLayout.show(panel, "2"));
         button1.addActionListener(e -> cardLayout.show(panel, "3"));
         button2.addActionListener(e -> cardLayout.show(panel, "1"));
@@ -175,8 +175,7 @@ public class Gui extends JFrame implements ActionListener {
     /**
      * Metoda initButtons inicjuje wszystkie przyciski typu Button w aplikacji. Ustalany jest tutaj rozmiar, kolor oraz wspolrzedne rozmieszczenia przycisku
      */
-    private void initButtons()
-    {
+    private void initButtons() {
         button.setBackground(Color.green);
         button1.setBackground(Color.yellow);
         button2.setBackground(Color.cyan);
@@ -215,8 +214,7 @@ public class Gui extends JFrame implements ActionListener {
     /**
      * W metodzie initLabels inicjowane sa wszystkie labele dostepne w aplikacji. Ustalana jest czcionka, rozmiar czy rozmieszczenie na panelu konkretnych napisow
      */
-    private void initLabels()
-    {
+    private void initLabels() {
         label.setBounds(210, -250, 900, 600);
         label.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
         label1.setBounds(20, 120, 500, 100);
@@ -272,8 +270,7 @@ public class Gui extends JFrame implements ActionListener {
     /**
      * W metodzie initComboBoxes inicjowane sa przyciski typu JComcboBox, a dokladniej ich wielkosc i rozmieszczenie na panelach
      */
-    private void initComboBoxes()
-    {
+    private void initComboBoxes() {
         comboBox.setBounds(150, 300, 180, 33);
         comboBox2.setBounds(535, 300, 180, 33);
         comboBox3.setBounds(920, 300, 180, 33);
@@ -286,8 +283,7 @@ public class Gui extends JFrame implements ActionListener {
      * W metodzie initTextAreas inicjowane sa pola typu jTextArea, ktore beda przechowywac bardzo dlugie wiadomosci tekstowe. Ustalany jest tutaj rozmiar czcionki, kolor tla czy tez brak mozliwosci edytowania wiadomosci wygenerowanej dla uzytkownika przez aplikacje
      * Dodatkowo dla jednego pola jTextArea mamy dodany jScrollPane, aby mozna bylo przewijac cala zawartosc pola jTextArea
      */
-    private void initTextAreas()
-    {
+    private void initTextAreas() {
         jTextArea.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         jTextArea.setBackground(Color.white);
         jTextArea.setLineWrap(true);
@@ -303,8 +299,7 @@ public class Gui extends JFrame implements ActionListener {
     /**
      * W metodzie initLayouts inicjujemy rodzaj layoutu dla kazdego panelu. Wszedzie oprocz panelu czwartego ustawiamy layout na null czyli panel bez layoutu. W tym jedynym przypadky bylo konieczne ustawienie layoutu z powodu uzycia jScrollPane
      */
-    private void initLayouts()
-    {
+    private void initLayouts() {
         myJPanel.setLayout(null);
         myJPanel2.setLayout(null);
         myJPanel3.setLayout(null);
@@ -316,8 +311,7 @@ public class Gui extends JFrame implements ActionListener {
     /**
      * W metodzie panelService mamy obsluge panelow dostepnych w aplikacji. Dla macierzystego panelu dodane sa inne panele, ktore maja swoj numer, aby rozroznic przelaczanie miedzy innymi oknami
      */
-    private void panelService()
-    {
+    private void panelService() {
         panel.add(myJPanel);
         panel.add(myJPanel2);
         panel.add(myJPanel, "1");
@@ -332,8 +326,7 @@ public class Gui extends JFrame implements ActionListener {
     /**
      * W metodzie addElementsToPanels do kazdego z paneli dodawane sa labele, buttony oraz inne niezbedne obiekty, ktore sa potrzebne do obslugi aplikacji przez uzytkownika
      */
-    private void addElementsToPanels()
-    {
+    private void addElementsToPanels() {
         myJPanel.add(button);
         myJPanel.add(button1);
         myJPanel2.add(button2);
@@ -399,16 +392,16 @@ public class Gui extends JFrame implements ActionListener {
      * Nastepnie kazdy z tych plikow dodajemy do mozliwosci odtworzenia w aplikacji
      * Nastepnie obydwa pliki dodajemy do siebie, aby po jednym pliku audio zaczal sie kolejny
      * Ustalmy glosnosc odtwarzania plikow audio oraz zapetlamy ich odtwarzanie
+     *
      * @throws UnsupportedAudioFileException wyrzucenie wyjatku gdy mamy do czynienia z plikiem audio, ktorego format nie jest wspierany
      */
     private void audio() throws UnsupportedAudioFileException {
         File soundFile = new File("src/main/resources/songs/Jason Derulo - Lifestyle (feat. Adam Levine) [Official Dance Video].wav");
         File soundFile2 = new File("src/main/resources/songs/Jason-Derulo-Take-You-Dancing-_Official-Dance-Video_.wav");
 
-        try {
-            AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
-            AudioInputStream audioIn2 = AudioSystem.getAudioInputStream(soundFile2);
-            AudioInputStream appendedFiles = new AudioInputStream(new SequenceInputStream(audioIn2, audioIn), audioIn2.getFormat(), audioIn2.getFrameLength() + audioIn.getFrameLength());
+        try (var audioIn = AudioSystem.getAudioInputStream(soundFile);
+             var audioIn2 = AudioSystem.getAudioInputStream(soundFile2);
+             var appendedFiles = new AudioInputStream(new SequenceInputStream(audioIn2, audioIn), audioIn2.getFormat(), audioIn2.getFrameLength() + audioIn.getFrameLength())) {
             Clip clip = AudioSystem.getClip();
             clip.open(appendedFiles);
             FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
@@ -423,8 +416,7 @@ public class Gui extends JFrame implements ActionListener {
     /**
      * W metodzie createNewBus tworzymy 10 obiektow autobusow, ktore przechowuja dane odpowiednie dla siebie
      */
-    protected void createNewBus()
-    {
+    protected void createNewBus() {
         bus = new Bus(1, "Bukówka", "Pietraszki");
         bus1 = new Bus(2, "Sukowska", "Kolberga");
         bus2 = new Bus(3, "Borków", "Kaczmarka");
@@ -440,8 +432,7 @@ public class Gui extends JFrame implements ActionListener {
     /**
      * W metodzie createNewBusStop tworzymy 140 obiektow przystankow, ktore przechowuja dane odpowiednie dla siebie
      */
-    protected void createNewBusStop()
-    {
+    protected void createNewBusStop() {
 
         busStop1 = new BusStop("05:15", "07:18", "13:45", "15:57", "18:32", "Kolberga", 5, "Szybowcowa");
         busStop2 = new BusStop("05:18", "07:25", "13:58", "16:13", "18:40", "1 Maja", 5, "Szybowcowa");
@@ -597,18 +588,19 @@ public class Gui extends JFrame implements ActionListener {
     /**
      * W metodzie actionPerformed sa obslugiwane wszystkie zdarzenia w aplikacji dla konkretnych przyciskow
      * Adnotacja @Override oznacza nadpisanie metody
+     *
      * @param e oznacza obiekt ActionEvent, ktorego pozniej pobieramy zrodlo
-     * Nastepnie tworzymy obiekt localtime, aby pobrac obecna godzine z systemu
-     * Nastepnie dla kazdego przycisku typu JComboBox pobieramy obecnie wybrany indeks
-     * Nastepnie w tablicach przechowujemy nazwy przystankow autobusowych, kierunkow w jakie autobus sie porusza czy tez po prostu obiekty typu BusStop
-     * Kolejnym elementem w tej metodzie jest dodanie do JComboBoxow odpowiednich kierunkow podrozy autobusow, gdy zrodlem wcisniecia przyciskow bedzie przycisk comboBox
-     * To samo dzieje sie jezeli zrodlem wcisniecia przycisku jest comboBox4, lecz wtedy kierunki autobusowe dodawane sa do comboBox5 a nie comboBox2 jak wyzej
-     * Nastepnie gdy zrodlem bedzie comboBox5 to dla kazdego przypadku dodawane sa odpowiednie przystanki dla comboBox3
-     * Nastepnie jesli zrodlem bedzie button4 to aplikacja obliczy jakie opoznienie ma kierowca autobusu dla podanego przystanka dla danej linii i kierunku jazdy, ktory wybierze uzytkownik
-     * Aplikacja za pomoca klasy LocalTime i metod dostepnych dla tej klasy ma mozliwosc odnalezienia przystanka, godziny i innych informacji, ktore sa pozniej wyswietlane dla uzytkownika
-     * Jezeli zrodlem bedzie button14 to aplikacja poprosi o podanie numeru linii i kierunku jazdy autobusu,a nastepnie wyswietli informacje o wszystkich odjazdach z przystankow wystepujacych na danej linii
-     * Natomiast gdy zrodlem bedzie button15 to aplikacja poprosi o podanie liczby minut i sekund po czym wyswietli informacje na temat najblizszych pieciu odjazdow po godzinie podanej przez uzytkownika
-     * Natomiast gdy zrodlem bedzie button17 to aplikacja poprosi o wybor przystanka z listy i wyswietli wszystkie odjazdy z niego niezaleznie od numerow linii czy kierunkow jazdy
+     *          Nastepnie tworzymy obiekt localtime, aby pobrac obecna godzine z systemu
+     *          Nastepnie dla kazdego przycisku typu JComboBox pobieramy obecnie wybrany indeks
+     *          Nastepnie w tablicach przechowujemy nazwy przystankow autobusowych, kierunkow w jakie autobus sie porusza czy tez po prostu obiekty typu BusStop
+     *          Kolejnym elementem w tej metodzie jest dodanie do JComboBoxow odpowiednich kierunkow podrozy autobusow, gdy zrodlem wcisniecia przyciskow bedzie przycisk comboBox
+     *          To samo dzieje sie jezeli zrodlem wcisniecia przycisku jest comboBox4, lecz wtedy kierunki autobusowe dodawane sa do comboBox5 a nie comboBox2 jak wyzej
+     *          Nastepnie gdy zrodlem bedzie comboBox5 to dla kazdego przypadku dodawane sa odpowiednie przystanki dla comboBox3
+     *          Nastepnie jesli zrodlem bedzie button4 to aplikacja obliczy jakie opoznienie ma kierowca autobusu dla podanego przystanka dla danej linii i kierunku jazdy, ktory wybierze uzytkownik
+     *          Aplikacja za pomoca klasy LocalTime i metod dostepnych dla tej klasy ma mozliwosc odnalezienia przystanka, godziny i innych informacji, ktore sa pozniej wyswietlane dla uzytkownika
+     *          Jezeli zrodlem bedzie button14 to aplikacja poprosi o podanie numeru linii i kierunku jazdy autobusu,a nastepnie wyswietli informacje o wszystkich odjazdach z przystankow wystepujacych na danej linii
+     *          Natomiast gdy zrodlem bedzie button15 to aplikacja poprosi o podanie liczby minut i sekund po czym wyswietli informacje na temat najblizszych pieciu odjazdow po godzinie podanej przez uzytkownika
+     *          Natomiast gdy zrodlem bedzie button17 to aplikacja poprosi o wybor przystanka z listy i wyswietli wszystkie odjazdy z niego niezaleznie od numerow linii czy kierunkow jazdy
      */
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -816,8 +808,7 @@ public class Gui extends JFrame implements ActionListener {
                     comboBox3.addItem(bus);
                 }
             }
-        }
-        else if (source == button4) {
+        } else if (source == button4) {
             if (index == -1 || indexThree == -1 || indexTwo == -1) {
                 JOptionPane.showMessageDialog(frame, "WYBIERZ KIERUNEK I PRZYSTANEK, ABY APLIKACJA PODALA INFORMACJE", "Nie Wybrano Wszystkich Wymaganych Opcji !!!", JOptionPane.WARNING_MESSAGE);
             } else {
@@ -1038,18 +1029,15 @@ public class Gui extends JFrame implements ActionListener {
                                 LocalTime timeThree = LocalTime.parse(nameStops[pom].getDepartureThreeTime());
                                 LocalTime timeFour = LocalTime.parse(nameStops[pom].getDepartureFourTime());
                                 LocalTime timeFive = LocalTime.parse(nameStops[pom].getDepartureFiveTime());
-                                if ((timeOne.equals(lastTimes[a]) || timeTwo.equals(lastTimes[a]) || timeThree.equals(lastTimes[a]) || timeFour.equals(lastTimes[a]) || timeFive.equals(lastTimes[a])) && ((flag != i && flagTwo != k && a % 2 != 0) || (flagThree != i && flagFour != k && a % 2 != 1)))
-                                {
+                                if ((timeOne.equals(lastTimes[a]) || timeTwo.equals(lastTimes[a]) || timeThree.equals(lastTimes[a]) || timeFour.equals(lastTimes[a]) || timeFive.equals(lastTimes[a])) && ((flag != i && flagTwo != k && a % 2 != 0) || (flagThree != i && flagFour != k && a % 2 != 1))) {
                                     directionsNames.add(nameDirections[pom2]);
                                     busStopsNames.add(nameBusStops[pom]);
                                     busNames.add(k + 1);
-                                    if(a % 2 == 0)
-                                    {
+                                    if (a % 2 == 0) {
                                         flag = i;
                                         flagTwo = k;
                                     }
-                                    if(a % 2 == 1)
-                                    {
+                                    if (a % 2 == 1) {
                                         flagThree = i;
                                         flagFour = k;
                                     }
@@ -1059,29 +1047,25 @@ public class Gui extends JFrame implements ActionListener {
                         }
                     }
                 }
-                if(busStopsNames.size() == 4)
-                {
+                if (busStopsNames.size() == 4) {
                     label29.setText("<html>ODJAZD NR 1 LINIA NR: " + busNames.get(0) + " ------ KIERUNEK: " + directionsNames.get(0) + " ------ PRZYSTANEK: " + busStopsNames.get(0) + " ------ GODZINA ODJAZDU: " + times.get(0) + "<br>"
                             + "ODJAZD NR 2 LINIA NR: " + busNames.get(1) + " ------ KIERUNEK: " + directionsNames.get(1) + " ------ PRZYSTANEK: " + busStopsNames.get(1) + " ------ GODZINA ODJAZDU: " + times.get(1) + "<br>"
                             + "ODJAZD NR 3 LINIA NR: " + busNames.get(2) + " ------ KIERUNEK: " + directionsNames.get(2) + " ------ PRZYSTANEK: " + busStopsNames.get(2) + " ------ GODZINA ODJAZDU: " + times.get(2) + "<br>"
                             + "ODJAZD NR 4 LINIA NR: " + busNames.get(3) + " ------ KIERUNEK: " + directionsNames.get(3) + " ------ PRZYSTANEK: " + busStopsNames.get(3) + " ------ GODZINA ODJAZDU: " + times.get(3) + "<br></html>");
                 }
-                if(busStopsNames.size() == 3)
-                {
+                if (busStopsNames.size() == 3) {
                     label29.setText("<html>ODJAZD NR 1 LINIA NR: " + busNames.get(0) + " ------ KIERUNEK: " + directionsNames.get(0) + " ------ PRZYSTANEK: " + busStopsNames.get(0) + " ------ GODZINA ODJAZDU: " + times.get(0) + "<br>"
                             + "ODJAZD NR 2 LINIA NR: " + busNames.get(1) + " ------ KIERUNEK: " + directionsNames.get(1) + " ------ PRZYSTANEK: " + busStopsNames.get(1) + " ------ GODZINA ODJAZDU: " + times.get(1) + "<br>"
                             + "ODJAZD NR 3 LINIA NR: " + busNames.get(2) + " ------ KIERUNEK: " + directionsNames.get(2) + " ------ PRZYSTANEK: " + busStopsNames.get(2) + " ------ GODZINA ODJAZDU: " + times.get(2) + "<br></html>");
                 }
-                if(busStopsNames.size() == 2)
-                {
+                if (busStopsNames.size() == 2) {
                     label29.setText("<html>ODJAZD NR 1 LINIA NR: " + busNames.get(0) + " ------ KIERUNEK: " + directionsNames.get(0) + " ------ PRZYSTANEK: " + busStopsNames.get(0) + " ------ GODZINA ODJAZDU: " + times.get(0) + "<br>"
                             + "ODJAZD NR 2 LINIA NR: " + busNames.get(1) + " ------ KIERUNEK: " + directionsNames.get(1) + " ------ PRZYSTANEK: " + busStopsNames.get(1) + " ------ GODZINA ODJAZDU: " + times.get(1) + "<br></html>");
                 }
-                if(busStopsNames.size() == 1)
-                {
+                if (busStopsNames.size() == 1) {
                     label29.setText("<html>ODJAZD NR 1 LINIA NR: " + busNames.get(0) + " ------ KIERUNEK: " + directionsNames.get(0) + " ------ PRZYSTANEK: " + busStopsNames.get(0) + " ------ GODZINA ODJAZDU: " + times.get(0) + "<br></html>");
                 }
-                if(busStopsNames.size() > 4) {
+                if (busStopsNames.size() > 4) {
                     label29.setText("<html>ODJAZD NR 1 LINIA NR: " + busNames.get(0) + " ------ KIERUNEK: " + directionsNames.get(0) + " ------ PRZYSTANEK: " + busStopsNames.get(0) + " ------ GODZINA ODJAZDU: " + times.get(0) + "<br>"
                             + "ODJAZD NR 2 LINIA NR: " + busNames.get(1) + " ------ KIERUNEK: " + directionsNames.get(1) + " ------ PRZYSTANEK: " + busStopsNames.get(1) + " ------ GODZINA ODJAZDU: " + times.get(1) + "<br>"
                             + "ODJAZD NR 3 LINIA NR: " + busNames.get(2) + " ------ KIERUNEK: " + directionsNames.get(2) + " ------ PRZYSTANEK: " + busStopsNames.get(2) + " ------ GODZINA ODJAZDU: " + times.get(2) + "<br>"
@@ -1089,56 +1073,49 @@ public class Gui extends JFrame implements ActionListener {
                             + "ODJAZD NR 5 LINIA NR: " + busNames.get(4) + " ------ KIERUNEK: " + directionsNames.get(4) + " ------ PRZYSTANEK: " + busStopsNames.get(4) + " ------ GODZINA ODJAZDU: " + times.get(4) + "</html>");
                 }
             }
-        }
-        else if(source == button17)
-        {
+        } else if (source == button17) {
             comboBox8.removeAllItems();
             Set<String> original = new TreeSet<>(Arrays.asList(nameBusStops));
-            for (String name: original) {
+            for (String name : original) {
                 comboBox8.addItem(name);
             }
-        }
-        else if(source == button16)
-        {
+        } else if (source == button16) {
             if (indexEight == -1) {
                 JOptionPane.showMessageDialog(frame, "WYBIERZ PRZYSTANEK, ABY APLIKACJA PODALA INFORMACJE", "Nie Wybrano Wszystkich Wymaganych Opcji !!!", JOptionPane.WARNING_MESSAGE);
-            }
-            else {
+            } else {
                 jTextArea2.setSize(1280, 250);
                 jTextArea2.setLocation(0, 300);
                 jTextArea2.setText(null);
                 for (int k = 0; k < 10; k++) {
                     int busLine = k + 1;
-                        for (int j = 0; j < 2; j++) {
-                                for (int i = 0; i < 7; i++) {
-                                    int pom = i;
-                                    int pom2 = j;
-                                    if (k == 0 && j == 1) {
-                                        pom = i + 7;
-                                    }
-                                    if (k > 0) {
-                                        for (int counter = 1; counter < 10; counter++) {
-                                            int busNumberTwo = k + 1;
-                                            if (busNumberTwo == counter + 1 && j == 0) {
-                                                pom = 7 * ((2 * busNumberTwo) - 2) + i;
-                                                pom2 = k * 2;
-                                            } else if (busNumberTwo == counter + 1) {
-                                                pom = 7 * ((2 * busNumberTwo) - 1) + i;
-                                                pom2 = k * 2 + 1;
-                                            }
-                                        }
-                                    }
-                                    if (k == 0 && i == 0 && j == 0)
-                                    {
-                                        jTextArea2.setText("ODJAZDY Z PRZYSTANKU: " + comboBox8.getItemAt(comboBox8.getSelectedIndex()) + "\n");
-                                    }
-                                    if(nameBusStops[pom].equals(comboBox8.getItemAt(comboBox8.getSelectedIndex())))
-                                    {
-                                        jTextArea2.append("\nLINIA NUMER: " + busLine + "\tKIERUNEK: " + nameDirections[pom2] + "\tODJAZDY: "  + nameStops[pom].getDepartureOneTime() + ",  " +nameStops[pom].getDepartureTwoTime() + ",  " +
-                                                nameStops[pom].getDepartureThreeTime() + ",  " + nameStops[pom].getDepartureFourTime() + ",  " + nameStops[pom].getDepartureFiveTime());
+                    for (int j = 0; j < 2; j++) {
+                        for (int i = 0; i < 7; i++) {
+                            int pom = i;
+                            int pom2 = j;
+                            if (k == 0 && j == 1) {
+                                pom = i + 7;
+                            }
+                            if (k > 0) {
+                                for (int counter = 1; counter < 10; counter++) {
+                                    int busNumberTwo = k + 1;
+                                    if (busNumberTwo == counter + 1 && j == 0) {
+                                        pom = 7 * ((2 * busNumberTwo) - 2) + i;
+                                        pom2 = k * 2;
+                                    } else if (busNumberTwo == counter + 1) {
+                                        pom = 7 * ((2 * busNumberTwo) - 1) + i;
+                                        pom2 = k * 2 + 1;
                                     }
                                 }
+                            }
+                            if (k == 0 && i == 0 && j == 0) {
+                                jTextArea2.setText("ODJAZDY Z PRZYSTANKU: " + comboBox8.getItemAt(comboBox8.getSelectedIndex()) + "\n");
+                            }
+                            if (nameBusStops[pom].equals(comboBox8.getItemAt(comboBox8.getSelectedIndex()))) {
+                                jTextArea2.append("\nLINIA NUMER: " + busLine + "\tKIERUNEK: " + nameDirections[pom2] + "\tODJAZDY: " + nameStops[pom].getDepartureOneTime() + ",  " + nameStops[pom].getDepartureTwoTime() + ",  " +
+                                        nameStops[pom].getDepartureThreeTime() + ",  " + nameStops[pom].getDepartureFourTime() + ",  " + nameStops[pom].getDepartureFiveTime());
+                            }
                         }
+                    }
                 }
             }
         }

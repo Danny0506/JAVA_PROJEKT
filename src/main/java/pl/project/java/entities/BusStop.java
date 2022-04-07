@@ -1,7 +1,5 @@
 package pl.project.java.entities;
 
-import pl.project.java.entities.Bus;
-
 import javax.persistence.*;
 
 /**
