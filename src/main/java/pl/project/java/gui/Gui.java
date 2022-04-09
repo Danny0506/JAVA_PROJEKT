@@ -109,7 +109,7 @@ public class Gui extends JFrame implements ActionListener {
      * Dla zwyklych buttonow wywolano zdarzenia polegajace na zmianie wyswietlanego panelu w aktualnym momencie oraz wybraniu opcji z menu czy podmenu
      * Dla przyciskow JComboBox wywolano zdarzenia, ktore polegaja na wybarniu jednej z dostepnych opcji
      */
-    void actionListener() {
+    private void actionListener() {
         button.addActionListener(e -> cardLayout.show(panel, "2"));
         button1.addActionListener(e -> cardLayout.show(panel, "3"));
         button2.addActionListener(e -> cardLayout.show(panel, "1"));
