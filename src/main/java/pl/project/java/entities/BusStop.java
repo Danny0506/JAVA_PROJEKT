@@ -1,5 +1,7 @@
 package pl.project.java.entities;
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 /**
@@ -8,6 +10,7 @@ import javax.persistence.*;
  * Klasa BusStop przedstawia wzor informacji dla przystanka
  */
 @Entity
+@NoArgsConstructor
 public class BusStop {
 
     /**
@@ -67,12 +70,6 @@ public class BusStop {
         this.departureFourTime = departureFourTime;
         this.departureFiveTime = departureFiveTime;
         this.direction = direction;
-    }
-
-    /**
-     * Bezparametrowy konstruktor klasy BusStop
-     */
-    public BusStop() {
     }
 
     /**

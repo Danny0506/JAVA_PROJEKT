@@ -1,5 +1,7 @@
 package pl.project.java.entities;
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -9,6 +11,7 @@ import java.util.Set;
  * Klasa Bus przedstawia wzor informacji dla autobusu
  */
 @Entity
+@NoArgsConstructor
 public class Bus
 {
     /**
@@ -50,14 +53,6 @@ public class Bus
         this.busLineNumber = busLineNumber;
         this.directionOne = directionOne;
         this.directionTwo = directionTwo;
-    }
-
-    /**
-     * Bezparametrowy konstruktor klasy Bus
-     */
-    public Bus()
-    {
-
     }
 
     /**
