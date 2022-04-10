@@ -79,8 +79,8 @@ public final class GuiAppearanceManager extends Gui {
         button15.setBackground(Color.green);
         button16.setBackground(Color.green);
         button17.setBackground(Color.cyan);
-        button.setBounds(100, 200, 200, 100);
-        button1.setBounds(900, 200, 200, 100);
+        button.setBounds(100, 200, 250, 100);
+        button1.setBounds(900, 200, 250, 100);
         button2.setBounds(440, 600, 400, 50);
         button3.setBounds(440, 600, 400, 50);
         button4.setBounds(535, 350, 180, 33);

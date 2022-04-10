@@ -44,8 +44,8 @@ public class Gui extends JFrame implements ActionListener {
     protected static final JComboBox<String> comboBox6 = new JComboBox<>(hours);
     protected static final JComboBox<String> comboBox7 = new JComboBox<>(minutes);
     protected static final JComboBox<String> comboBox8 = new JComboBox<>();
-    protected static final JButton button = new JButton("JESTEM KIEROWCĄ");
-    protected static final JButton button1 = new JButton("JESTEM PASAZEREM");
+    protected static final MyJButton button = new MyJButton("JESTEM KIEROWCĄ");
+    protected static final MyJButton button1 = new MyJButton("JESTEM PASAZEREM");
     protected static final JButton button2 = new JButton("COFNIJ SIE DO MENU GLOWNEGO");
     protected static final JButton button3 = new JButton("COFNIJ SIE DO MENU GLOWNEGO");
     protected static final JButton button4 = new JButton("SPRAWDZ");
