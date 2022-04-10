@@ -1,5 +1,6 @@
 package pl.project.java.repositories;
 
+import pl.project.java.entities.Bus;
 import pl.project.java.gui.Gui;
 
 import javax.persistence.EntityManager;
@@ -20,6 +21,7 @@ public class BusRepository extends Gui
     private static final EntityManagerFactory factory = Persistence.createEntityManagerFactory("BusBase");
     private static final EntityManager theManager = factory.createEntityManager();
     private static final EntityTransaction transaction = theManager.getTransaction();
+    private static final int NUMBER_OF_OBJECTS = 10;
 
     /**
      * Konstruktor klasy BusRepository, któremu wywoływana jest konstrukcja super dzieki ktorej wywolujemy konstruktor klasy nadrzednej
@@ -38,16 +40,10 @@ public class BusRepository extends Gui
     public void addNewBus()
     {
         transaction.begin();
-        theManager.persist(bus);
-        theManager.persist(bus1);
-        theManager.persist(bus2);
-        theManager.persist(bus3);
-        theManager.persist(bus4);
-        theManager.persist(bus5);
-        theManager.persist(bus6);
-        theManager.persist(bus7);
-        theManager.persist(bus8);
-        theManager.persist(bus9);
+        for(int counter = 0; counter < NUMBER_OF_OBJECTS; counter++)
+        {
+            theManager.persist(buses[counter]);
+        }
         transaction.commit();
     }
 }

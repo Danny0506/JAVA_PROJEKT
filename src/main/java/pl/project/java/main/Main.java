@@ -18,7 +18,6 @@ public class Main
      * Wywolanie metody addNewBus dla obiektu busStopRepository
      */
     public static void main(String [] args) throws UnsupportedAudioFileException {
-
         BusStopRepository busStopRepository = new BusStopRepository();
         busStopRepository.addNewBusStop();
         busStopRepository.addNewBus();
