@@ -46,18 +46,18 @@ public class Gui extends JFrame implements ActionListener {
     protected static final JComboBox<String> comboBox8 = new JComboBox<>();
     protected static final MyJButton button = new MyJButton("JESTEM KIEROWCĄ");
     protected static final MyJButton button1 = new MyJButton("JESTEM PASAŻEREM");
-    protected static final MyJButton button2 = new MyJButton("COFNIJ SIĘ DO MENU GŁÓWNEGO");
-    protected static final MyJButton button3 = new MyJButton("COFNIJ SIĘ DO MENU GŁÓWNEGO");
+    protected static final MyJButton button2 = new MyJButton("WRÓĆ DO MENU GŁÓWNEGO");
+    protected static final MyJButton button3 = new MyJButton("WRÓĆ DO MENU GŁÓWNEGO");
     protected static final MyJButton button4 = new MyJButton("SPRAWDŹ");
-    protected static final MyJButton button5 = new MyJButton("COFNIJ SIĘ DO MENU GŁÓWNEGO");
-    protected static final MyJButton button6 = new MyJButton("COFNIJ SIĘ DO MENU GŁÓWNEGO");
-    protected static final MyJButton button7 = new MyJButton("COFNIJ SIĘ DO MENU GŁÓWNEGO");
+    protected static final MyJButton button5 = new MyJButton("WRÓĆ DO MENU GŁÓWNEGO");
+    protected static final MyJButton button6 = new MyJButton("WRÓĆ DO MENU GŁÓWNEGO");
+    protected static final MyJButton button7 = new MyJButton("WRÓĆ DO MENU GŁÓWNEGO");
     protected static final MyJButton button8 = new MyJButton("WYSZUKAJ POŁĄCZENIA PO NUMERZE LINII");
     protected static final MyJButton button9 = new MyJButton("WYSZUKAJ POŁĄCZENIA PO GODZINIE");
     protected static final MyJButton button10 = new MyJButton("WYSZUKAJ POŁĄCZENIA PO KONKRETNYM PRZYSTANKU");
-    protected static final MyJButton button11 = new MyJButton("COFNIJ SIĘ DO MENU KRYTERIÓW");
-    protected static final MyJButton button12 = new MyJButton("COFNIJ SIĘ DO MENU KRYTERIÓW SZUKANIA AUTOBUSU");
-    protected static final MyJButton button13 = new MyJButton("COFNIJ SIĘ DO MENU KRYTERIÓW SZUKANIA AUTOBUSU");
+    protected static final MyJButton button11 = new MyJButton("WRÓĆ DO MENU KRYTERIÓW SZUKANIA");
+    protected static final MyJButton button12 = new MyJButton("WRÓĆ DO MENU KRYTERIÓW SZUKANIA AUTOBUSU");
+    protected static final MyJButton button13 = new MyJButton("WRÓĆ DO MENU KRYTERIÓW SZUKANIA AUTOBUSU");
     protected static final MyJButton button14 = new MyJButton("SPRAWDŹ");
     protected static final MyJButton button15 = new MyJButton("SPRAWDŹ");
     protected static final MyJButton button16 = new MyJButton("SPRAWDŹ");
@@ -242,12 +242,12 @@ public class Gui extends JFrame implements ActionListener {
                                                         differenceHours = differenceHours - 1;
                                                     }
                                                     if (minutes < 10) {
-                                                        label9.setText("<html> Wybrales Kierowco linie numer " + busNumber + ", ktora poruszasz się w kierunku " + nameDirections[pom2] + " i chcesz zapytac jakie opoznienie masz do przystanku <br> o nazwie " + nameStops[pom].getBusStopName() +
-                                                                ". Obecna godzina to: " + hours + ":0" + minutes + ". Natomiast ostatni odjazd z tego przystanku przed obecną godziną mial nastapic<br> o godzinie: " + hoursTwo + ":" + minutesTwo + ". Opoznienie wynosi: " +
+                                                        label9.setText("<html> Wybrana linia: " + busNumber + "<br>Kierunek jazdy: " + nameDirections[pom2] + ".<br>Przystanek: " + nameStops[pom].getBusStopName() +
+                                                                ".<br>Obecna godzina to: " + hours + ":0" + minutes + ".<br>Ostatni odjazd: " + hoursTwo + ":" + minutesTwo + ".<br>Opóźnienie wynosi: " +
                                                                 differenceHours + " godzin i " + differenceMinutes + " minut.</html>");
                                                     } else {
-                                                        label9.setText("<html> Wybrales Kierowco linie numer " + busNumber + ", ktora poruszasz się w kierunku " + nameDirections[pom2] + " i chcesz zapytac jakie opoznienie masz do przystanku <br> o nazwie " + nameStops[pom].getBusStopName() +
-                                                                ". Obecna godzina to: " + hours + ":" + minutes + ". Natomiast ostatni odjazd z tego przystanku przed obecną godziną mial nastapic<br> o godzinie: " + hoursTwo + ":" + minutesTwo + ". Opoznienie wynosi: " +
+                                                        label9.setText("<html> Wybrana linia: " + busNumber + ".<br>Kierunek jazdy: " + nameDirections[pom2] + ".<br>Przystanek: " + nameStops[pom].getBusStopName() +
+                                                                ".<br>Obecna godzina to: " + hours + ":" + minutes + ".<br>Ostatni odjazd: " + hoursTwo + ":" + minutesTwo + ".<br>Opóźnienie wynosi: " +
                                                                 differenceHours + " godzin i " + differenceMinutes + " minut.</html>");
                                                     }
                                                 }

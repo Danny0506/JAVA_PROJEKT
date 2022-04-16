@@ -81,9 +81,9 @@ public final class GuiAppearanceManager extends Gui {
         button17.setBackground(Color.cyan);
         button.setBounds(100, 200, 400, 100);
         button1.setBounds(750, 200, 400, 100);
-        button2.setBounds(400, 550, 500, 80);
+        button2.setBounds(400, 580, 500, 80);
         button3.setBounds(410, 600, 450, 70);
-        button4.setBounds(510, 450, 280, 70);
+        button4.setBounds(510, 500, 280, 70);
         button6.setBounds(20, 600, 500, 70);
         button7.setBounds(50, 600, 500, 70);
         button8.setBounds(350, 150, 570, 100);
@@ -119,7 +119,7 @@ public final class GuiAppearanceManager extends Gui {
         label7.setForeground(Color.white);
         label8.setBounds(940, 169, 300, 100);
         label8.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 20));
-        label9.setBounds(0, 340, 1280, 100);
+        label9.setBounds(0, 340, 1280, 150);
         label9.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         label10.setBounds(310, 60, 1250, 100);
         label10.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
