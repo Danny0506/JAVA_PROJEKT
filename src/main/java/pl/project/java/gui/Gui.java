@@ -52,10 +52,10 @@ public class Gui extends JFrame implements ActionListener {
     protected static final MyJButton button5 = new MyJButton("COFNIJ SIĘ DO MENU GŁÓWNEGO");
     protected static final MyJButton button6 = new MyJButton("COFNIJ SIĘ DO MENU GŁÓWNEGO");
     protected static final MyJButton button7 = new MyJButton("COFNIJ SIĘ DO MENU GŁÓWNEGO");
-    protected static final MyJButton button8 = new MyJButton("WYSZUKAJ POLACZENIA PO NUMERZE LINII");
-    protected static final MyJButton button9 = new MyJButton("WYSZUKAJ POLACZENIA PO GODZINIE");
-    protected static final MyJButton button10 = new MyJButton("WYSZUKAJ POLACZENIA PO KONKRETNYM PRZYSTANKU");
-    protected static final MyJButton button11 = new MyJButton("COFNIJ SIĘ DO MENU KRYTERIÓW SZUKANIA AUTOBUSU");
+    protected static final MyJButton button8 = new MyJButton("WYSZUKAJ POŁĄCZENIA PO NUMERZE LINII");
+    protected static final MyJButton button9 = new MyJButton("WYSZUKAJ POŁĄCZENIA PO GODZINIE");
+    protected static final MyJButton button10 = new MyJButton("WYSZUKAJ POŁĄCZENIA PO KONKRETNYM PRZYSTANKU");
+    protected static final MyJButton button11 = new MyJButton("COFNIJ SIĘ DO MENU KRYTERIÓW");
     protected static final MyJButton button12 = new MyJButton("COFNIJ SIĘ DO MENU KRYTERIÓW SZUKANIA AUTOBUSU");
     protected static final MyJButton button13 = new MyJButton("COFNIJ SIĘ DO MENU KRYTERIÓW SZUKANIA AUTOBUSU");
     protected static final MyJButton button14 = new MyJButton("SPRAWDŹ");
@@ -456,7 +456,7 @@ public class Gui extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(frame, "WYBIERZ PRZYSTANEK, ABY APLIKACJA PODALA INFORMACJE", "Nie Wybrano Wszystkich Wymaganych Opcji !!!", JOptionPane.WARNING_MESSAGE);
             } else {
                 jTextArea2.setSize(1280, 250);
-                jTextArea2.setLocation(0, 300);
+                jTextArea2.setLocation(0, 325);
                 jTextArea2.setText(null);
                 for (int k = 0; k < 10; k++) {
                     int busLine = k + 1;

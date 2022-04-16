@@ -19,13 +19,13 @@ public final class GuiAppearanceManager extends Gui {
     private static final JLabel label8 = new JLabel("Wybierz przystanek:");
     private static final JLabel label10 = new JLabel("Wybierz kryterium, po którym chcesz znaleźć autobus, którego szukasz");
     private static final JLabel label11 = new JLabel("ANIE AUTOBUSU PO NUMER");
-    private static final JLabel label12 = new JLabel("SZUKANIE AUTOBUSU PO GODZINIE PODANEJ PRZEZ PASAZERA");
+    private static final JLabel label12 = new JLabel("SZUKANIE AUTOBUSU PO GODZINIE PODANEJ PRZEZ PASAŻERA");
     private static final JLabel label13 = new JLabel("SZUKANIE AUTOBUSU PO KONKRETNYM PRZYSTANKU");
-    private static final JLabel label14 = new JLabel("          W tej czesci aplikacji możesz wybrać numer linii, a nas");
-    private static final JLabel label15 = new JLabel("W tej części apliakcji należy wybrac godzine oraz liczbe minut, a aplikacja znajdzie 5 najblizszych odjazdow, które wystąpia o danej godzinie lub po godzinie podanej przez pasazera");
-    private static final JLabel label16 = new JLabel("Nalezy wybrac przystanek z listy dostępnej w bazie, a następnie aplikacja poda numer linii wraz z kierunkem podrozy oraz godzina odjazdu z wybranego przystanku");
-    private static final JLabel label17 = new JLabel("                      Wybierz kierunek podrozy:");
-    private static final JLabel label18 = new JLabel("                   Wybierz numer linii:");
+    private static final JLabel label14 = new JLabel("          W tej części aplikacji możesz wybrać numer linii, a nas");
+    private static final JLabel label15 = new JLabel("W tej części apliakcji należy wybrac godzine oraz liczbę minut, a aplikacja znajdzie 5 najblizszych odjazdow, które wystąpią o danej godzinie lub po godzinie podanej przez pasażera");
+    private static final JLabel label16 = new JLabel("Należy wybrać przystanek z listy dostępnej w bazie, a następnie aplikacja poda numer linii wraz z kierunkem podróży oraz godziną odjazdu z wybranego przystanku");
+    private static final JLabel label17 = new JLabel("              Wybierz kierunek podróży:");
+    private static final JLabel label18 = new JLabel("                  Wybierz numer linii:");
     private static final JLabel label19 = new JLabel("                                          SZUK");
     private static final JLabel label20 = new JLabel("ZE  LINII");
     private static final JLabel label21 = new JLabel();
@@ -34,7 +34,7 @@ public final class GuiAppearanceManager extends Gui {
     private static final JLabel label24 = new JLabel("                                                         ");
     private static final JLabel label25 = new JLabel("                                                         ");
     private static final JLabel label26 = new JLabel("                                                         ");
-    private static final JLabel label27 = new JLabel("Wybierz godzine:");
+    private static final JLabel label27 = new JLabel("Wybierz godzinę:");
     private static final JLabel label28 = new JLabel("Wybierz ilość minut:");
     private static final JLabel label30 = new JLabel("UWAGA!!! W przypadku, gdy odbedzie się mniej niż 5 odjazdow ze względu na porę dnia, zostaną wyświetlone wszystkie odjazdy, które pozostaly");
     private static final JLabel label31 = new JLabel("Wybierz Przystanek:");
@@ -82,18 +82,18 @@ public final class GuiAppearanceManager extends Gui {
         button.setBounds(100, 200, 400, 100);
         button1.setBounds(750, 200, 400, 100);
         button2.setBounds(400, 550, 500, 80);
-        button3.setBounds(440, 600, 400, 50);
+        button3.setBounds(410, 600, 450, 70);
         button4.setBounds(510, 450, 280, 70);
-        button6.setBounds(190, 600, 400, 50);
-        button7.setBounds(190, 600, 400, 50);
+        button6.setBounds(20, 600, 500, 70);
+        button7.setBounds(50, 600, 500, 70);
         button8.setBounds(350, 150, 570, 100);
         button9.setBounds(350, 300, 570, 100);
         button10.setBounds(350, 450, 570, 100);
-        button12.setBounds(670, 600, 400, 50);
-        button13.setBounds(670, 600, 400, 50);
-        button15.setBounds(531, 240, 200, 50);
-        button16.setBounds(536, 260, 200, 40);
-        button17.setBounds(836, 200, 250, 40);
+        button12.setBounds(620, 600, 600, 70);
+        button13.setBounds(620, 600, 600, 70);
+        button15.setBounds(450, 320, 350, 70);
+        button16.setBounds(900, 200, 350, 70);
+        button17.setBounds(20, 200, 350, 70);
     }
 
     /**
@@ -132,10 +132,10 @@ public final class GuiAppearanceManager extends Gui {
         label14.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
         label15.setBounds(0, 60, 1280, 100);
         label15.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
-        label16.setBounds(60, 60, 1280, 100);
-        label16.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
-        label17.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
-        label18.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
+        label16.setBounds(5, 60, 1280, 100);
+        label16.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 16));
+        label17.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 22));
+        label18.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 22));
         label19.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
         label20.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
         label22.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
@@ -146,14 +146,16 @@ public final class GuiAppearanceManager extends Gui {
         label29.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         label30.setBounds(130, 85, 1280, 100);
         label30.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
-        label31.setBounds(544, 125, 300, 100);
-        label31.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
-        label27.setBounds(200, 160, 180, 33);
-        label28.setBounds(915, 160, 180, 33);
+        label31.setBounds(544, 110, 300, 100);
+        label31.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 22));
+        label27.setBounds(160, 160, 280, 60);
+        label27.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 22));
+        label28.setBounds(905, 160, 280, 60);
+        label28.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 22));
     }
 
     /**
-     * W metodzie initComboBoxes inicjowane sa przyciski typu JComcboBox, a dokladniej ich wielkosc i rozmieszczenie na panelach
+     * W metodzie initComboBoxes inicjowane sa przyciski typu JComboBox, a dokladniej ich wielkosc i rozmieszczenie na panelach
      */
     static void initComboBoxes() {
         comboBox.setBounds(100, 250, 280, 70);
@@ -162,9 +164,14 @@ public final class GuiAppearanceManager extends Gui {
         comboBox2.setFont(new Font(Font.SANS_SERIF,  Font.BOLD, 20));
         comboBox3.setBounds(900, 250, 280, 70);
         comboBox3.setFont(new Font(Font.SANS_SERIF,  Font.BOLD, 20));
-        comboBox6.setBounds(200, 200, 180, 33);
-        comboBox7.setBounds(915, 200, 180, 33);
-        comboBox8.setBounds(500, 200, 270, 40);
+        comboBox4.setFont(new Font(Font.SANS_SERIF,  Font.BOLD, 21));
+        comboBox5.setFont(new Font(Font.SANS_SERIF,  Font.BOLD, 21));
+        comboBox6.setBounds(100, 220, 280, 60);
+        comboBox6.setFont(new Font(Font.SANS_SERIF,  Font.BOLD, 20));
+        comboBox7.setBounds(870, 220, 280, 60);
+        comboBox7.setFont(new Font(Font.SANS_SERIF,  Font.BOLD, 20));
+        comboBox8.setBounds(485, 200, 320, 70);
+        comboBox8.setFont(new Font(Font.SANS_SERIF,  Font.BOLD, 21));
     }
 
     /**
