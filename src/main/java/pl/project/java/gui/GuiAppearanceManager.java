@@ -38,6 +38,7 @@ public final class GuiAppearanceManager extends Gui {
     private static final JLabel label28 = new JLabel("Wybierz ilość minut:");
     private static final JLabel label30 = new JLabel("UWAGA!!! W przypadku, gdy odbedzie się mniej niż 5 odjazdow ze względu na porę dnia, zostaną wyświetlone wszystkie odjazdy, które pozostaly");
     private static final JLabel label31 = new JLabel("Wybierz Przystanek:");
+    private static final JLabel label32 = new JLabel("Wpisz nazwę przystanku, który chcesz wyszukać:");
     private static final JScrollPane jScrollPane = new JScrollPane(jTextArea);
     private static final MyJPanel myJPanel = new MyJPanel();
     private static final MyJPanel myJPanel3 = new MyJPanel();
@@ -79,6 +80,7 @@ public final class GuiAppearanceManager extends Gui {
         button15.setBackground(Color.green);
         button16.setBackground(Color.green);
         button17.setBackground(Color.cyan);
+        button18.setBackground(Color.green);
         button.setBounds(100, 200, 400, 100);
         button1.setBounds(750, 200, 400, 100);
         button2.setBounds(400, 580, 500, 80);
@@ -92,8 +94,11 @@ public final class GuiAppearanceManager extends Gui {
         button12.setBounds(620, 600, 600, 70);
         button13.setBounds(620, 600, 600, 70);
         button15.setBounds(450, 320, 350, 70);
-        button16.setBounds(900, 200, 350, 70);
-        button17.setBounds(20, 200, 350, 70);
+        button16.setBounds(730, 250, 520, 60);
+        button17.setBounds(10, 250, 330, 60);
+        button18.setBounds(730, 140, 520, 60);
+        textField.setBounds(110, 150, 480, 40);
+        textField.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 22));
     }
 
     /**
@@ -126,13 +131,13 @@ public final class GuiAppearanceManager extends Gui {
         label11.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
         label12.setBounds(150, -250, 1000, 600);
         label12.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
-        label13.setBounds(220, -250, 900, 600);
+        label13.setBounds(220, -275, 900, 600);
         label13.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
         label14.setBounds(50, 60, 1200, 100);
         label14.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
         label15.setBounds(0, 60, 1280, 100);
         label15.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
-        label16.setBounds(5, 60, 1280, 100);
+        label16.setBounds(5, 10, 1280, 100);
         label16.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 16));
         label17.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 22));
         label18.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 22));
@@ -146,8 +151,11 @@ public final class GuiAppearanceManager extends Gui {
         label29.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 18));
         label30.setBounds(130, 85, 1280, 100);
         label30.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 15));
-        label31.setBounds(544, 110, 300, 100);
+        label31.setBounds(444, 205, 300, 50);
+        label31.setForeground(Color.WHITE);
         label31.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 22));
+        label32.setBounds(100, 100, 550, 50);
+        label32.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 22));
         label27.setBounds(160, 160, 280, 60);
         label27.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 22));
         label28.setBounds(905, 160, 280, 60);
@@ -170,7 +178,7 @@ public final class GuiAppearanceManager extends Gui {
         comboBox6.setFont(new Font(Font.SANS_SERIF,  Font.BOLD, 20));
         comboBox7.setBounds(870, 220, 280, 60);
         comboBox7.setFont(new Font(Font.SANS_SERIF,  Font.BOLD, 20));
-        comboBox8.setBounds(485, 200, 320, 70);
+        comboBox8.setBounds(420, 250, 250, 60);
         comboBox8.setFont(new Font(Font.SANS_SERIF,  Font.BOLD, 21));
     }
 
@@ -280,6 +288,9 @@ public final class GuiAppearanceManager extends Gui {
         myJPanel6.add(button16);
         myJPanel6.add(button17);
         myJPanel6.add(jTextArea2);
+        myJPanel6.add(textField);
+        myJPanel6.add(button18);
+        myJPanel6.add(label32);
     }
 
     /**

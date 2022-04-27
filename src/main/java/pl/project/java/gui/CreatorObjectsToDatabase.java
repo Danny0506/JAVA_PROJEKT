@@ -85,20 +85,20 @@ public final class CreatorObjectsToDatabase extends Gui {
         BusStop busStop55 = new BusStop("07:56", "12:41", "16:42", "19:23", "23:12", "Żytnia", 3, "Kaczmarka");
         BusStop busStop56 = new BusStop("08:13", "13:10", "16:55", "19:42", "23:44", "Kaczmarka", 3, "Kaczmarka");
 
-        BusStop busStop57 = new BusStop("04:15", "06:18", "13:52", "17:37", "20:32", "al. Na Stadion", 4, "Zagnanska Areszt");
+        BusStop busStop57 = new BusStop("04:15", "06:18", "13:52", "17:37", "20:32", "Al. Na Stadion", 4, "Zagnanska Areszt");
         BusStop busStop58 = new BusStop("04:18", "06:25", "14:15", "17:59", "20:40", "Pakosz", 4, "Zagnanska Areszt");
         BusStop busStop59 = new BusStop("04:24", "06:48", "14:26", "18:26", "20:53", "Krakowska", 4, "Zagnanska Areszt");
         BusStop busStop60 = new BusStop("04:33", "07:21", "14:48", "18:33", "21:10", "Seminaryjska", 4, "Zagnanska Areszt");
         BusStop busStop61 = new BusStop("04:45", "07:55", "14:58", "18:45", "21:21", "Tarnowska", 4, "Zagnanska Areszt");
         BusStop busStop62 = new BusStop("04:59", "08:41", "15:15", "18:57", "21:32", "Jesionowa", 4, "Zagnanska Areszt");
         BusStop busStop63 = new BusStop("05:11", "09:22", "15:26", "19:11", "21:42", "Zagnanska Areszt", 4, "Zagnanska Areszt");
-        BusStop busStop64 = new BusStop("05:20", "10:44", "15:45", "19:25", "21:50", "Zagnanska Areszt", 4, "al. Na Stadion");
-        BusStop busStop65 = new BusStop("05:37", "11:12", "15:59", "19:35", "21:59", "Jesionowa", 4, "al. Na Stadion");
-        BusStop busStop66 = new BusStop("05:48", "11:30", "16:12", "19:47", "22:12", "Tarnowska", 4, "al. Na Stadion");
-        BusStop busStop67 = new BusStop("05:57", "11:46", "16:23", "19:59", "22:23", "Seminaryjska", 4, "al. Na Stadion");
-        BusStop busStop68 = new BusStop("05:59", "12:57", "16:45", "20:11", "22:35", "Krakowska", 4, "al. Na Stadion");
-        BusStop busStop69 = new BusStop("06:10", "13:13", "16:52", "20:20", "22:47", "Pakosz", 4, "al. Na Stadion");
-        BusStop busStop70 = new BusStop("06:13", "13:27", "16:59", "20:26", "22:51", "al. Na Stadion", 4, "al. Na Stadion");
+        BusStop busStop64 = new BusStop("05:20", "10:44", "15:45", "19:25", "21:50", "Zagnanska Areszt", 4, "Al. Na Stadion");
+        BusStop busStop65 = new BusStop("05:37", "11:12", "15:59", "19:35", "21:59", "Jesionowa", 4, "Al. Na Stadion");
+        BusStop busStop66 = new BusStop("05:48", "11:30", "16:12", "19:47", "22:12", "Tarnowska", 4, "Al. Na Stadion");
+        BusStop busStop67 = new BusStop("05:57", "11:46", "16:23", "19:59", "22:23", "Seminaryjska", 4, "Al. Na Stadion");
+        BusStop busStop68 = new BusStop("05:59", "12:57", "16:45", "20:11", "22:35", "Krakowska", 4, "Al. Na Stadion");
+        BusStop busStop69 = new BusStop("06:10", "13:13", "16:52", "20:20", "22:47", "Pakosz", 4, "Al. Na Stadion");
+        BusStop busStop70 = new BusStop("06:13", "13:27", "16:59", "20:26", "22:51", "Al. Na Stadion", 4, "Al. Na Stadion");
 
         BusStop busStop71 = new BusStop("05:15", "07:18", "13:45", "15:57", "18:32", "Dworzec Autobusowy", 6, "Niestachów petla");
         BusStop busStop72 = new BusStop("05:18", "07:25", "13:58", "16:10", "18:40", "Czarnowska", 6, "Niestachów petla");
@@ -189,8 +189,8 @@ public final class CreatorObjectsToDatabase extends Gui {
         Bus bus4 = new Bus(5, "Szybowcowa", "Kolberga");
         Bus bus5 = new Bus(6, "Niestachów pętla", "Dworzec Autobusowy");
         Bus bus6 = new Bus(7, "Zagnańsk Szkoła", "Dworzec Autobusowy");
-        Bus bus7 = new Bus(8, "Żniwna", "Os. Ślichowice");
-        Bus bus8 = new Bus(9, "Ćmińsk", "Os. Ślichowice");
+        Bus bus7 = new Bus(8, "Żniwna", "Oś. Ślichowice");
+        Bus bus8 = new Bus(9, "Ćmińsk", "Oś. Ślichowice");
         Bus bus9 = new Bus(10, "Ciekoty Żeromszczyzna", "Dworzec Autobusowy");
 
         return new Bus[] {bus, bus1, bus2, bus3, bus4, bus5, bus6, bus7, bus8, bus9};

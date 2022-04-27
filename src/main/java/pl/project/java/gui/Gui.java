@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalTime;
 import java.util.*;
+import java.util.List;
 
 import static pl.project.java.gui.ComboBoxesCreator.*;
 import static pl.project.java.gui.CreatorObjectsToDatabase.createNewBus;
@@ -60,8 +61,10 @@ public class Gui extends JFrame implements ActionListener {
     protected static final MyJButton button13 = new MyJButton("WRÓĆ DO MENU KRYTERIÓW SZUKANIA AUTOBUSU");
     protected static final MyJButton button14 = new MyJButton("SPRAWDŹ");
     protected static final MyJButton button15 = new MyJButton("SPRAWDŹ");
-    protected static final MyJButton button16 = new MyJButton("SPRAWDŹ");
+    protected static final MyJButton button16 = new MyJButton("SPRAWDŹ PO WYBRANYM PRZYSTANKU Z LISTY");
     protected static final MyJButton button17 = new MyJButton("POKAŻ DOSTĘPNE PRZYSTANKI");
+    protected static final MyJButton button18 = new MyJButton("SPRAWDŹ PO WPISANYM PRZYSTANKU");
+    protected static final JTextField textField = new JTextField();
     protected static final JTextArea jTextArea = new JTextArea();
     protected static final JTextArea jTextArea2 = new JTextArea();
     protected static final JPanel panel = new JPanel();
@@ -128,6 +131,7 @@ public class Gui extends JFrame implements ActionListener {
         button15.addActionListener(this);
         button16.addActionListener(this);
         button17.addActionListener(this);
+        button18.addActionListener(this);
         comboBox.addActionListener(this);
         comboBox2.addActionListener(this);
         comboBox3.addActionListener(this);
@@ -448,13 +452,16 @@ public class Gui extends JFrame implements ActionListener {
             for (BusStop nameStop : nameStops) {
                 original.add(nameStop.getBusStopName());
             }
+            Arrays.sort(Set.of(original).toArray());
             for (String name : original) {
                 comboBox8.addItem(name);
             }
         } else if (source == button16) {
             if (indexEight == -1) {
                 JOptionPane.showMessageDialog(frame, "WYBIERZ PRZYSTANEK, ABY APLIKACJA PODALA INFORMACJE", "Nie Wybrano Wszystkich Wymaganych Opcji !!!", JOptionPane.WARNING_MESSAGE);
-            } else {
+            }
+            else
+            {
                 jTextArea2.setSize(1280, 250);
                 jTextArea2.setLocation(0, 325);
                 jTextArea2.setText(null);
@@ -483,6 +490,58 @@ public class Gui extends JFrame implements ActionListener {
                                 jTextArea2.setText("ODJAZDY Z PRZYSTANKU: " + comboBox8.getItemAt(comboBox8.getSelectedIndex()) + "\n");
                             }
                             if (nameStops[pom].getBusStopName().equals(comboBox8.getItemAt(comboBox8.getSelectedIndex()))) {
+                                jTextArea2.append("\nLINIA NUMER: " + busLine + "\tKIERUNEK: " + nameDirections[pom2] + "\tODJAZDY: " + nameStops[pom].getDepartureOneTime() + ",  " + nameStops[pom].getDepartureTwoTime() + ",  " +
+                                        nameStops[pom].getDepartureThreeTime() + ",  " + nameStops[pom].getDepartureFourTime() + ",  " + nameStops[pom].getDepartureFiveTime());
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else if(source == button18)
+        {
+            int flag = 0;
+            for (BusStop nameStop : nameStops) {
+                if(nameStop.getBusStopName().equalsIgnoreCase(textField.getText()))
+                {
+                    flag = 1;
+                }
+            }
+            if (textField.getText().equals("") || flag == 0)
+            {
+                JOptionPane.showMessageDialog(frame, "WPISZ POPRAWNĄ NAZWĘ PRZYSTANKU, ABY GO ZNALEŹĆ !!!", "Niepoprawna nazwa przystanka", JOptionPane.WARNING_MESSAGE);
+            }
+            else
+            {
+                jTextArea2.setSize(1280, 250);
+                jTextArea2.setLocation(0, 325);
+                jTextArea2.setText(null);
+                String busName = textField.getText();
+                for (int k = 0; k < 10; k++) {
+                    int busLine = k + 1;
+                    for (int j = 0; j < 2; j++) {
+                        for (int i = 0; i < 7; i++) {
+                            int pom = i;
+                            int pom2 = j;
+                            if (k == 0 && j == 1) {
+                                pom = i + 7;
+                            }
+                            if (k > 0) {
+                                for (int counter = 1; counter < 10; counter++) {
+                                    int busNumberTwo = k + 1;
+                                    if (busNumberTwo == counter + 1 && j == 0) {
+                                        pom = 7 * ((2 * busNumberTwo) - 2) + i;
+                                        pom2 = k * 2;
+                                    } else if (busNumberTwo == counter + 1) {
+                                        pom = 7 * ((2 * busNumberTwo) - 1) + i;
+                                        pom2 = k * 2 + 1;
+                                    }
+                                }
+                            }
+                            if (k == 0 && i == 0 && j == 0) {
+                                jTextArea2.setText("ODJAZDY Z PRZYSTANKU: " + busName.toUpperCase() + "\n");
+                            }
+                            if (nameStops[pom].getBusStopName().equalsIgnoreCase(busName)) {
                                 jTextArea2.append("\nLINIA NUMER: " + busLine + "\tKIERUNEK: " + nameDirections[pom2] + "\tODJAZDY: " + nameStops[pom].getDepartureOneTime() + ",  " + nameStops[pom].getDepartureTwoTime() + ",  " +
                                         nameStops[pom].getDepartureThreeTime() + ",  " + nameStops[pom].getDepartureFourTime() + ",  " + nameStops[pom].getDepartureFiveTime());
                             }
